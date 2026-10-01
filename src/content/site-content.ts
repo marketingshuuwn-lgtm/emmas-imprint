@@ -15,6 +15,7 @@ export const siteContent: SiteContent = {
     { label: "الرئيسية", href: "#home" },
     { label: "من نحن", href: "#about" },
     { label: "خدماتنا", href: "#services" },
+    { label: "معرض المشاريع", href: "#showcase" },
     { label: "النباتات الداخلية", href: "#plants" },
     { label: "الأسئلة الشائعة", href: "#faq" },
     { label: "احجز استشارة", href: "#contact" },
@@ -235,7 +236,7 @@ export const siteContent: SiteContent = {
       "المعدات والأدوات الزراعية",
       "النجيلة الصناعية",
     ],
-    copyright: "© 2026 مشتل سلطان العتيبي الزراعية. جميع الحقوق محفوظة.",
+    copyright: "جميع الحقوق محفوظة © 2026 مشتل سلطان العتيبي الزراعية.",
   },
   seo: {
     title: "مشتل سلطان العتيبي الزراعية | نباتات وتنسيق حدائق في الرياض",
