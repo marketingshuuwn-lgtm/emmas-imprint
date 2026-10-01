@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f6;
+  --foreground: #1a2e1a;
+  --primary: #1b5e20;
+  --primary-foreground: #ffffff;
+  --primary-hover: #145a1a;
+  --secondary: #4a7c59;
+  --secondary-foreground: #ffffff;
+  --accent: #c8e6c9;
+  --accent-foreground: #1b5e20;
+  --muted: #e8f0e8;
+  --muted-foreground: #4a5d4a;
+  --card: #ffffff;
+  --card-foreground: #1a2e1a;
+  --border: #d4e0d4;
+  --success: #2e7d32;
+  --warning: #f9a825;
+  --ring: #1b5e20;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-cairo);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo), system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.section-padding {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-block: 5.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-block: 6.5rem;
+  }
+}
+
+.container-main {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-main {
+    padding-inline: 2rem;
+  }
+}
+
+.prose-ar {
+  line-height: 1.85;
+}
