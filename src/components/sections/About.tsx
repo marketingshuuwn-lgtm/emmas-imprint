@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Eye, Target, Award, CheckCircle, MapPin, Users, Sparkles, Sprout } from "lucide-react";
+import { Eye, Target, Award, CheckCircle, MapPin, Sparkles, Sprout } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function About() {
@@ -24,7 +24,7 @@ export function About() {
               <div className="relative h-80 sm:h-96 md:h-[450px] w-full">
                 <Image
                   src="/images/nursery-greenhouse.jpg"
-                  alt="مشاتل سلطان العتيبي الزراعية بالرياض"
+                  alt="بصمة ايما الزراعية بالرياض"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

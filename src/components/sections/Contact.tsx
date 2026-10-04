@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, Phone, MapPin, Clock, Calendar, CheckCircle2 } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Contact() {

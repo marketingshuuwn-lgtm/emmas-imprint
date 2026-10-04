@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sun, Droplets, Shield, Sparkles, MessageCircle, Check, ArrowLeft, Heart, Filter } from "lucide-react";
-import { siteContent } from "@/content/site-content";
+import { Sun, Droplets, Shield, Sparkles, MessageCircle } from "lucide-react";
 
 interface PlantItem {
   id: string;
@@ -130,7 +129,6 @@ const plantsCatalog: PlantItem[] = [
 ];
 
 export function Plants() {
-  const { plants } = siteContent;
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [selectedLocation, setSelectedLocation] = useState<string>("living");
   const [selectedLight, setSelectedLight] = useState<string>("indirect");
@@ -307,7 +305,7 @@ export function Plants() {
                 <div className="pt-4 mt-auto">
                   <a
                     href={`https://wa.me/966578326985?text=${encodeURIComponent(
-                      `مرحباً مشتل سلطان العتيبي، أود الاستفسار عن توفر وسعر: ${plant.name}`
+                      `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وسعر: ${plant.name}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -442,7 +440,7 @@ export function Plants() {
 
             <a
               href={`https://wa.me/966578326985?text=${encodeURIComponent(
-                `مرحباً مشتل سلطان، رشح لي الموقع نبتة (${recommended.name}) وأود طلبها مع حوضها الفاخر لمنزلي.`
+                `مرحباً بصمة ايما، رشح لي الموقع نبتة (${recommended.name}) وأود طلبها مع حوضها الفاخر لمنزلي.`
               )}`}
               target="_blank"
               rel="noopener noreferrer"

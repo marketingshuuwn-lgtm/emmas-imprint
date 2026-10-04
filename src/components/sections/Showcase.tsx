@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, CheckCircle2, ArrowRight, ArrowLeft, Eye, MessageCircle } from "lucide-react";
+import { Sparkles, CheckCircle2, Eye, MessageCircle } from "lucide-react";
 
 interface Project {
   id: string;
@@ -62,7 +62,7 @@ export function Showcase() {
             شاهد كيف نحول المساحات إلى <span className="text-emerald-700">تحف طبيعية</span>
           </h2>
           <p className="text-base md:text-lg text-emerald-900/80 prose-ar max-w-2xl mx-auto">
-            نماذج واقعية من مشاريع نفذها فريق مشتل سلطان العتيبي لعملائنا في مختلف أحياء الرياض.
+            نماذج واقعية من مشاريع نفذها فريق بصمة ايما الزراعية لعملائنا في مختلف أحياء الرياض.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export function Showcase() {
             <div className="pt-4 border-t border-emerald-100">
               <a
                 href={`https://wa.me/966578326985?text=${encodeURIComponent(
-                  `مرحباً مشتل سلطان، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
+                  `مرحباً بصمة ايما، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

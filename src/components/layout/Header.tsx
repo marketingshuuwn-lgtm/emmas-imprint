@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, MessageCircle, Sprout, Sparkles } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Sprout } from "lucide-react";
 import { siteContent } from "@/content/site-content";
-import { Button } from "@/components/ui/Button";
 
 export function Header() {
   const [open, setOpen] = useState(false);

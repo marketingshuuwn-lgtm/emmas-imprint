@@ -98,7 +98,7 @@ const secondaryServices = [
 ];
 
 export function Services() {
-  const { services, business } = siteContent;
+  const { services } = siteContent;
 
   return (
     <section
@@ -195,7 +195,7 @@ export function Services() {
                   {/* CTA link */}
                   <a
                     href={`https://wa.me/966578326985?text=${encodeURIComponent(
-                      `مرحباً مشتل سلطان، أود الاستفسار عن خدمة: ${service.title}`
+                      `مرحباً بصمة ايما، أود الاستفسار عن خدمة: ${service.title}`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"

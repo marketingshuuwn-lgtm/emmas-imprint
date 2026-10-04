@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { MessageCircle, Leaf, Sparkles, ShieldCheck, Droplet, ArrowDown, PhoneCall } from "lucide-react";
 import { siteContent } from "@/content/site-content";
-import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   const { hero, business } = siteContent;
@@ -18,7 +17,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-garden.jpg"
-          alt="حديقة فيلا فاخرة بتصميم مشتل سلطان العتيبي بالرياض"
+          alt="حديقة فيلا فاخرة بتصميم بصمة ايما الزراعية بالرياض"
           fill
           priority
           className="object-cover object-center scale-105 motion-safe:animate-pulse-subtle"
@@ -110,7 +109,7 @@ export function Hero() {
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-white font-bold text-sm">مشاريع مشتل سلطان بالرياض</span>
+                  <span className="text-white font-bold text-sm">مشاريع بصمة ايما بالرياض</span>
                 </div>
                 <span className="text-xs text-emerald-300 font-mono bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-500/20">
                   +147 حديقة منفذة
