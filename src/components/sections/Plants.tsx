@@ -2,455 +2,293 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sun, Droplets, Shield, Sparkles, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Sun, Droplets, Sparkles, Camera, ArrowLeft } from "lucide-react";
 
 interface PlantItem {
   id: string;
   name: string;
   scientificName: string;
-  category: "low-light" | "bright-indirect" | "large-spaces" | "desks";
+  category: "outdoor-sun" | "indoor-shade" | "self-watering" | "pet-safe";
   description: string;
-  lightLevel: "خفيف / ظليل" | "متوسط غير مباشر" | "إضاءة ساطعة" | "معتدل";
-  waterFreq: "كل 10-14 يوم" | "مرة أسبوعياً" | "مرتين أسبوعياً" | "عند جفاف التربة";
-  difficulty: "سهلة جداً (للمبتدئين)" | "متوسطة" | "سهلة ومقاومة";
+  sunTolerance: string;
+  waterFreq: string;
+  riyadhAdvice: string;
   image: string;
   tag: string;
 }
 
 const plantsCatalog: PlantItem[] = [
   {
-    id: "monstera",
-    name: "نبتة المونستيرا (القفص الصدري)",
-    scientificName: "Monstera Deliciosa",
-    category: "bright-indirect",
-    description: "الأيقونة الملكية في عالم الديكور الداخلي. أوراقها العريضة والمشققة تضفي لمسة استوائية فخمة على صالات المعيشة.",
-    lightLevel: "متوسط غير مباشر",
-    waterFreq: "مرة أسبوعياً",
-    difficulty: "سهلة ومقاومة",
+    id: "bougainvillea",
+    name: "الجهنمية المعمرة (بوفيديا)",
+    scientificName: "Bougainvillea Spectabilis",
+    category: "outdoor-sun",
+    description: "بطلة أسوار الرياض؛ تعشق شمس الصيف المباشرة حتى 50°، وتزهر بغزارة بألوان بنفسجية ووردية مبهرة طوال العام.",
+    sunTolerance: "شمس حارقة مباشرة 100%",
+    waterFreq: "يومياً فجراً بالصيف • مرتين أسبوعياً بالشتاء",
+    riyadhAdvice: "ازرعها بجوار السور أو المظلة لتعطيك ساتراً طبيعياً يحجب الغبار والحرارة.",
+    image: "/images/service-landscaping.jpg",
+    tag: "تتحمل صيف 50°",
+  },
+  {
+    id: "plumeria",
+    name: "الياسمين الهندي (البلوميريا)",
+    scientificName: "Plumeria Obtusa",
+    category: "outdoor-sun",
+    description: "شجرة استوائية عطرية نادرة التكيف مع حرارة الرياض؛ أزهارها بيضاء صفراء ذات عطر ساحر في ليالي الصيف.",
+    sunTolerance: "شمس مباشرة إلى نصف ظليل",
+    waterFreq: "مرة يومياً بالصيف • عند جفاف التربة بالشتاء",
+    riyadhAdvice: "ضعها في مدخل الفناء الخارجي لتستمتع برائحتها العطرية الفواحة وقت المساء.",
+    image: "/images/hero-garden.jpg",
+    tag: "عطرية ومقاومة للحرارة",
+  },
+  {
+    id: "sansevieria",
+    name: "جلد النمر (سانسيفيريا)",
+    scientificName: "Sansevieria Trifasciata",
+    category: "indoor-shade",
+    description: "أقوى نبتة صالات في العالم؛ تخزن الماء في أوراقها السميكة وتعيش بامتياز في جو التكييف البارد والإضاءة المحدودة.",
+    sunTolerance: "إضاءة غرف معتدلة أو خافتة",
+    waterFreq: "كل 12 إلى 15 يوماً (لا تسقِ حتى تجف التربة)",
+    riyadhAdvice: "القاتل الوحيد لها هو كثرة السقي؛ اترك تربتها تجف تماماً قبل أن ترويها ثانية.",
+    image: "/images/plant-sansevieria.jpg",
+    tag: "الأقوى تحملاً للتكييف",
+  },
+  {
+    id: "zz-plant",
+    name: "الزاميا اللامعة (ZZ Plant)",
+    scientificName: "Zamioculcas Zamiifolia",
+    category: "indoor-shade",
+    description: "نبتة أنيقة بأوراق شمعية داكنة فائقة اللمعان. تتحمل أسابيع من الإهمال وتزدهر حتى تحت الإضاءة الفلورية المكتبية.",
+    sunTolerance: "إضاءة منخفضة إلى متوسطة",
+    waterFreq: "مرة كل 2 إلى 3 أسابيع",
+    riyadhAdvice: "ممتازة لزوايا الممرات والصالات التي تفتقر للنوافذ الطبيعية.",
     image: "/images/plant-monstera.jpg",
-    tag: "الأكثر طلباً",
+    tag: "لا تحتاج لعناية يومية",
+  },
+  {
+    id: "monstera",
+    name: "المونستيرا (القفص الصدري)",
+    scientificName: "Monstera Deliciosa",
+    category: "indoor-shade",
+    description: "أيقونة الديكور الداخلي بأوراقها العريضة المشرحة التي تضفي هيبة استوائية هادئة على صالات الاستقبال المفتوحة.",
+    sunTolerance: "إضاءة ساطعة غير مباشرة (قرب نافذة)",
+    waterFreq: "مرة أسبوعياً صيفاً • كل 10 أيام شتاءً",
+    riyadhAdvice: "امسح أوراقها بقطعة قماش مبللة كل أسبوعين لإزالة غبار الرياض لتتنفس بعمق.",
+    image: "/images/plant-monstera.jpg",
+    tag: "أيقونة الصالات",
   },
   {
     id: "ficus-lyrata",
     name: "فيكس ليراتا (تين الكمان)",
     scientificName: "Ficus Lyrata",
-    category: "large-spaces",
-    description: "شجرة داخلية ساحرة بأوراق عملاقة تشبه آلة الكمان، تعد الخيار المفضل لمصممي الديكور لإبراز زوايا الصالونات المرتفعة.",
-    lightLevel: "إضاءة ساطعة",
-    waterFreq: "مرة أسبوعياً",
-    difficulty: "متوسطة",
+    category: "self-watering",
+    description: "شجرة داخلية معمارية بأوراق كبيرة تشبه آلة الكمان؛ نقدمها بأحواض هيدروليكية ذاتية التغذية تناسب مقرات الأعمال.",
+    sunTolerance: "إضاءة قوية غير مباشرة",
+    waterFreq: "ري ذاتي (تعبئة الخزان كل 18 يوماً)",
+    riyadhAdvice: "حافظ على ثبات موقعها داخل المكتب وتجنب نقلها المتكرر حتى لا تصاب بصدمة.",
     image: "/images/plant-ficus.jpg",
-    tag: "ديكور فاخر",
+    tag: "أحواض ذاتية الري للمكاتب",
   },
   {
     id: "areca-palm",
-    name: "نخيل الأريكا الداخلي",
+    name: "نخيل الأريكا المنقي للهواء",
     scientificName: "Dypsis Lutescens",
-    category: "large-spaces",
-    description: "يمنح المداخل والبهو الواسع حضوراً استثنائياً وارتفاعاً بصرياً مريحاً مع أوراقه الريشية الخضراء الكثيفة المنقية للهواء.",
-    lightLevel: "إضاءة ساطعة",
-    waterFreq: "مرتين أسبوعياً",
-    difficulty: "متوسطة",
+    category: "self-watering",
+    description: "ريش أخضر متهدل يمنح المكاتب وقاعات الاجتماعات بهجة وارتفاعاً بصرياً يقلل من التوتر ويزيد رطوبة الهواء.",
+    sunTolerance: "إضاءة مكتبية جيدة",
+    waterFreq: "ري ذاتي (تعبئة الخزان كل 14 يوماً)",
+    riyadhAdvice: "أفضل نبتة لتجديد هواء المكاتب المغلقة ذات التكييف المركزي.",
     image: "/images/plant-areca.jpg",
-    tag: "للمساحات الكبيرة",
+    tag: "تنقية هواء للمقرات",
   },
   {
-    id: "peace-lily",
-    name: "زنبق السلام (الشراع الأبيض)",
-    scientificName: "Spathiphyllum",
-    category: "bright-indirect",
-    description: "نبتة رومانسية هادئة تمتاز بأزهارها البيضاء النقية الشبيهة بالأشرعة، وقدرتها العالية على ترطيب وتنقية أجواء الغرف.",
-    lightLevel: "متوسط غير مباشر",
-    waterFreq: "مرة أسبوعياً",
-    difficulty: "سهلة ومقاومة",
+    id: "spider-plant",
+    name: "نبتة العنكبوت (سبايدر)",
+    scientificName: "Chlorophytum Comosum",
+    category: "pet-safe",
+    description: "نبتة رشيقة وسريعة النمو بأوراق مقلمة بالأبيض والأخضر، آمنة وغير سامة تماماً للقطط والأطفال مع قدرة فائقة على تنقية السموم.",
+    sunTolerance: "إضاءة غير مباشرة معتدلة",
+    waterFreq: "مرة أسبوعياً عند جفاف السطح",
+    riyadhAdvice: "يمكن تعليقها في أوانٍ متدلية لتعطي مظهراً جميلاً بعيداً عن أيدي الصغار.",
     image: "/images/plant-peacelily.jpg",
-    tag: "مزهرة ومنقية",
+    tag: "آمنة 100% للحيوانات والأطفال",
   },
   {
-    id: "sansevieria",
-    name: "جلد النمر (نبات الثعبان)",
-    scientificName: "Sansevieria Trifasciata",
-    category: "low-light",
-    description: "أقوى نبات داخلي للتحمل؛ ينمو بكفاءة في زوايا الغرف قليلة الإضاءة، ويتحمل نسيان الري لأسابيع دون أن يفقد نضارته.",
-    lightLevel: "خفيف / ظليل",
-    waterFreq: "كل 10-14 يوم",
-    difficulty: "سهلة جداً (للمبتدئين)",
-    image: "/images/plant-sansevieria.jpg",
-    tag: "عالية التحمل",
-  },
-  {
-    id: "pothos",
-    name: "نبات البوتس الذهبي المتدلي",
-    scientificName: "Epipremnum Aureum",
-    category: "desks",
-    description: "نبتة متسلقة ومتدلية محبوبة جداً بأوراق قلبية موشحة باللون الذهبي، مثالية للأرفف الخشبية والمكاتب والمطابخ الحديثة.",
-    lightLevel: "معتدل",
-    waterFreq: "مرة أسبوعياً",
-    difficulty: "سهلة جداً (للمبتدئين)",
-    image: "/images/plant-pothos.jpg",
-    tag: "للأرفف والمكاتب",
-  },
-  {
-    id: "dracaena",
-    name: "دراسينا مارجيناتا (شجرة التنين)",
-    scientificName: "Dracaena Marginata",
-    category: "large-spaces",
-    description: "تتميز بسيقانها المتعددة الرشيقة وأوراقها الرفيعة ذات الحواف الوردية الرفيعة، تعطي طابعاً معمارياً فسيحاً ومودرن.",
-    lightLevel: "متوسط غير مباشر",
-    waterFreq: "كل 10-14 يوم",
-    difficulty: "سهلة ومقاومة",
-    image: "/images/plant-dracaena.jpg",
-    tag: "طابع معماري",
-  },
-  {
-    id: "aglaonema",
-    name: "أجلونيما الصينية الملونة",
-    scientificName: "Aglaonema",
-    category: "low-light",
-    description: "لوحة تشكيلية طبيعية بدرجات الأخضر والوردي والفضي. تتأقلم مع الإضاءة المنخفضة وتضفي بهجة دافئة على طاولات القهوة والمكاتب.",
-    lightLevel: "خفيف / ظليل",
-    waterFreq: "كل 10-14 يوم",
-    difficulty: "سهلة ومقاومة",
-    image: "/images/plant-aglaonema.jpg",
-    tag: "ألوان مبهجة",
-  },
-  {
-    id: "zz-plant",
-    name: "نبتة الزاميا الزمردية (ZZ)",
-    scientificName: "Zamioculcas Zamiifolia",
-    category: "desks",
-    description: "نبتة أنيقة لا تموت بسهولة؛ أوراقها شمعية براقة كأنها مدهونة بالزيت، تكتفي بالقليل جداً من الماء والضوء الصناعي.",
-    lightLevel: "خفيف / ظليل",
-    waterFreq: "كل 10-14 يوم",
-    difficulty: "سهلة جداً (للمبتدئين)",
-    image: "/images/plant-sansevieria.jpg",
-    tag: "قليلة المتطلبات",
+    id: "calathea",
+    name: "كالاتيا المخططة (نبتة الصلاة)",
+    scientificName: "Calathea Orbifolia",
+    category: "pet-safe",
+    description: "لوحة فنية طبيعية ترتفع أوراقها ليلاً كأنها تصلي؛ أوراق دائرية عريضة بنقوش فضية وخضراء، آمنة للأطفال والحيوانات الأليفة.",
+    sunTolerance: "ظل جزئي وإضاءة ناعمة",
+    waterFreq: "مرة أسبوعياً بماء معتدل الأملاح",
+    riyadhAdvice: "يفضل ريها بمياه شرب معتدلة لتفادي جفاف أطراف أوراقها الحساسة للأملاح.",
+    image: "/images/plant-monstera.jpg",
+    tag: "أوراق فنية غير سامة",
   },
 ];
 
 export function Plants() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [selectedLocation, setSelectedLocation] = useState<string>("living");
-  const [selectedLight, setSelectedLight] = useState<string>("indirect");
 
-  const filteredPlants = activeFilter === "all"
-    ? plantsCatalog
-    : plantsCatalog.filter((p) => p.category === activeFilter);
-
-  // Smart recommendation logic
-  const getRecommendation = () => {
-    if (selectedLight === "low") {
-      return plantsCatalog.find((p) => p.id === "sansevieria") || plantsCatalog[4];
-    }
-    if (selectedLocation === "foyer" || selectedLocation === "large") {
-      return plantsCatalog.find((p) => p.id === "ficus-lyrata") || plantsCatalog[1];
-    }
-    if (selectedLocation === "office") {
-      return plantsCatalog.find((p) => p.id === "pothos") || plantsCatalog[5];
-    }
-    return plantsCatalog.find((p) => p.id === "monstera") || plantsCatalog[0];
-  };
-
-  const recommended = getRecommendation();
+  const filteredPlants =
+    activeFilter === "all"
+      ? plantsCatalog
+      : plantsCatalog.filter((p) => p.category === activeFilter);
 
   return (
     <section
       id="plants"
-      className="section-padding bg-gradient-to-b from-[#fafcf9] via-[#edf6ee] to-[#fafcf9] relative overflow-hidden"
+      className="py-16 sm:py-24 bg-[#faf8f5] text-[#1c1f1d] border-b border-[#e8dfd3]"
       aria-labelledby="plants-heading"
     >
-      {/* Decorative ambient spots */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100/60 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-100/60 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container-main relative z-10">
+      <div className="container-main">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3 border border-emerald-200">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>كتالوج النباتات الداخلية الطبيعية ({plantsCatalog.length} أصناف)</span>
+        <div className="max-w-3xl text-right mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-xs font-bold mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#b8603d]" />
+            <span>دليل نباتات الرياض الواقعي</span>
           </div>
+
           <h2
             id="plants-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-950 mb-5 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#102117] leading-tight mb-4 font-heading"
           >
-            نباتات منتقاة بعناية تمنح مساحتك <span className="text-emerald-700">حياةً وأناقة</span>
+            نباتات مؤصّلة لمناخ الرياض، <br />
+            <span className="text-[#b8603d]">مصنفة حسب واقع غرفتك أو حوشك.</span>
           </h2>
-          <p className="text-base md:text-lg text-emerald-900/80 prose-ar leading-relaxed max-w-2xl mx-auto">
-            مجموعة متكاملة من أجمل نباتات الزينة المنزلية والمكتبية المتوافقة مع أجواء منازل الرياض، مع أحواض فخارية وسيراميك فاخرة.
+
+          <p className="text-sm sm:text-base text-[#424944] leading-relaxed">
+            اختر بيئة مساحتك وسنظهر لك النباتات التي تناسبها دون وعود خيالية:
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
-          <button
-            onClick={() => setActiveFilter("all")}
-            className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 ${
-              activeFilter === "all"
-                ? "bg-emerald-900 text-white shadow-xl shadow-emerald-950/20 scale-105"
-                : "bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-200/80"
-            }`}
-          >
-            جميع النباتات ({plantsCatalog.length})
-          </button>
-          <button
-            onClick={() => setActiveFilter("bright-indirect")}
-            className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 ${
-              activeFilter === "bright-indirect"
-                ? "bg-emerald-900 text-white shadow-xl shadow-emerald-950/20 scale-105"
-                : "bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-200/80"
-            }`}
-          >
-            للصالات والإضاءة المشرقة
-          </button>
-          <button
-            onClick={() => setActiveFilter("large-spaces")}
-            className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 ${
-              activeFilter === "large-spaces"
-                ? "bg-emerald-900 text-white shadow-xl shadow-emerald-950/20 scale-105"
-                : "bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-200/80"
-            }`}
-          >
-            للمداخل والمساحات الواسعة
-          </button>
-          <button
-            onClick={() => setActiveFilter("low-light")}
-            className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 ${
-              activeFilter === "low-light"
-                ? "bg-emerald-900 text-white shadow-xl shadow-emerald-950/20 scale-105"
-                : "bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-200/80"
-            }`}
-          >
-            للزوايا والإضاءة الخافتة
-          </button>
-          <button
-            onClick={() => setActiveFilter("desks")}
-            className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 ${
-              activeFilter === "desks"
-                ? "bg-emerald-900 text-white shadow-xl shadow-emerald-950/20 scale-105"
-                : "bg-white text-emerald-900 hover:bg-emerald-50 border border-emerald-200/80"
-            }`}
-          >
-            للمكاتب والأرفف المتدلية
-          </button>
+        {/* Realistic Riyadh Filter Buttons */}
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-10">
+          {[
+            { id: "all", label: `جميع الأصناف (${plantsCatalog.length})` },
+            { id: "outdoor-sun", label: "☀️ شمس الرياض المباشرة (أحواش وأسوار)" },
+            { id: "indoor-shade", label: "❄️ صالات مكيفة وظل (تتحمل التكييف)" },
+            { id: "self-watering", label: "🏢 مكاتب وشركات (أحواض ري ذاتي)" },
+            { id: "pet-safe", label: "🐾 آمنة للأطفال والحيوانات الأليفة" },
+          ].map((tab) => {
+            const isActive = activeFilter === tab.id;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveFilter(tab.id)}
+                className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all duration-200 border ${
+                  isActive
+                    ? "bg-[#183324] text-white border-[#183324] shadow-sm"
+                    : "bg-white text-[#424944] border-[#e8dfd3] hover:border-[#b8603d] hover:bg-[#faf8f5]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
         </div>
 
-        {/* 9 Plant Cards Grid with High-Res Photos */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7 mb-16">
+        {/* Plants Grid (Clean Editorial Cards) */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-14">
           {filteredPlants.map((plant) => (
             <div
               key={plant.id}
-              className="group bg-white rounded-3xl overflow-hidden border border-emerald-100/90 shadow-md hover:shadow-2xl transition-all duration-500 flex flex-col transform hover:-translate-y-1.5"
+              className="editorial-card rounded-2xl overflow-hidden border border-[#e8dfd3] bg-white flex flex-col justify-between"
             >
-              {/* Plant Image */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-emerald-50">
-                <Image
-                  src={plant.image}
-                  alt={plant.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-white/95 text-emerald-950 backdrop-blur-md shadow-md border border-white/60">
+              <div>
+                
+                {/* Photo with Tag */}
+                <div className="relative h-60 w-full overflow-hidden bg-[#f4efea] border-b border-[#e8dfd3]">
+                  <Image
+                    src={plant.image}
+                    alt={plant.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                  <div className="absolute top-3 right-3 bg-[#102117]/85 backdrop-blur-sm text-[#faf8f5] text-[11px] font-bold px-3 py-1 rounded-md">
                     {plant.tag}
-                  </span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Plant Specs & Content */}
-              <div className="p-6 flex-1 flex flex-col justify-between text-right">
-                <div>
-                  <h3 className="text-xl font-bold text-emerald-950 mb-0.5">
-                    {plant.name}
-                  </h3>
-                  <p className="text-xs text-emerald-700/80 font-mono mb-3">
-                    {plant.scientificName}
-                  </p>
-                  <p className="text-sm text-emerald-900/80 prose-ar leading-relaxed mb-5">
-                    {plant.description}
-                  </p>
-
-                  {/* Botanical Care Specs */}
-                  <div className="space-y-2 py-3.5 border-y border-emerald-100/80 text-xs">
-                    <div className="flex items-center justify-between text-emerald-950">
-                      <span className="flex items-center gap-2 text-emerald-700">
-                        <Sun className="w-4 h-4 text-amber-500" />
-                        الإضاءة:
-                      </span>
-                      <span className="font-semibold">{plant.lightLevel}</span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-emerald-950">
-                      <span className="flex items-center gap-2 text-emerald-700">
-                        <Droplets className="w-4 h-4 text-teal-500" />
-                        معدل الري:
-                      </span>
-                      <span className="font-semibold">{plant.waterFreq}</span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-emerald-950">
-                      <span className="flex items-center gap-2 text-emerald-700">
-                        <Shield className="w-4 h-4 text-emerald-600" />
-                        صعوبة العناية:
-                      </span>
-                      <span className="font-semibold">{plant.difficulty}</span>
-                    </div>
                   </div>
                 </div>
 
-                {/* WhatsApp Quick Order */}
-                <div className="pt-4 mt-auto">
-                  <a
-                    href={`https://wa.me/966563340109?text=${encodeURIComponent(
-                      `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وسعر: ${plant.name}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-50 hover:bg-emerald-700 text-emerald-900 hover:text-white font-bold text-xs sm:text-sm transition-all duration-300 border border-emerald-200/80 hover:border-emerald-700 shadow-sm"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>طلب واستفسار فوري عبر واتساب</span>
-                  </a>
+                {/* Content */}
+                <div className="p-5 sm:p-6 text-right">
+                  <div className="mb-3">
+                    <h3 className="font-bold text-base sm:text-lg text-[#102117] font-heading">
+                      {plant.name}
+                    </h3>
+                    <p className="text-[11px] font-mono text-[#6f7872] italic">
+                      {plant.scientificName}
+                    </p>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-[#424944] leading-relaxed mb-4">
+                    {plant.description}
+                  </p>
+
+                  {/* 2 Riyadh Field Specs */}
+                  <div className="space-y-2 p-3 rounded-xl bg-[#faf8f5] border border-[#e8dfd3] text-xs mb-4">
+                    <div className="flex items-start gap-2">
+                      <Sun className="w-3.5 h-3.5 text-[#b8603d] shrink-0 mt-0.5" />
+                      <span className="text-[#1c1f1d]"><strong>الإضاءة:</strong> {plant.sunTolerance}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Droplets className="w-3.5 h-3.5 text-[#2f5d43] shrink-0 mt-0.5" />
+                      <span className="text-[#1c1f1d]"><strong>السقي:</strong> {plant.waterFreq}</span>
+                    </div>
+                  </div>
+
+                  {/* Practical Advice */}
+                  <div className="text-[11px] text-[#6f7872] bg-[#f7ebe5] p-2.5 rounded-lg border border-[#e8dfd3]">
+                    <strong className="text-[#9c4c2d] block mb-0.5">نصيحة المشتل:</strong>
+                    <span>{plant.riyadhAdvice}</span>
+                  </div>
+
                 </div>
+
               </div>
+
+              {/* Action Button */}
+              <div className="p-4 sm:p-5 pt-0">
+                <a
+                  href={`https://wa.me/966563340109?text=${encodeURIComponent(
+                    `مرحباً بصمة ايما، أود الاستفسار عن توفر وسعر (${plant.name}) مع إمكانية التوصيل أو الزيارة.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#183324] hover:bg-[#102117] text-white text-xs font-bold transition-colors"
+                >
+                  <Camera className="w-3.5 h-3.5 text-[#d6c7b5]" />
+                  <span>اطلب هذه النبتة أو استشرنا عنها</span>
+                </a>
+              </div>
+
             </div>
           ))}
         </div>
 
-        {/* Interactive Plant Matcher Box */}
-        <div className="grid lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl p-6 sm:p-10 border border-emerald-200/80 shadow-2xl">
-          
-          {/* Smart Selector Form */}
-          <div className="lg:col-span-7 text-right">
-            <div className="flex items-center gap-2.5 mb-3 text-emerald-700 font-bold text-sm">
-              <Sparkles className="w-4 h-4 text-emerald-600" />
-              <span>مستشار النباتات التفاعلي</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-emerald-950 mb-3">
-              لست متأكداً أي نبتة تلائم زاوية منزلك؟
+        {/* Link to Full 100+ Plants Encyclopedia */}
+        <div className="p-6 sm:p-8 rounded-2xl bg-[#183324] text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-[#2f5d43]">
+          <div className="text-right">
+            <h3 className="font-bold text-lg sm:text-xl text-white mb-1 font-heading">
+              تبحث عن أصناف أخرى؟ لدينا أكثر من 100 صنف نباتي مسجل
             </h3>
-            <p className="text-sm text-emerald-800/80 prose-ar mb-6">
-              اختر الموقع ومستوى الإضاءة المتوفر لديك، وسنحدد لك الخيار الأنسب لحيوية المكان:
+            <p className="text-xs sm:text-sm text-[#d6c7b5]">
+              تصفح موسوعتنا الشاملة لأشجار الظل، شتلات الفواكه، الصباريات، ونخيل الواشنطونيا بالرياض.
             </p>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="block text-xs font-bold text-emerald-900 mb-2">
-                  أين ترغب بوضع النبتة؟
-                </label>
-                <div className="space-y-2">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedLocation("living")}
-                    className={`w-full text-right px-4 py-2.5 rounded-xl text-xs font-bold border transition-colors ${
-                      selectedLocation === "living"
-                        ? "bg-emerald-100 border-emerald-600 text-emerald-950"
-                        : "bg-emerald-50/50 border-emerald-100 text-emerald-800"
-                    }`}
-                  >
-                    🛋️ صالة معيشة أو مجلس رئيسي
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedLocation("foyer")}
-                    className={`w-full text-right px-4 py-2.5 rounded-xl text-xs font-bold border transition-colors ${
-                      selectedLocation === "foyer"
-                        ? "bg-emerald-100 border-emerald-600 text-emerald-950"
-                        : "bg-emerald-50/50 border-emerald-100 text-emerald-800"
-                    }`}
-                  >
-                    🚪 مدخل الفيلا أو بهو مرتفع
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedLocation("office")}
-                    className={`w-full text-right px-4 py-2.5 rounded-xl text-xs font-bold border transition-colors ${
-                      selectedLocation === "office"
-                        ? "bg-emerald-100 border-emerald-600 text-emerald-950"
-                        : "bg-emerald-50/50 border-emerald-100 text-emerald-800"
-                    }`}
-                  >
-                    💻 مكتب أو رف جداري
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-emerald-900 mb-2">
-                  مستوى الإضاءة في المكان؟
-                </label>
-                <div className="space-y-2">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedLight("indirect")}
-                    className={`w-full text-right px-4 py-2.5 rounded-xl text-xs font-bold border transition-colors ${
-                      selectedLight === "indirect"
-                        ? "bg-emerald-100 border-emerald-600 text-emerald-950"
-                        : "bg-emerald-50/50 border-emerald-100 text-emerald-800"
-                    }`}
-                  >
-                    🌤️ إضاءة شمس مشرقة غير مباشرة
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setSelectedLight("low")}
-                    className={`w-full text-right px-4 py-2.5 rounded-xl text-xs font-bold border transition-colors ${
-                      selectedLight === "low"
-                        ? "bg-emerald-100 border-emerald-600 text-emerald-950"
-                        : "bg-emerald-50/50 border-emerald-100 text-emerald-800"
-                    }`}
-                  >
-                    🌑 زاوية مظلمة أو إضاءة سبوتلايت فقط
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Match Result Display */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-emerald-900 to-[#0a2f1b] rounded-2xl p-6 text-white text-right shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-32 h-32 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
-            
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/30 text-emerald-200 border border-emerald-400/30 mb-3">
-              ترشيح خبير المشتل لك ✨
-            </span>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 border border-white/20">
-                <Image
-                  src={recommended.image}
-                  alt={recommended.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="text-lg font-black text-white">{recommended.name}</h4>
-                <p className="text-xs text-emerald-300 font-mono">{recommended.scientificName}</p>
-                <p className="text-xs text-emerald-100/80 mt-1">{recommended.tag}</p>
-              </div>
-            </div>
-
-            <p className="text-xs text-emerald-100/90 leading-relaxed mb-5 prose-ar">
-              {recommended.description}
-            </p>
-
-            <a
-              href={`https://wa.me/966563340109?text=${encodeURIComponent(
-                `مرحباً بصمة ايما، رشح لي الموقع نبتة (${recommended.name}) وأود طلبها مع حوضها الفاخر لمنزلي.`
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-emerald-950 font-black text-sm transition-all shadow-lg"
-            >
-              <MessageCircle className="w-4 h-4" />
-              <span>طلب هذه النبتة مع التوصيل داخل الرياض</span>
-            </a>
-          </div>
-
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-xs sm:text-sm shrink-0 shadow-md transition-all active:scale-98"
+          >
+            <span>فتح موسوعة الـ 100 نبتة كاملة</span>
+            <ArrowLeft className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

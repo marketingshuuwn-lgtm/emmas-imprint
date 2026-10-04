@@ -1,181 +1,153 @@
 "use client";
 
 import Image from "next/image";
-import { MessageCircle, Leaf, Sparkles, ShieldCheck, Droplet, ArrowDown, PhoneCall } from "lucide-react";
+import { Camera, MapPin, Check, ArrowLeft, Sun, Snowflake, Droplets } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Hero() {
-  const { hero, business } = siteContent;
+  const { hero } = siteContent;
 
   return (
     <section
       id="home"
-      className="relative min-h-[95svh] lg:min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#071d12]"
+      className="relative pt-28 pb-16 lg:py-28 bg-[#102117] text-[#faf8f5] overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background Image with Cinematic Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/hero-garden.jpg"
-          alt="حديقة فيلا فاخرة بتصميم بصمة ايما الزراعية بالرياض"
-          fill
-          priority
-          className="object-cover object-center scale-105 motion-safe:animate-pulse-subtle"
-          sizes="100vw"
-        />
-        {/* Multi-layered Gradients for Deep Cinematic Atmosphere */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071d12]/95 via-[#071d12]/80 to-[#071d12]/50 md:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#071d12] via-transparent to-[#071d12]/40" />
-        {/* Soft Ambient Light Glows */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#2d6a4f]/25 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#52b788]/20 rounded-full blur-3xl pointer-events-none" />
-      </div>
+      {/* Subtle organic background tint */}
+      <div 
+        className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#d6c7b5_1px,transparent_1px)] [background-size:24px_24px]" 
+        aria-hidden="true" 
+      />
 
-      <div className="container-main relative z-10 w-full py-8">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="container-main relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Main Typography & CTAs (Left in LTR, Right in RTL) */}
+          {/* Main Editorial Content (8 cols) */}
           <div className="lg:col-span-7 text-right">
             
-            {/* Live Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel-dark text-emerald-300 text-xs sm:text-sm font-semibold mb-6 border border-emerald-500/30 shadow-lg animate-float-slow">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping inline-block" />
-              <Leaf className="w-4 h-4 text-emerald-400" aria-hidden />
-              <span>{hero.eyebrow} • الرياض والمملكة</span>
+            {/* Honest Geographic Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#183324] border border-[#2f5d43]/50 text-[#d6c7b5] text-xs font-semibold mb-6">
+              <MapPin className="w-3.5 h-3.5 text-[#b8603d]" />
+              <span>الرياض — طريق أبو بكر الصديق • مشتل واستنبات زراعي</span>
             </div>
 
+            {/* Bold, Human Headline */}
             <h1
               id="hero-heading"
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-extrabold text-white leading-[1.2] tracking-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-black text-white leading-[1.25] tracking-tight mb-6 font-heading"
             >
-              نمنح مساحتك <span className="text-transparent bg-clip-text bg-gradient-to-l from-emerald-300 via-green-400 to-teal-200">حياةً خضراء</span> وجمالاً يدوم
+              نباتات تعيش في <span className="text-[#d6c7b5]">صيف الرياض</span>،<br />
+              <span className="text-[#b8603d]">مو تموت بعد أسبوعين.</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-emerald-100/90 prose-ar max-w-2xl mb-8 leading-relaxed font-normal drop-shadow-sm">
-              {hero.description}
+            {/* Direct Problem-Aware Description */}
+            <p className="text-base sm:text-lg text-[#e8dfd3]/90 prose-ar max-w-2xl mb-8 leading-relaxed font-normal">
+              أغلب اللي يشتري نبات في الرياض يتفاجأ إنه يذبل بسرعة؛ إما من شمس الظهر الحارقة أو صدمة تكييف الصالة. في مشتل بصمة ايما، ما نبيعك شتلة عشوائية؛ نختار لك النبتة اللي جذورها مؤصلة ومجربة لمناخ نجد، ونقولك بصراحة وش اللي يصلح لمساحتك.
             </p>
 
-            {/* Quick Intent Guide Pill */}
-            <div className="mb-6">
-              <a
+            {/* Single Powerful CTA Box */}
+            <div className="bg-[#183324]/90 border border-[#2f5d43]/60 rounded-2xl p-5 sm:p-6 max-w-xl shadow-xl">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-3">
+                <a
+                  href={hero.primaryCta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-base transition-all duration-200 shadow-md active:scale-98"
+                >
+                  <Camera className="w-5 h-5 text-white shrink-0" />
+                  <span>صوّر مساحتك وأرسلها واتساب</span>
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 text-xs text-[#d6c7b5]/80">
+                <Check className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>يرد عليك مهندس زراعي بالنبتة المناسبة لمساحتك وطريقة رعايتها مجاناً.</span>
+              </div>
+            </div>
+
+            {/* Quiet Secondary Options */}
+            <div className="mt-6 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#d6c7b5]/80">
+              <a 
                 href="#intent-guide"
-                className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-2xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/30 text-emerald-200 hover:text-white font-medium text-xs sm:text-sm transition-all duration-300 shadow-lg shadow-emerald-950/40 group"
+                className="inline-flex items-center gap-1.5 hover:text-white underline underline-offset-4 decoration-[#b8603d] transition-colors"
               >
-                <span className="flex h-2.5 w-2.5 relative shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                </span>
-                <span>💡 محتار وما تدري من وين تبدأ؟ <strong className="text-white underline decoration-emerald-400 font-bold mr-1">دليلك السريع: وش تبحث عنه؟</strong></span>
-                <span className="text-emerald-400 group-hover:translate-x-[-4px] transition-transform font-bold">←</span>
+                <span>دليلك السريع: وش تبحث عنه اليوم؟</span>
+                <ArrowLeft className="w-3.5 h-3.5 text-[#b8603d]" />
+              </a>
+
+              <span className="text-[#2f5d43]">•</span>
+
+              <a 
+                href="#visit"
+                className="hover:text-white transition-colors"
+              >
+                زيارة المشتل (طريق أبو بكر الصديق — مفتوح حتى 12:30 ليلاً)
               </a>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
-              <a
-                href={hero.primaryCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-base shadow-xl hover:shadow-emerald-600/30 transition-all duration-300 transform hover:-translate-y-0.5 group"
-              >
-                <MessageCircle className="w-5 h-5 text-white group-hover:scale-110 transition-transform" />
-                <span>{hero.primaryCta.label}</span>
-              </a>
-
-              <a
-                href="#plants"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl glass-panel-dark text-white hover:text-emerald-300 font-semibold text-base hover:border-emerald-400/50 transition-all duration-300"
-              >
-                <Sparkles className="w-5 h-5 text-emerald-400" />
-                <span>استكشف كتالوج النباتات</span>
-              </a>
-
-              <a
-                href={`tel:${business.phone}`}
-                className="inline-flex items-center justify-center p-4 rounded-xl glass-panel-dark text-emerald-300 hover:text-white hover:border-emerald-400/50 transition-all duration-300 sm:w-auto"
-                title="اتصال مباشر"
-              >
-                <PhoneCall className="w-5 h-5" />
-                <span className="sm:hidden font-medium mr-2">اتصال فوري</span>
-              </a>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 border-t border-emerald-900/60 text-xs sm:text-sm text-emerald-200/80">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>ضمان حيوية الشتلات</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Droplet className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>شبكات ري ذكية وموفرة</span>
-              </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>معاينة وتصميم مجاني بالرياض</span>
-              </div>
-            </div>
           </div>
 
-          {/* Floating Showcase Card on Right / Visual Accent */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
-            <div className="relative rounded-3xl p-6 glass-panel-dark border border-emerald-500/20 shadow-2xl overflow-hidden backdrop-blur-xl">
+          {/* Editorial Photographic & Botanical Diagnostic Aside (5 cols) */}
+          <div className="lg:col-span-5">
+            <div className="editorial-card-warm bg-[#faf8f5] text-[#1c1f1d] rounded-2xl p-6 sm:p-7 border border-[#e8dfd3] shadow-xl">
               
-              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-white font-bold text-sm">مشاريع بصمة ايما بالرياض</span>
+              <div className="flex items-center justify-between pb-4 border-b border-[#e8dfd3] mb-5">
+                <div>
+                  <h3 className="font-bold text-base text-[#102117] font-heading">
+                    واقع زراعة النباتات بالرياض
+                  </h3>
+                  <p className="text-xs text-[#6f7872]">حقائق ميدانية نراعيها قبل أن نبيعك شتلة</p>
                 </div>
-                <span className="text-xs text-emerald-300 font-mono bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-500/20">
-                  +147 حديقة منفذة
+                <span className="text-[11px] font-bold px-2.5 py-1 rounded bg-[#e9f2ec] text-[#183324] border border-[#2f5d43]/20">
+                  تأصيل ميداني
                 </span>
               </div>
 
-              {/* Mini Preview Image with Overlay */}
-              <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden mb-4 group">
+              {/* Real Greenhouse / Nursery Photo */}
+              <div className="relative h-48 sm:h-52 rounded-xl overflow-hidden mb-5 border border-[#e8dfd3]">
                 <Image
-                  src="/images/service-landscaping.jpg"
-                  alt="تنسيق حديقة فيلا حديثة"
+                  src="/images/nursery-greenhouse.jpg"
+                  alt="بيئة استنبات زراعي خاضعة لأعلى المعايير بمشتل بصمة ايما بالرياض"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 right-3 left-3 text-right">
-                  <p className="text-white text-sm font-bold">تنفيذ فيلا خاصة — حي النرجس، الرياض</p>
-                  <p className="text-emerald-300 text-xs">مسطح أخضر + شلال جداري + شبكة رذاذ ضبابي</p>
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-3 text-white text-right">
+                  <p className="text-xs font-bold leading-tight">مشتلنا الميداني بالرياض — طريق أبو بكر الصديق</p>
+                  <p className="text-[10px] text-emerald-200">تعويد وتأصيل تدريجي لمناخ نجد</p>
                 </div>
               </div>
 
-              {/* Quick Key Stats */}
-              <div className="grid grid-cols-2 gap-3 text-center">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-2xl font-black text-emerald-400">+147</div>
-                  <div className="text-xs text-emerald-200/70 mt-0.5">مشروع منجز في الرياض</div>
+              {/* 3 Riyadh Plant Realities */}
+              <div className="space-y-3 text-xs">
+                <div className="flex items-start gap-3 p-2.5 rounded-lg bg-white border border-[#e8dfd3]">
+                  <Sun className="w-4 h-4 text-[#b8603d] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-[#102117] font-bold">شمس الظهر 50°:</strong>
+                    <span className="text-[#424944]">نوفر أصنافاً مؤصلة كالبوفيديا والبلوميريا لا تحترق جذورها بالصيف.</span>
+                  </div>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10">
-                  <div className="text-2xl font-black text-amber-300">5 أعوام</div>
-                  <div className="text-xs text-emerald-200/70 mt-0.5">خبرة وكفاءة هندسية</div>
+
+                <div className="flex items-start gap-3 p-2.5 rounded-lg bg-white border border-[#e8dfd3]">
+                  <Snowflake className="w-4 h-4 text-[#2f5d43] shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-[#102117] font-bold">تكييف الصالات المستمر:</strong>
+                    <span className="text-[#424944]">نختار نباتات درنية (كالزاميا وجلد النمر) تتحمل برودة الغرف وجفاف الجو.</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 p-2.5 rounded-lg bg-white border border-[#e8dfd3]">
+                  <Droplets className="w-4 h-4 text-sky-700 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-[#102117] font-bold">ملوحة مياه وشبكة الرياض:</strong>
+                    <span className="text-[#424944]">نوصيك بخلطات تربة نجدية مخصبة بالبرلايت لمنع ترسب الأملاح على الجذور.</span>
+                  </div>
                 </div>
               </div>
 
-            </div>
-
-            {/* Floating Glassmorphism Tag */}
-            <div className="absolute -bottom-4 -right-4 sm:-right-6 glass-badge bg-white/90 text-emerald-950 px-4 py-2.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-emerald-200 animate-float-reverse">
-              <span className="text-2xl">🌱</span>
-              <div>
-                <p className="text-xs font-bold leading-tight">جاهزية التوريد والزراعة</p>
-                <p className="text-[11px] text-emerald-700 font-medium">مباشرة من مشاتلنا بالرياض</p>
-              </div>
             </div>
           </div>
 
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="mt-14 hidden md:flex flex-col items-center justify-center gap-1.5 text-emerald-300/60">
-          <span className="text-xs tracking-wider font-medium">اكتشف روعة الطبيعة والحدائق</span>
-          <ArrowDown className="w-4 h-4 animate-bounce text-emerald-400" aria-hidden />
         </div>
       </div>
     </section>

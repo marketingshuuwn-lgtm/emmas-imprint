@@ -7,13 +7,11 @@ import {
   Trees, 
   Building2, 
   Home, 
-  MessageCircle, 
+  Camera, 
   ArrowLeft, 
-  CheckCircle2, 
-  Phone,
+  Check, 
   Sparkles
 } from "lucide-react";
-import { siteContent } from "@/content/site-content";
 
 interface IntentOption {
   id: string;
@@ -21,19 +19,13 @@ interface IntentOption {
   title: string;
   subtitle: string;
   badge: string;
-  badgeColor: string;
+  badgeBg: string;
+  badgeText: string;
   description: string;
   features: string[];
-  primaryAction: {
-    label: string;
-    href: string;
-    isExternal?: boolean;
-    isWhatsApp?: boolean;
-  };
-  secondaryAction: {
-    label: string;
-    href: string;
-  };
+  ctaWhatsApp: string;
+  catalogLink?: string;
+  catalogLabel?: string;
 }
 
 export function QuickIntentNavigator() {
@@ -44,278 +36,211 @@ export function QuickIntentNavigator() {
       id: "indoor",
       icon: Sprout,
       title: "نباتات داخلية",
-      subtitle: "للصالات وغرف النوم ومداخل الفلل",
-      badge: "الأكثر طلباً للمنازل",
-      badgeColor: "bg-emerald-500/20 text-emerald-300 border-emerald-500/30",
-      description: "نباتات ظل منتقاة بعناية تلائم الأجواء الداخلية المكيفة، تنقي الهواء وتضفي لمسة هادئة وفخمة بدون متطلبات عناية معقدة.",
+      subtitle: "للصالات، غرف النوم، ومداخل الفلل",
+      badge: "تتحمل التكييف وقلة الضوء",
+      badgeBg: "bg-[#e9f2ec]",
+      badgeText: "text-[#183324]",
+      description: "نباتات ظل طبيعية نختارها لك بحيث تعيش في غرف مكيفة وإضاءة معتدلة، ولا تحتاج لسقي إلا عندما تجف التربة تماماً.",
       features: [
-        "أصناف مجربة وموثوقة (بوتس، زاميا، جلد النمر، مونستيرا)",
-        "خيارات أحواض سيراميك وفايبر راقية تناسب الديكور",
-        "توصيل سريع مع إرشادات الري والإضاءة"
+        "أصناف مجربة بالرياض (جلد النمر، الزاميا، البوتس، المونستيرا)",
+        "خيارات أحواض سيراميك وفايبر متناسقة مع أثاثك",
+        "إرشادات واضحة للري حتى لا تتعفن الجذور"
       ],
-      primaryAction: {
-        label: "تصفح النباتات الداخلية (50 صنفاً)",
-        href: "/projects?category=indoor",
-      },
-      secondaryAction: {
-        label: "استشارة فورية عبر واتساب",
-        href: `https://wa.me/966563340109?text=${encodeURIComponent(
-          "مرحباً بصمة ايما الزراعية، أبحث عن نباتات داخلية مناسبة لمنزلي وأود المساعدة في الاختيار."
-        )}`,
-      }
+      ctaWhatsApp: "مرحباً بصمة ايما، صورت صالتي وأبي ترشحون لي نباتات داخلية تعيش في التكييف بدون ما تصفر.",
+      catalogLink: "/projects?category=indoor",
+      catalogLabel: "استعراض أصناف الظل والداخلية"
     },
     {
       id: "outdoor",
       icon: Trees,
-      title: "نباتات وأشجار خارجية",
-      subtitle: "لأحواش الفلل، المداخل، والأسوار",
-      badge: "متحملة لمناخ وحرارة الرياض",
-      badgeColor: "bg-teal-500/20 text-teal-300 border-teal-500/30",
-      description: "أشجار ظل وارفة، سواتر نباتية مانعة للرؤية، زهور عطرية، ونخيل متأقلم 100% مع شمس الرياض ودرجات الحرارة العالية.",
+      title: "أشجار ونباتات خارجية",
+      subtitle: "لأحواش الفلل، الأسوار، والأسطح",
+      badge: "متحملة لشمس وصيف الرياض 50°",
+      badgeBg: "bg-[#f7ebe5]",
+      badgeText: "text-[#9c4c2d]",
+      description: "أشجار وشجيرات معمرة تؤصل في مشتلنا لتتحمل شمس الصيف الحارقة، توفر ظلالاً وارفة وسواتر خضراء تمنع الغبار وتلطف الجو.",
       features: [
-        "سدر، غاف، جهنمية، بلوميريا، واشنطونيا، وأشجار فواكه",
-        "أحجام ومقاسات جاهزة للغرس المباشر",
-        "نصائح هندسية لجدولة الري ومواقع الظل والشمس"
+        "أشجار نجدية ومستنبتة (جهنمية، ياسمين هندي، بلوميريا، أكاسيا)",
+        "أحجام متنوعة بجذور قوية جاهزة للغرس المباشر",
+        "نصائح لجدولة الري الصباحي والمسائي لحماية الجذور"
       ],
-      primaryAction: {
-        label: "استعراض موسوعة الأشجار (50 صنفاً)",
-        href: "/projects?category=outdoor",
-      },
-      secondaryAction: {
-        label: "طلب كميات خارجية عبر واتساب",
-        href: `https://wa.me/966563340109?text=${encodeURIComponent(
-          "مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر أشجار ونباتات خارجية لحديقة منزلي بالرياض."
-        )}`,
-      }
+      ctaWhatsApp: "مرحباً بصمة ايما، صورت حوش بيتي وأبي أشجار وسواتر تتحمل شمس الرياض وحرارة الصيف.",
+      catalogLink: "/projects?category=outdoor",
+      catalogLabel: "استعراض أشجار الحدائق والأحواش"
     },
     {
       id: "offices",
       icon: Building2,
       title: "نباتات المكاتب والشركات",
-      subtitle: "لمقرات العمل، الاستقبال، وقاعات الاجتماعات",
-      badge: "أحواض ذاتية الري وصيانة سهلة",
-      badgeColor: "bg-amber-500/20 text-amber-300 border-amber-500/30",
-      description: "تنسيق نباتي مؤسسي يمنح بيئة عملك مظهراً مرموقاً، يرفع من إنتاجية الموظفين ويرحب بضيوفك بأناقة تليق بعلامتك التجارية.",
+      subtitle: "للمقرات، غرف الاجتماعات، ومكاتب الإدارة",
+      badge: "أحواض ذاتية الري (كل أسبوعين)",
+      badgeBg: "bg-[#f4efea]",
+      badgeText: "text-[#424944]",
+      description: "تنسيق نباتي راقٍ بمقرات الأعمال بدون عبء السقي اليومي. نستخدم أحواضاً ذاتية الري بنظام هيدروليكي يضمن استقرار النبتة أثناء الإجازات.",
       features: [
-        "أحواض ذاتية الري الذكي (ري مرة كل أسبوعين إلى شهر)",
-        "نباتات قوية تتحمل الإضاءة الصناعية وتكييف المكاتب",
-        "عقود توريد وصيانة دورية وفواتير ضريبية معتمدة"
+        "أحواض ذاتية الري تتكفل بالنبتة لمدة 14 إلى 21 يوماً",
+        "تنسيق يعكس الفخامة ويرفع تركيز وإنتاجية الفريق",
+        "إمكانية توفير عقود صيانة دورية شهرية بالرياض"
       ],
-      primaryAction: {
-        label: "طلب استشارة تأثيث المكاتب",
-        href: `https://wa.me/966563340109?text=${encodeURIComponent(
-          "مرحباً بصمة ايما، أود الاستفسار عن باقات النباتات وتنسيق المكاتب والشركات بالرياض."
-        )}`,
-        isWhatsApp: true,
-      },
-      secondaryAction: {
-        label: "اتصال مباشر: 0563340109",
-        href: "tel:+966563340109",
-      }
+      ctaWhatsApp: "مرحباً بصمة ايما، أود تأثيث مقر شركة / مكتب بنباتات ذاتية الري مع استشارة مناسبة.",
+      catalogLink: "/projects",
+      catalogLabel: "خيارات وتشكيلات المكاتب"
     },
     {
-      id: "landscaping",
+      id: "landscape",
       icon: Home,
-      title: "تصميم وتنسيق حدائق",
-      subtitle: "من المخطط المبدئي وحتى اكتمال الحديقة",
-      badge: "معاينة وزيارة ميدانية مجانية",
-      badgeColor: "bg-emerald-400/20 text-emerald-200 border-emerald-400/40",
-      description: "خدمة متكاملة بإشراف مهندس زراعي: شبكات ري أوتوماتيكية، زراعة عشب طبيعي وصناعي، شلالات ونوافير، وتوزيع ذكي للمساحات.",
+      title: "تصميم وتنسيق حدائق كاملة",
+      subtitle: "للفلل الجديدة، الاستراحات، وتجديد الأحواش",
+      badge: "معاينة ميدانية مجانية بالرياض",
+      badgeBg: "bg-[#e8dfd3]",
+      badgeText: "text-[#102117]",
+      description: "خدمة متكاملة من الصفر: يزورك مهندسنا في موقعك داخل الرياض، يرفع المقاسات، يصمم شبكة الري الأوتوماتيكية، ويشرف على توريد وزراعة الحديقة.",
       features: [
-        "زيارة مهندس مختص لرفع المقاسات وفحص الموقع مجاناً",
-        "مخطط توزيع احترافي قبل بدء التنفيذ",
-        "ضمان شامل على النباتات وشبكات الري"
+        "زيارة ومعاينة ميدانية مجانية بدون أي التزام مسبق",
+        "شبكات ري إيطالية أوتوماتيكية توفر 40% من المياه",
+        "ضمان كامل على سلامة وتجذير كافة الشتلات المزروعة"
       ],
-      primaryAction: {
-        label: "حجز زيارة ميدانية مجانية بالرياض",
-        href: "/#contact",
-      },
-      secondaryAction: {
-        label: "محادثة المهندس عبر واتساب",
-        href: `https://wa.me/966563340109?text=${encodeURIComponent(
-          "مرحباً بصمة ايما الزراعية، أرغب بحجز زيارة ميدانية مجانية لمهندس زراعي لتنسيق حديقة منزلي."
-        )}`,
-      }
+      ctaWhatsApp: "مرحباً بصمة ايما، أود حجز موعد معاينة ميدانية مجانية لتنسيق حديقة فلتنا بالرياض.",
     }
   ];
 
   const current = intents.find((i) => i.id === selectedIntent) || intents[0];
-  const CurrentIcon = current.icon;
 
   return (
     <section 
       id="intent-guide" 
-      className="py-12 md:py-20 bg-gradient-to-b from-[#071d12] via-[#092216] to-[#0d2a1b] text-white relative overflow-hidden"
-      aria-labelledby="intent-guide-heading"
+      className="py-16 sm:py-24 bg-[#f4efea] border-b border-[#e8dfd3]"
+      aria-labelledby="intent-heading"
     >
-      {/* Ambient background blur */}
-      <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container-main relative z-10">
+      <div className="container-main">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs font-bold mb-3 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>دليلك التفاعلي السريع • اختصر وقتك</span>
+        {/* Header */}
+        <div className="text-right max-w-2xl mb-10 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-xs font-bold mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#b8603d]" />
+            <span>بوصلة التوجيه السريع</span>
           </div>
 
-          <h2
-            id="intent-guide-heading"
-            className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 font-heading leading-tight"
+          <h2 
+            id="intent-heading" 
+            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#102117] leading-tight mb-3 font-heading"
           >
             وش تبحث عنه اليوم؟
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-emerald-100/80 prose-ar leading-relaxed">
-            اختر ما يناسب طلبك بنقرة واحدة لنرشدك فوراً لأفضل الخيارات وأسرع وسيلة للطلب:
+          <p className="text-sm sm:text-base text-[#424944]">
+            اضغط على الخيار اللي يمثلك، وسنوجهك مباشرة للحل الأنسب لمساحتك بدون تشتت:
           </p>
         </div>
 
-        {/* The 4 Big Touch-Friendly Intent Cards (Grid on desktop & mobile) */}
+        {/* 4 Clickable Intent Cards (Tactile & Clean) */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
-          {intents.map((intent) => {
-            const Icon = intent.icon;
-            const isSelected = selectedIntent === intent.id;
+          {intents.map((item) => {
+            const isSelected = item.id === selectedIntent;
+            const Icon = item.icon;
+
             return (
               <button
-                key={intent.id}
+                key={item.id}
                 type="button"
-                onClick={() => setSelectedIntent(intent.id)}
-                className={`flex flex-col text-right p-4 sm:p-5 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative overflow-hidden group cursor-pointer ${
+                onClick={() => setSelectedIntent(item.id)}
+                className={`text-right p-4 sm:p-5 rounded-xl sm:rounded-2xl transition-all duration-200 flex flex-col justify-between min-h-[140px] sm:min-h-[160px] cursor-pointer border ${
                   isSelected
-                    ? "bg-gradient-to-b from-emerald-800/90 to-emerald-950/90 border-emerald-400/80 shadow-xl shadow-emerald-950/60 ring-2 ring-emerald-400/40 transform -translate-y-1"
-                    : "bg-emerald-950/40 hover:bg-emerald-900/40 border-emerald-500/20 hover:border-emerald-500/40 shadow-md"
+                    ? "bg-[#183324] text-white border-[#183324] shadow-lg shadow-[#183324]/10 transform -translate-y-1"
+                    : "bg-white text-[#1c1f1d] border-[#e8dfd3] hover:border-[#d6c7b5] hover:bg-[#faf8f5]"
                 }`}
+                aria-pressed={isSelected}
               >
-                {/* Active indicator dot */}
-                {isSelected && (
-                  <span className="absolute top-3 left-3 w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-sm" />
-                )}
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors ${
+                      isSelected ? "bg-[#b8603d] text-white" : "bg-[#f4efea] text-[#183324]"
+                    }`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
 
-                <div className={`w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center mb-3 transition-transform group-hover:scale-105 shrink-0 ${
-                  isSelected 
-                    ? "bg-gradient-to-tr from-emerald-400 to-teal-300 text-emerald-950 shadow-md" 
-                    : "bg-emerald-900/60 text-emerald-300 border border-emerald-500/20"
+                    {isSelected && (
+                      <span className="w-2 h-2 rounded-full bg-[#b8603d]" />
+                    )}
+                  </div>
+
+                  <h3 className="font-bold text-sm sm:text-base leading-snug font-heading">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <p className={`text-[11px] sm:text-xs mt-2 line-clamp-2 ${
+                  isSelected ? "text-[#d6c7b5]" : "text-[#6f7872]"
                 }`}>
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-
-                <span className="font-black text-sm sm:text-base text-white mb-1 leading-snug font-heading">
-                  {intent.title}
-                </span>
-
-                <span className="text-[11px] sm:text-xs text-emerald-200/70 leading-tight hidden sm:block">
-                  {intent.subtitle}
-                </span>
-
-                <div className="mt-3 pt-2.5 border-t border-emerald-800/50 flex items-center justify-between w-full">
-                  <span className={`text-[10px] sm:text-[11px] font-bold ${
-                    isSelected ? "text-emerald-300" : "text-emerald-400/80 group-hover:text-emerald-300"
-                  }`}>
-                    {isSelected ? "تم التحديد ✓" : "اضغط للاستعراض"}
-                  </span>
-                  <ArrowLeft className={`w-3.5 h-3.5 transition-transform ${
-                    isSelected ? "translate-x-[-2px] text-emerald-300" : "text-emerald-400/60 group-hover:translate-x-[-2px]"
-                  }`} />
-                </div>
+                  {item.subtitle}
+                </p>
               </button>
             );
           })}
         </div>
 
-        {/* Selected Intent Detailed Interactive Panel */}
-        <div className="bg-gradient-to-br from-[#0c2e1c] via-[#092416] to-[#06190f] rounded-3xl p-6 sm:p-8 md:p-10 border border-emerald-500/30 shadow-2xl relative overflow-hidden">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+        {/* Active Selection Details Card (Editorial Layout) */}
+        <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e8dfd3] shadow-md">
+          <div className="grid lg:grid-cols-12 gap-8 items-center">
             
-            {/* Right Column: Information & Guarantees */}
-            <div className="lg:col-span-7 space-y-4 text-right">
-              <div className="flex items-center gap-2.5 flex-wrap">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border ${current.badgeColor}`}>
+            {/* Description & Points (8 cols) */}
+            <div className="lg:col-span-8 text-right space-y-5">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className={`text-xs font-bold px-3 py-1 rounded-md ${current.badgeBg} ${current.badgeText}`}>
                   {current.badge}
                 </span>
-                <span className="text-xs text-emerald-300 font-mono">
-                  {siteContent.business.nameShort} • مسار مباشر
-                </span>
+                <span className="text-xs text-[#6f7872]">خيارك المحدد الآن</span>
               </div>
 
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-800/80 border border-emerald-500/40 text-emerald-300 flex items-center justify-center shrink-0">
-                  <CurrentIcon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white font-heading">
-                    {current.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-emerald-300/80">
-                    {current.subtitle}
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl sm:text-2xl font-black text-[#102117] mb-2 font-heading">
+                  {current.title} — {current.subtitle}
+                </h3>
+                <p className="text-sm sm:text-base text-[#424944] leading-relaxed">
+                  {current.description}
+                </p>
               </div>
 
-              <p className="text-xs sm:text-sm md:text-base text-emerald-100/90 prose-ar leading-relaxed">
-                {current.description}
-              </p>
-
-              {/* Bullet Features */}
-              <div className="space-y-2 pt-2 border-t border-emerald-800/50">
+              {/* Bullet Points */}
+              <div className="space-y-2.5 pt-2">
                 {current.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-emerald-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#1c1f1d]">
+                    <div className="w-4 h-4 rounded-full bg-[#e9f2ec] text-[#183324] flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-[#183324]" />
+                    </div>
                     <span>{feat}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Left Column: Direct High-Conversion Actions */}
-            <div className="lg:col-span-5 bg-black/25 backdrop-blur-md p-5 sm:p-7 rounded-2xl border border-emerald-500/20 flex flex-col gap-3.5">
-              <span className="text-xs font-bold text-emerald-300 block text-right">
-                اختر طريقة المتابعة الأنسب لك:
-              </span>
+            {/* Direct High-Intent Actions (4 cols) */}
+            <div className="lg:col-span-4 flex flex-col gap-3 pt-6 lg:pt-0 lg:border-r lg:border-[#e8dfd3] lg:pr-8">
+              
+              {/* WhatsApp Fast Consultation with prefilled context */}
+              <a
+                href={`https://wa.me/966563340109?text=${encodeURIComponent(current.ctaWhatsApp)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-sm shadow-md transition-all active:scale-98"
+              >
+                <Camera className="w-4 h-4 text-white" />
+                <span>أرسل صورة مساحتك لهذا الخيار</span>
+              </a>
 
-              {/* Primary Action Button */}
-              {current.primaryAction.href.startsWith("http") ? (
-                <a
-                  href={current.primaryAction.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 px-5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-emerald-950 font-black text-sm text-center shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
-                >
-                  <MessageCircle className="w-4 h-4 text-emerald-950 group-hover:scale-110 transition-transform" />
-                  <span>{current.primaryAction.label}</span>
-                </a>
-              ) : (
+              {/* Optional Catalog Link */}
+              {current.catalogLink && (
                 <Link
-                  href={current.primaryAction.href}
-                  className="w-full py-4 px-5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-emerald-950 font-black text-sm text-center shadow-lg transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                  href={current.catalogLink}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#faf8f5] hover:bg-[#f4efea] text-[#183324] border border-[#e8dfd3] font-semibold text-xs transition-colors"
                 >
-                  <span>{current.primaryAction.label}</span>
-                  <ArrowLeft className="w-4 h-4 text-emerald-950 group-hover:-translate-x-1 transition-transform" />
+                  <span>{current.catalogLabel}</span>
+                  <ArrowLeft className="w-3.5 h-3.5" />
                 </Link>
               )}
 
-              {/* Secondary Action (WhatsApp / Call) */}
-              <a
-                href={current.secondaryAction.href}
-                target={current.secondaryAction.href.startsWith("http") ? "_blank" : undefined}
-                rel={current.secondaryAction.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="w-full py-3.5 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm text-center border border-white/15 transition-all flex items-center justify-center gap-2 cursor-pointer"
-              >
-                {current.secondaryAction.href.startsWith("tel:") ? (
-                  <Phone className="w-4 h-4 text-emerald-400" />
-                ) : (
-                  <MessageCircle className="w-4 h-4 text-emerald-400" />
-                )}
-                <span>{current.secondaryAction.label}</span>
-              </a>
-
-              <div className="pt-2 text-center">
-                <span className="text-[11px] text-emerald-300/70 inline-flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span>مشتل ومعرض حي • طريق أبو بكر الصديق</span>
-                </span>
-              </div>
+              <p className="text-[11px] text-[#6f7872] text-center mt-1">
+                استشارة فورية ومجانية من مهندسي مشتلنا على طريق أبو بكر
+              </p>
             </div>
 
           </div>
