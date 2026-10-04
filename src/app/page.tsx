@@ -7,6 +7,7 @@ import { Showcase } from "@/components/sections/Showcase";
 import { Plants } from "@/components/sections/Plants";
 import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
+import { QuickIntentNavigator } from "@/components/sections/QuickIntentNavigator";
 import { siteContent } from "@/content/site-content";
 
 export default function HomePage() {
@@ -66,6 +67,7 @@ export default function HomePage() {
       <Header />
       <main>
         <Hero />
+        <QuickIntentNavigator />
         <About />
         <Services />
         <Showcase />

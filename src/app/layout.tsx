@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { siteContent } from "@/content/site-content";
+import { MobileQuickBar } from "@/components/layout/MobileQuickBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://emma-nursery.sa"),
@@ -45,8 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground pb-16 lg:pb-0">
         {children}
+        <MobileQuickBar />
       </body>
     </html>
   );

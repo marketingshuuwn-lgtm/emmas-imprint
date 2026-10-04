@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation, FileDown } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Footer() {
@@ -136,13 +136,26 @@ export function Footer() {
             <span dir="ltr">2026</span>
             <span>{business.name}.</span>
           </p>
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 hover:text-emerald-300 transition-colors"
-          >
-            <span>العودة للأعلى</span>
-            <ArrowUp className="w-4 h-4" />
-          </button>
+
+          <div className="flex items-center gap-6">
+            <a
+              href="/site-content.md"
+              download="emma-smile-site-content.md"
+              className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-white transition-colors py-1 px-2 rounded-lg hover:bg-emerald-900/40"
+              title="تحميل النص الكامل للموقع بصيغة Markdown"
+            >
+              <FileDown className="w-3.5 h-3.5" />
+              <span>تحميل محتوى الموقع (.md)</span>
+            </a>
+
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 hover:text-emerald-300 transition-colors"
+            >
+              <span>العودة للأعلى</span>
+              <ArrowUp className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

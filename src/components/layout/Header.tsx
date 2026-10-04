@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, FileDown } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Header() {
@@ -81,6 +81,16 @@ export function Header() {
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
+              href="/site-content.md"
+              download="emma-smile-site-content.md"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl glass-panel-dark text-emerald-300 hover:text-white hover:border-emerald-400/50 text-xs font-semibold transition-colors"
+              title="تحميل النص الكامل للموقع بصيغة Markdown"
+            >
+              <FileDown className="w-4 h-4 text-emerald-400" />
+              <span>تحميل المحتوى .md</span>
+            </a>
+
+            <a
               href={`tel:${siteContent.business.phone}`}
               className="p-2.5 rounded-xl glass-panel-dark text-emerald-300 hover:text-white hover:border-emerald-400/50 transition-colors"
               aria-label="اتصل بنا"
@@ -154,6 +164,15 @@ export function Header() {
             >
               <Phone className="w-5 h-5 text-emerald-400" />
               <span>اتصل بنا هاتفياً</span>
+            </a>
+            <a
+              href="/site-content.md"
+              download="emma-smile-site-content.md"
+              className="inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-white/5 border border-emerald-500/20 text-emerald-300 font-bold text-sm"
+              onClick={close}
+            >
+              <FileDown className="w-4 h-4 text-emerald-400" />
+              <span>تحميل النص الكامل للموقع (.md)</span>
             </a>
           </div>
         </nav>

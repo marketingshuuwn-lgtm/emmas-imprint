@@ -24,31 +24,35 @@ export function About() {
               <div className="relative h-80 sm:h-96 md:h-[450px] w-full">
                 <Image
                   src="/images/nursery-greenhouse.jpg"
-                  alt="بصمة ايما الزراعية بالرياض"
+                  alt="مشتل بصمة ايما الزراعية بالرياض"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-5 right-5 left-5 text-white">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-xs font-bold mb-2">
+                
+                {/* Floating Trust Badge - Top Left (No text overlap) */}
+                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md py-2.5 px-4 rounded-2xl shadow-xl border border-emerald-100 flex items-center gap-3 z-10">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center text-base font-bold shrink-0">
+                    5+
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs font-bold text-emerald-950 leading-tight">سنوات من الريادة</p>
+                    <p className="text-[11px] text-emerald-700">مئات الفلل المعتمدة بالرياض</p>
+                  </div>
+                </div>
+
+                {/* Bottom Caption - Fully Visible with Rich Gradient Scrim */}
+                <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black/90 via-black/60 to-transparent text-white z-10 text-right">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-sm text-xs font-bold mb-2">
                     <Sprout className="w-3.5 h-3.5" />
                     <span>مشتلنا الميداني بالرياض</span>
                   </div>
-                  <h4 className="text-lg font-bold">بيئة استنبات زراعي خاضعة لأعلى المعايير</h4>
-                  <p className="text-xs text-emerald-200">طريق أبو بكر الصديق، الرياض</p>
+                  <h4 className="text-lg sm:text-xl font-bold text-white font-heading">
+                    بيئة استنبات زراعي خاضعة لأعلى المعايير
+                  </h4>
+                  <p className="text-xs text-emerald-200 mt-1">طريق أبو بكر الصديق، الرياض</p>
                 </div>
-              </div>
-            </div>
-
-            {/* Overlapping Floating Badge */}
-            <div className="absolute -bottom-6 -left-4 sm:left-6 bg-white p-4 rounded-2xl shadow-xl border border-emerald-100 flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-emerald-700 text-white flex items-center justify-center text-xl font-bold">
-                5+
-              </div>
-              <div>
-                <p className="text-xs font-bold text-emerald-950">سنوات من الريادة الزراعية</p>
-                <p className="text-[11px] text-emerald-700">مئات الفلل والحدائق المعتمدة بالرياض</p>
               </div>
             </div>
           </div>

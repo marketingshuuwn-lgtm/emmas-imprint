@@ -55,6 +55,21 @@ export function Hero() {
               {hero.description}
             </p>
 
+            {/* Quick Intent Guide Pill */}
+            <div className="mb-6">
+              <a
+                href="#intent-guide"
+                className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2.5 rounded-2xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-400/30 text-emerald-200 hover:text-white font-medium text-xs sm:text-sm transition-all duration-300 shadow-lg shadow-emerald-950/40 group"
+              >
+                <span className="flex h-2.5 w-2.5 relative shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                </span>
+                <span>💡 محتار وما تدري من وين تبدأ؟ <strong className="text-white underline decoration-emerald-400 font-bold mr-1">دليلك السريع: وش تبحث عنه؟</strong></span>
+                <span className="text-emerald-400 group-hover:translate-x-[-4px] transition-transform font-bold">←</span>
+              </a>
+            </div>
+
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <a
