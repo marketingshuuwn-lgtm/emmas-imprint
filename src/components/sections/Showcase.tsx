@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Sparkles, CheckCircle2, Eye, MessageCircle } from "lucide-react";
+import Link from "next/link";
+import { Sparkles, CheckCircle2, Eye, MessageCircle, ArrowLeft, Layers } from "lucide-react";
 
 interface Project {
   id: string;
@@ -150,6 +151,18 @@ export function Showcase() {
 
           </div>
 
+        </div>
+
+        {/* Link to Full Projects & Plants Catalog Page */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-800 to-teal-800 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm sm:text-base shadow-xl transition-all transform hover:-translate-y-0.5"
+          >
+            <Layers className="w-5 h-5 text-emerald-300" />
+            <span>تصفح دليل أصناف المشاريع (100 صنف داخلي وخارجي بأولويات التخزين)</span>
+            <ArrowLeft className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

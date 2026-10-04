@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, Phone, MessageCircle, Sprout } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
@@ -35,8 +36,8 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-18">
           
           {/* Logo */}
-          <a
-            href="#home"
+          <Link
+            href="/"
             className="flex items-center gap-3 font-black text-lg md:text-xl text-white shrink-0 group"
             onClick={close}
           >
@@ -51,7 +52,7 @@ export function Header() {
                 مشاتل وتنسيق حدائق • الرياض
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Navigation */}
           <nav
