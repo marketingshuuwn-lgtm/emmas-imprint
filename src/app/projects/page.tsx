@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Search,
   Sprout,
@@ -12,7 +13,7 @@ import {
   List,
   Filter,
   Phone,
-  Layers,
+  BookOpen,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -58,7 +59,7 @@ export default function ProjectsCatalogPage() {
     <div className="min-h-screen bg-[#f8faf8] text-[#0f2416] flex flex-col font-sans">
       <Header />
 
-      {/* Hero Banner for Projects & Botanical Index */}
+      {/* Hero Banner for Botanical Encyclopedia */}
       <section className="pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-b from-[#071d12] via-[#0d2a1b] to-[#123624] text-white relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -70,32 +71,32 @@ export default function ProjectsCatalogPage() {
               <span>الرئيسية</span>
             </Link>
             <span>/</span>
-            <span className="text-white font-bold">دليل المشاريع وأصناف النباتات</span>
+            <span className="text-white font-bold">موسوعة النباتات والأشجار</span>
           </div>
 
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-800/60 text-emerald-300 text-xs font-bold mb-4 border border-emerald-500/30">
-              <Layers className="w-3.5 h-3.5 text-emerald-400" />
-              <span>دليل الأصناف التوريدية لـ {siteContent.business.name}</span>
+              <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
+              <span>موسوعة النباتات المعتمدة • {siteContent.business.name}</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-4">
-              أصناف نباتات المشاريع <br />
+              دليل نباتات الفلل والمشاريع <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">
-                100 صنف داخلي وخارجي بأولويات التخزين
+                100 صنف منتقى بأولويات التخزين والتوريد
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-emerald-100/90 prose-ar leading-relaxed max-w-2xl">
-              تصفح القائمة المتكاملة لنباتات المشاريع الزراعية المعتمدة لدى {siteContent.business.nameShort} بالرياض،
-              موزعة بين 50 صنفاً داخلياً و50 صنفاً خارجياً مع أولويات التخزين والتوريد للمشاريع والفلل.
+              موسوعة شاملة ومصورة تضم أجود نباتات الظل الداخلية وأشجار المشهد الطبيعي الخارجية،
+              مؤقلمة ومجهزة للتوريد الفوري لمشاريع الفلل والحدائق في الرياض.
             </p>
           </div>
 
           {/* Quick Stats Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-8 border-t border-emerald-800/40 text-xs">
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
-              <span className="text-emerald-300/80 block mb-0.5">إجمالي الأصناف</span>
+              <span className="text-emerald-300/80 block mb-0.5">إجمالي الأصناف الموثقة</span>
               <span className="text-2xl font-black text-white">100 صنف</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
@@ -157,7 +158,7 @@ export default function ProjectsCatalogPage() {
                   aria-label="عرض البطاقات"
                 >
                   <LayoutGrid className="w-4 h-4" />
-                  <span>بطاقات</span>
+                  <span>بطاقات مصورة</span>
                 </button>
                 <button
                   type="button"
@@ -190,8 +191,8 @@ export default function ProjectsCatalogPage() {
                       : "bg-emerald-50 hover:bg-emerald-100 text-emerald-900"
                   }`}
                 >
-                  <span>كافة الأصناف</span>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white">
+                  <span>كافة النباتات</span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white font-mono">
                     100
                   </span>
                 </button>
@@ -207,7 +208,7 @@ export default function ProjectsCatalogPage() {
                 >
                   <Sprout className="w-4 h-4 text-emerald-400" />
                   <span>النباتات الداخلية</span>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white">
+                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white font-mono">
                     50
                   </span>
                 </button>
@@ -223,7 +224,7 @@ export default function ProjectsCatalogPage() {
                 >
                   <TreePine className="w-4 h-4 text-teal-400" />
                   <span>الأشجار والنباتات الخارجية</span>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white">
+                  <span className="px-2 py-0.5 rounded-full text-[10px] bg-black/20 text-white font-mono">
                     50
                   </span>
                 </button>
@@ -299,7 +300,7 @@ export default function ProjectsCatalogPage() {
               {searchQuery && ` لنتيجة البحث: "${searchQuery}"`}
             </span>
             <span className="hidden sm:inline text-emerald-700/70">
-              متاحة للتوريد الفوري وكميات المشاريع في الرياض
+              جميع الأصناف مؤقلمة ومجهزة للتوريد في الرياض
             </span>
           </div>
 
@@ -308,7 +309,7 @@ export default function ProjectsCatalogPage() {
             <div className="bg-white rounded-3xl p-12 text-center border border-emerald-100 my-8">
               <Search className="w-12 h-12 text-emerald-300 mx-auto mb-3" />
               <h3 className="text-lg font-bold text-emerald-950 mb-1">لم يتم العثور على نباتات مطابقة</h3>
-              <p className="text-sm text-emerald-800/70 mb-4">جرب البحث بكلمة أخرى أو إعادة تعيين الفلاتر.</p>
+              <p className="text-sm text-emerald-800/70 mb-4">جرب البحث بكلمة أخرى أو تعديل خيارات الفلترة.</p>
               <button
                 onClick={() => {
                   setSearchQuery("");
@@ -322,47 +323,64 @@ export default function ProjectsCatalogPage() {
             </div>
           )}
 
-          {/* GRID VIEW */}
+          {/* GRID VIEW (With Botanical Photos) */}
           {viewMode === "grid" && filteredList.length > 0 && (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {filteredList.map((plant, index) => (
                 <div
                   key={`${plant.type}-${plant.id}`}
-                  className="bg-white rounded-2xl p-5 border border-emerald-100/90 hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white rounded-2xl border border-emerald-100/90 overflow-hidden hover:border-emerald-500/50 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    {/* Card Top: Number + Category Badge */}
-                    <div className="flex items-center justify-between mb-3 text-xs">
-                      <span className="font-mono text-emerald-900/50 font-bold">
-                        #{index + 1}
-                      </span>
-                      <span
-                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                          plant.type === "indoor"
-                            ? "bg-emerald-100 text-emerald-800 border border-emerald-200"
-                            : "bg-teal-100 text-teal-800 border border-teal-200"
-                        }`}
-                      >
-                        {plant.type === "indoor" ? "داخلي" : "خارجي"}
-                      </span>
+                    {/* Plant Visual Photo */}
+                    <div className="relative h-44 sm:h-48 w-full bg-emerald-50 overflow-hidden">
+                      <Image
+                        src={plant.image}
+                        alt={plant.name}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      
+                      {/* Top Badges */}
+                      <div className="absolute top-2.5 right-2.5 left-2.5 flex items-center justify-between">
+                        <span className="font-mono bg-black/60 backdrop-blur-md text-white text-[11px] font-bold px-2 py-0.5 rounded-lg border border-white/20">
+                          #{index + 1}
+                        </span>
+                        <span
+                          className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-sm ${
+                            plant.type === "indoor"
+                              ? "bg-emerald-600 text-white"
+                              : "bg-teal-600 text-white"
+                          }`}
+                        >
+                          {plant.type === "indoor" ? "داخلي" : "خارجي"}
+                        </span>
+                      </div>
+
+                      {/* Overlaid Priority Badge */}
+                      <div className="absolute bottom-2.5 right-2.5">
+                        <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-black/75 backdrop-blur-md text-white text-[11px] font-bold border border-amber-400/40">
+                          <span>{plant.priorityBadge}</span>
+                          <span className="text-amber-300 text-[10px]">{plant.priorityLabel}</span>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Plant Name */}
-                    <h3 className="text-base font-black text-emerald-950 mb-2 group-hover:text-emerald-700 transition-colors leading-snug">
-                      {plant.name}
-                    </h3>
-
-                    {/* Storage Priority Badge */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-50/80 border border-amber-200 text-xs mb-4">
-                      <span className="text-sm">{plant.priorityBadge}</span>
-                      <span className="font-bold text-amber-950 text-[11px]">
-                        {plant.priorityLabel}
-                      </span>
+                    {/* Plant Details */}
+                    <div className="p-4">
+                      <h3 className="text-base font-black text-emerald-950 mb-1 group-hover:text-emerald-700 transition-colors leading-snug">
+                        {plant.name}
+                      </h3>
+                      <p className="text-[11px] text-emerald-800/60 font-medium">
+                        {plant.type === "indoor" ? "نبات ظل وعناية داخلية" : "أشجار وزراعة خارجية للمشهد الطبيعي"}
+                      </p>
                     </div>
                   </div>
 
                   {/* Order & Inquire Action */}
-                  <div className="pt-3 border-t border-emerald-50 mt-2">
+                  <div className="p-4 pt-0">
                     <a
                       href={`https://wa.me/966578326985?text=${encodeURIComponent(
                         `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وطلب كميات من: (${plant.name}) - [${plant.typeLabel}].`
@@ -380,7 +398,7 @@ export default function ProjectsCatalogPage() {
             </div>
           )}
 
-          {/* TABLE VIEW */}
+          {/* TABLE VIEW (With Photo Thumbnails) */}
           {viewMode === "table" && filteredList.length > 0 && (
             <div className="bg-white rounded-3xl border border-emerald-100 overflow-hidden shadow-xl">
               <div className="overflow-x-auto">
@@ -388,9 +406,10 @@ export default function ProjectsCatalogPage() {
                   <thead className="bg-emerald-900 text-white font-bold border-b border-emerald-800">
                     <tr>
                       <th className="py-4 px-4 w-14">#</th>
-                      <th className="py-4 px-6">اسم النبتة / الشجرة</th>
-                      <th className="py-4 px-4">النوع</th>
-                      <th className="py-4 px-6">أولوية التخزين</th>
+                      <th className="py-4 px-3 w-16">الصورة</th>
+                      <th className="py-4 px-4">اسم النبتة / الشجرة</th>
+                      <th className="py-4 px-4">البيئة</th>
+                      <th className="py-4 px-4">أولوية التخزين</th>
                       <th className="py-4 px-4 text-center">الإجراء المباشر</th>
                     </tr>
                   </thead>
@@ -400,13 +419,24 @@ export default function ProjectsCatalogPage() {
                         key={`${plant.type}-${plant.id}`}
                         className="hover:bg-emerald-50/60 transition-colors"
                       >
-                        <td className="py-3.5 px-4 font-mono font-bold text-emerald-900/50">
+                        <td className="py-3 px-4 font-mono font-bold text-emerald-900/50">
                           {index + 1}
                         </td>
-                        <td className="py-3.5 px-6 font-black text-emerald-950 text-sm">
+                        <td className="py-3 px-3">
+                          <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-emerald-200/80 bg-emerald-50 shrink-0">
+                            <Image
+                              src={plant.image}
+                              alt={plant.name}
+                              fill
+                              className="object-cover"
+                              sizes="44px"
+                            />
+                          </div>
+                        </td>
+                        <td className="py-3 px-4 font-black text-emerald-950 text-sm">
                           {plant.name}
                         </td>
-                        <td className="py-3.5 px-4">
+                        <td className="py-3 px-4">
                           <span
                             className={`inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
                               plant.type === "indoor"
@@ -417,13 +447,13 @@ export default function ProjectsCatalogPage() {
                             {plant.type === "indoor" ? "داخلي" : "خارجي"}
                           </span>
                         </td>
-                        <td className="py-3.5 px-6">
+                        <td className="py-3 px-4">
                           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-200 text-amber-950 font-bold text-xs">
                             <span>{plant.priorityBadge}</span>
                             <span>{plant.priorityLabel}</span>
                           </div>
                         </td>
-                        <td className="py-3.5 px-4 text-center">
+                        <td className="py-3 px-4 text-center">
                           <a
                             href={`https://wa.me/966578326985?text=${encodeURIComponent(
                               `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وطلب كميات من: (${plant.name}) - [${plant.typeLabel}].`
@@ -433,7 +463,7 @@ export default function ProjectsCatalogPage() {
                             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-800 hover:bg-emerald-700 text-white font-bold text-xs transition-colors shadow-xs"
                           >
                             <MessageCircle className="w-3.5 h-3.5" />
-                            <span>استفسار فوري</span>
+                            <span>استفسار وتوريد</span>
                           </a>
                         </td>
                       </tr>
