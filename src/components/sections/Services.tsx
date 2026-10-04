@@ -194,7 +194,7 @@ export function Services() {
 
                   {/* CTA link */}
                   <a
-                    href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                    href={`https://wa.me/966563340109?text=${encodeURIComponent(
                       `مرحباً بصمة ايما، أود الاستفسار عن خدمة: ${service.title}`
                     )}`}
                     target="_blank"

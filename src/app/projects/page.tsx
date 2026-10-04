@@ -382,7 +382,7 @@ export default function ProjectsCatalogPage() {
                   {/* Order & Inquire Action */}
                   <div className="p-4 pt-0">
                     <a
-                      href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                      href={`https://wa.me/966563340109?text=${encodeURIComponent(
                         `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وطلب كميات من: (${plant.name}) - [${plant.typeLabel}].`
                       )}`}
                       target="_blank"
@@ -455,7 +455,7 @@ export default function ProjectsCatalogPage() {
                         </td>
                         <td className="py-3 px-4 text-center">
                           <a
-                            href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                            href={`https://wa.me/966563340109?text=${encodeURIComponent(
                               `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وطلب كميات من: (${plant.name}) - [${plant.typeLabel}].`
                             )}`}
                             target="_blank"
@@ -491,7 +491,7 @@ export default function ProjectsCatalogPage() {
 
               <div className="md:col-span-4 flex flex-col gap-3">
                 <a
-                  href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                  href={`https://wa.me/966563340109?text=${encodeURIComponent(
                     "مرحباً بصمة ايما الزراعية، أود طلب عرض سعر وجدول كميات نباتات لمشروع حديقة في الرياض."
                   )}`}
                   target="_blank"

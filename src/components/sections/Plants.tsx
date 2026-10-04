@@ -304,7 +304,7 @@ export function Plants() {
                 {/* WhatsApp Quick Order */}
                 <div className="pt-4 mt-auto">
                   <a
-                    href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                    href={`https://wa.me/966563340109?text=${encodeURIComponent(
                       `مرحباً بصمة ايما الزراعية، أود الاستفسار عن توفر وسعر: ${plant.name}`
                     )}`}
                     target="_blank"
@@ -439,7 +439,7 @@ export function Plants() {
             </p>
 
             <a
-              href={`https://wa.me/966578326985?text=${encodeURIComponent(
+              href={`https://wa.me/966563340109?text=${encodeURIComponent(
                 `مرحباً بصمة ايما، رشح لي الموقع نبتة (${recommended.name}) وأود طلبها مع حوضها الفاخر لمنزلي.`
               )}`}
               target="_blank"

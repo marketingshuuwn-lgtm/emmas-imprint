@@ -137,7 +137,7 @@ export function Showcase() {
 
             <div className="pt-4 border-t border-emerald-100">
               <a
-                href={`https://wa.me/966578326985?text=${encodeURIComponent(
+                href={`https://wa.me/966563340109?text=${encodeURIComponent(
                   `مرحباً بصمة ايما، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
                 )}`}
                 target="_blank"

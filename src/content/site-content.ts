@@ -6,9 +6,9 @@ export const siteContent: SiteContent = {
     nameShort: "بصمة ايما",
     type: "مشتل زراعي وتنسيق حدائق",
     location: "الرياض",
-    phone: "+966578326985",
-    phoneDisplay: "00966578326985",
-    whatsapp: "https://wa.me/966578326985",
+    phone: "+966563340109",
+    phoneDisplay: "0563340109",
+    whatsapp: "https://wa.me/966563340109",
     address: "الرياض — الدائري الغربي — مخرج 29",
   },
   nav: [
@@ -27,7 +27,7 @@ export const siteContent: SiteContent = {
       "نباتات مختارة بعناية، ومساحات خضراء تشبه ذوقك. نساعدك على تحويل المساحات إلى أماكن أكثر جمالًا وحيوية؛ من نبتة داخلية تضيف لمسة هادئة إلى زاوية منزلك، إلى حديقة متكاملة تُنفَّذ بعناية من التصميم حتى الزراعة والري.",
     primaryCta: {
       label: "احجز استشارتك المجانية",
-      href: "https://wa.me/966578326985",
+      href: "https://wa.me/966563340109",
     },
     secondaryCta: { label: "استعرض خدماتنا", href: "#services" },
     tertiaryCta: { label: "اكتشف النباتات الداخلية", href: "#plants" },
@@ -211,22 +211,23 @@ export const siteContent: SiteContent = {
       "ابدئي بنبتة... أو دعينا نخطط للمساحة كاملة. سواء كنت تبحثين عن نبتة داخلية لزاوية في المنزل، أو تخططين لتنسيق حديقة كاملة، تواصلي معنا لنساعدك على اختيار الحل المناسب لمساحتك واحتياجاتك.",
     primaryCta: {
       label: "احجز استشارتك المجانية",
-      href: "https://wa.me/966578326985",
+      href: "https://wa.me/966563340109",
     },
     secondaryCta: {
       label: "اتصل بنا الآن",
-      href: "tel:+966578326985",
+      href: "tel:+966563340109",
     },
   },
   footer: {
     description:
       "بصمة ايما الزراعية — خبرة في توفير النباتات والمستلزمات الزراعية، وتصميم وتنفيذ الحدائق، وشبكات الري، مع اهتمام بالتفاصيل وجودة التنفيذ.",
     quickLinks: [
-      { label: "الرئيسية", href: "#home" },
-      { label: "من نحن", href: "#about" },
-      { label: "خدماتنا", href: "#services" },
-      { label: "النباتات الداخلية", href: "#plants" },
-      { label: "الأسئلة الشائعة", href: "#faq" },
+      { label: "الرئيسية", href: "/#home" },
+      { label: "من نحن", href: "/#about" },
+      { label: "خدماتنا", href: "/#services" },
+      { label: "معرض المشاريع", href: "/#showcase" },
+      { label: "موسوعة النباتات", href: "/projects" },
+      { label: "الأسئلة الشائعة", href: "/#faq" },
     ],
     servicesLinks: [
       "تصميم وتنفيذ الحدائق",
@@ -245,7 +246,7 @@ export const siteContent: SiteContent = {
     keywords: [
       "بصمة ايما الزراعية",
       "بصمة ايما",
-      "EmmaSmile",
+      "Basmat Emma",
       "مشتل الرياض",
       "نباتات داخلية",
       "تنسيق حدائق",

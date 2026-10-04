@@ -39,7 +39,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Zamioculcas_zamiifolia_1.jpg/330px-Zamioculcas_zamiifolia_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Philodendron_scandens_subsp_oxycardium2.jpg/330px-Philodendron_scandens_subsp_oxycardium2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1596724817753-e5229712bf37?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Chlorophytum_comosum%2C_flores.jpg/960px-Chlorophytum_comosum%2C_flores.jpg",
   },
   {
     id: 6,
@@ -89,7 +89,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+    image: "/images/plant-ficus.jpg",
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1598880940371-c756e015fea1?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Schefflera_arboricola%2C_vrugte%2C_a%2C_Pretoria.jpg/330px-Schefflera_arboricola%2C_vrugte%2C_a%2C_Pretoria.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 10,
@@ -109,7 +109,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1604762524889-3e2fcc145683?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/AnthuriumAndraenum.jpg/330px-AnthuriumAndraenum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 11,
@@ -129,7 +129,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Dracaena_sanderiana_2.jpg/330px-Dracaena_sanderiana_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 13,
@@ -139,7 +139,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 14,
@@ -159,7 +159,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "/images/plant-pothos.jpg",
+    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 16,
@@ -169,7 +169,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1596724817753-e5229712bf37?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1598880940371-c756e015fea1?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 17,
@@ -179,7 +179,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1598880940371-c756e015fea1?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Ficus_elastica_leaves_02.JPG/330px-Ficus_elastica_leaves_02.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 18,
@@ -189,7 +189,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "/images/plant-dracaena.jpg",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Dracaena_fragrans_%282%29.jpg/330px-Dracaena_fragrans_%282%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 19,
@@ -199,7 +199,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Dracaena_reflexa.JPG/330px-Dracaena_reflexa.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 20,
@@ -209,7 +209,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 21,
@@ -219,7 +219,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1597055181300-e3633a917c9c?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/CalatheaMakoyana.jpg/330px-CalatheaMakoyana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 22,
@@ -229,7 +229,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1597055181300-e3633a917c9c?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Maranta_leuconeura3.jpg/330px-Maranta_leuconeura3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 23,
@@ -239,7 +239,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Colpfl05.jpg/330px-Colpfl05.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 24,
@@ -249,7 +249,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Peperomia_argyreia.jpg/330px-Peperomia_argyreia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 25,
@@ -259,7 +259,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "/images/plant-aglaonema.jpg",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Starr_061212-2331_Dieffenbachia_seguine.jpg/330px-Starr_061212-2331_Dieffenbachia_seguine.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 26,
@@ -269,7 +269,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Alocasia_x_amazonica_a1.jpg/330px-Alocasia_x_amazonica_a1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 27,
@@ -279,7 +279,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Cordyline_fruticosa_%2820262433874%29.jpg/330px-Cordyline_fruticosa_%2820262433874%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 28,
@@ -289,7 +289,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Acanthaceae_leaf.jpg/330px-Acanthaceae_leaf.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 29,
@@ -299,7 +299,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Phalaenopsis_philippinensis_NationalOrchidGarden-Singapore.jpg/330px-Phalaenopsis_philippinensis_NationalOrchidGarden-Singapore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 30,
@@ -309,7 +309,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Saintpaulia_ionantha.jpg/330px-Saintpaulia_ionantha.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 31,
@@ -319,7 +319,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Pilea_peperomioides_Chinese_money_plant.jpg/330px-Pilea_peperomioides_Chinese_money_plant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 32,
@@ -329,7 +329,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Kalanchoe_blossfeldiana_3.jpg/330px-Kalanchoe_blossfeldiana_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 33,
@@ -339,7 +339,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/NKN-2007-06-13_114250_Hoya_Carnosa_%28Yvan_Leduc_author_for_Wikipedia%29.jpg/330px-NKN-2007-06-13_114250_Hoya_Carnosa_%28Yvan_Leduc_author_for_Wikipedia%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 34,
@@ -349,7 +349,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1567689265664-1c48de61db0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Aloe_vera_flower_inset.png/330px-Aloe_vera_flower_inset.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 35,
@@ -369,7 +369,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Haworthia_cymbiformis_1.jpg/330px-Haworthia_cymbiformis_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 37,
@@ -379,7 +379,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Echeveria_elegans_-_1.jpg/330px-Echeveria_elegans_-_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 38,
@@ -389,7 +389,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Sedum_acre_single_-_Niitv%C3%A4lja.jpg/330px-Sedum_acre_single_-_Niitv%C3%A4lja.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 39,
@@ -399,7 +399,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1597055181300-e3633a917c9c?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Goeppertia_roseopicta.jpg/330px-Goeppertia_roseopicta.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 40,
@@ -419,7 +419,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1599685315640-9ceab2f58544?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Chamaedorea_elegans_Mart.JPG/330px-Chamaedorea_elegans_Mart.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 42,
@@ -429,7 +429,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Yucca_gigantea_-_Jard%C3%ADn_Bot%C3%A1nico_Canario_Viera_y_Clavijo_-_Gran_Canaria.jpg/330px-Yucca_gigantea_-_Jard%C3%ADn_Bot%C3%A1nico_Canario_Viera_y_Clavijo_-_Gran_Canaria.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 43,
@@ -439,7 +439,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Beaucarnea_recurvata%2C_Ocampo%2C_Tamaulipas%2C_Mexico_1.jpg/330px-Beaucarnea_recurvata%2C_Ocampo%2C_Tamaulipas%2C_Mexico_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 44,
@@ -449,7 +449,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1599685315640-9ceab2f58544?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Howea_forsteriana_Lord_Howe_Island.jpg/330px-Howea_forsteriana_Lord_Howe_Island.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 45,
@@ -459,7 +459,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "/images/plant-ficus.jpg",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Starr_031108-0130_Ficus_lyrata.jpg/330px-Starr_031108-0130_Ficus_lyrata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 46,
@@ -469,7 +469,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Ficus_microcarpa_-_La_Gomera_01.jpg/330px-Ficus_microcarpa_-_La_Gomera_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 47,
@@ -479,7 +479,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Zingiber_malaysianum.jpg/330px-Zingiber_malaysianum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 48,
@@ -489,7 +489,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "/images/plant-pothos.jpg",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Scindapsus_pictus_01.jpg/330px-Scindapsus_pictus_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 49,
@@ -499,7 +499,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Begonia_obliqua00.jpg/330px-Begonia_obliqua00.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 50,
@@ -509,7 +509,7 @@ export const indoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "/images/plant-monstera.jpg",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Monstera_adansonii_79319231.jpg/330px-Monstera_adansonii_79319231.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
 ];
 
@@ -522,7 +522,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Starr_030418-0061_Bougainvillea_spectabilis.jpg/330px-Starr_030418-0061_Bougainvillea_spectabilis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 2,
@@ -532,7 +532,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1588628566587-dbd176de94b4?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Plumeria_alba2709449426.jpg/330px-Plumeria_alba2709449426.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 3,
@@ -542,7 +542,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Washingtonia_filifera.jpg/330px-Washingtonia_filifera.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 4,
@@ -552,7 +552,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Ziziphus-areva-israel.jpg/330px-Ziziphus-areva-israel.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 5,
@@ -562,7 +562,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1541256942802-7b2996a6022e?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Olea_europaea_cuspidata-africana_Cape_Town.JPG/330px-Olea_europaea_cuspidata-africana_Cape_Town.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 6,
@@ -572,7 +572,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/330px-P1030323.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 7,
@@ -592,7 +592,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Neem_Tree_in_Rajasthan%2C_India.jpg/330px-Neem_Tree_in_Rajasthan%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 9,
@@ -602,7 +602,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Prosopis_cineraria_-_Khejri.jpg/330px-Prosopis_cineraria_-_Khejri.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 10,
@@ -612,7 +612,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Macro_view_of_thorn_and_leaves_of_a_Babul_tree_%28Vachellia_nilotica%29_from_Rajasthan%2C_India.jpg/330px-Macro_view_of_thorn_and_leaves_of_a_Babul_tree_%28Vachellia_nilotica%29_from_Rajasthan%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 11,
@@ -622,7 +622,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Ip%C3%AA-de-jardim_%28do_tupi_%27yp%C3%A9%29%2C_Tecoma_stans%2C_em_Bag%C3%A9-RS%2C_Brasil.jpg/330px-Ip%C3%AA-de-jardim_%28do_tupi_%27yp%C3%A9%29%2C_Tecoma_stans%2C_em_Bag%C3%A9-RS%2C_Brasil.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 12,
@@ -632,7 +632,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/LantanaFlowerLeaves.jpg/330px-LantanaFlowerLeaves.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 13,
@@ -642,7 +642,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Vitex_agnus-castus_1.JPG/330px-Vitex_agnus-castus_1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 14,
@@ -652,7 +652,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Nerium_oleander_flowers_leaves.jpg/330px-Nerium_oleander_flowers_leaves.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 15,
@@ -662,7 +662,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Jasminum_grandiflorum_%28Oleaceae%29.jpg/330px-Jasminum_grandiflorum_%28Oleaceae%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 16,
@@ -672,7 +672,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Volkameria_inermis_308123521.jpg/330px-Volkameria_inermis_308123521.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 17,
@@ -682,7 +682,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Arabian_jasmin%2C_Tunisia_2010.jpg/330px-Arabian_jasmin%2C_Tunisia_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 18,
@@ -692,7 +692,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1597055181300-e3633a917c9c?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 19,
@@ -702,7 +702,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hibiscus_Brilliant.jpg/330px-Hibiscus_Brilliant.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 20,
@@ -712,7 +712,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Cinnamon-bellied_flowerpiercer_%28Diglossa_baritula%29_male_on_Indian_shot_%28Canna_indica%29_Finca_El_Pilar.jpg/330px-Cinnamon-bellied_flowerpiercer_%28Diglossa_baritula%29_male_on_Indian_shot_%28Canna_indica%29_Finca_El_Pilar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 21,
@@ -722,7 +722,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg/330px-Vinca_%28Catharanthus_roseus%29_cultivada_em_Bag%C3%A9%2C_RS%2C_Brasil_-_55231652268.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 22,
@@ -732,7 +732,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 23,
@@ -742,7 +742,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Tradescantia_spathacea_%28_Moses-in-the-cradle_%29.jpg/330px-Tradescantia_spathacea_%28_Moses-in-the-cradle_%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 24,
@@ -752,7 +752,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1598880940080-ff9a29891b85?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Acalypha_Flamengueira2.JPG/330px-Acalypha_Flamengueira2.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 25,
@@ -762,7 +762,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Jatropha_interregima.JPG/330px-Jatropha_interregima.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 26,
@@ -772,7 +772,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Starr_010820-0009_Carissa_macrocarpa.jpg/330px-Starr_010820-0009_Carissa_macrocarpa.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 27,
@@ -782,7 +782,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Tecoma_capensis_2922.jpg/330px-Tecoma_capensis_2922.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 28,
@@ -792,7 +792,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Dodonaea_viscosa_%28Hopbush%29_W2_IMG_1899.jpg/330px-Dodonaea_viscosa_%28Hopbush%29_W2_IMG_1899.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 29,
@@ -802,7 +802,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Conocarpus_erectus_Key_Largo.jpg/330px-Conocarpus_erectus_Key_Largo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 30,
@@ -812,7 +812,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Jacarand%C3%A1-mimoso_%28do_tupi_%C3%AEakarand%C3%A1%29_-_54942878507_02.jpg/330px-Jacarand%C3%A1-mimoso_%28do_tupi_%C3%AEakarand%C3%A1%29_-_54942878507_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 31,
@@ -822,7 +822,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Royal_Poinciana.jpg/330px-Royal_Poinciana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 32,
@@ -832,7 +832,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Starr_080531-4752_Albizia_lebbeck.jpg/330px-Starr_080531-4752_Albizia_lebbeck.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 33,
@@ -842,7 +842,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Scarlet_cordia.jpg/330px-Scarlet_cordia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 34,
@@ -852,7 +852,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Starr_080314-3425_Senna_surattensis.jpg/330px-Starr_080314-3425_Senna_surattensis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 35,
@@ -862,7 +862,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/ParkinsoniaAculeata.jpg/330px-ParkinsoniaAculeata.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 36,
@@ -872,7 +872,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1550950158-d0d960dff51b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Melaleuca_viminalis.jpg/330px-Melaleuca_viminalis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 37,
@@ -882,7 +882,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Tamarindus_indica_pods.JPG/330px-Tamarindus_indica_pods.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 38,
@@ -892,7 +892,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1541344999736-83eca872f242?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Pomegranate_Juice_%282019%29.jpg/330px-Pomegranate_Juice_%282019%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 39,
@@ -902,7 +902,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1541344999736-83eca872f242?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Rosales_-_Morus_alba_-_3.jpg/330px-Rosales_-_Morus_alba_-_3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 40,
@@ -912,7 +912,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/OrangeBloss_wb.jpg/330px-OrangeBloss_wb.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 41,
@@ -922,7 +922,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1582281298055-e25b84a30b0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Citrus_reticulata_April_2013_Nordbaden.JPG/330px-Citrus_reticulata_April_2013_Nordbaden.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 42,
@@ -932,7 +932,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1541344999736-83eca872f242?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Ficus_carica_L%2C_1771.jpg/330px-Ficus_carica_L%2C_1771.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 43,
@@ -942,7 +942,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/DrumstickFlower.jpg/330px-DrumstickFlower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 44,
@@ -952,7 +952,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Peelo_10.jpg/330px-Peelo_10.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 45,
@@ -962,7 +962,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Tamaris3.jpg/330px-Tamaris3.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 46,
@@ -972,7 +972,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1516214104703-d870798883c5?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Vachellia_%28ex_Acacia%29_tortilis.jpg/330px-Vachellia_%28ex_Acacia%29_tortilis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 47,
@@ -982,7 +982,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Agave_July_2011-1.jpg/330px-Agave_July_2011-1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 48,
@@ -992,7 +992,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 2,
     priorityBadge: "🔥🔥",
     priorityLabel: "أولوية عالية",
-    image: "https://images.unsplash.com/photo-1567689265664-1c48de61db0b?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 49,
@@ -1002,7 +1002,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 1,
     priorityBadge: "🔥",
     priorityLabel: "أولوية خاصة",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cereus_repandus_in_Aruba_-_on_the_way_back_from_Altovista_chapel_%282896840490%29.jpg/330px-Cereus_repandus_in_Aruba_-_on_the_way_back_from_Altovista_chapel_%282896840490%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
   {
     id: 50,
@@ -1012,7 +1012,7 @@ export const outdoorPlants: CatalogPlant[] = [
     priority: 3,
     priorityBadge: "🔥🔥🔥",
     priorityLabel: "أولوية قصوى",
-    image: "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=600&q=80",
+    image: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Dates005.jpg/330px-Dates005.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   },
 ];
 
