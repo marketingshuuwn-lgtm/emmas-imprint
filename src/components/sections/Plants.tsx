@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, MessageCircle, ArrowLeft } from "lucide-react";
@@ -129,6 +129,22 @@ const plantsData: PlantCard[] = [
 export function Plants() {
   const [activeTab, setActiveTab] = useState<"indoor" | "outdoor" | "work">("indoor");
 
+  // Menu links use #plants-home / #plants-outdoor / #plants-work: open the matching tab
+  useEffect(() => {
+    const hashToTab: Record<string, "indoor" | "outdoor" | "work"> = {
+      "#plants-home": "indoor",
+      "#plants-outdoor": "outdoor",
+      "#plants-work": "work",
+    };
+    const sync = () => {
+      const tab = hashToTab[window.location.hash];
+      if (tab) setActiveTab(tab);
+    };
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+
   const filtered = plantsData.filter((p) => p.category === activeTab);
 
   return (
@@ -138,6 +154,10 @@ export function Plants() {
       aria-labelledby="plants-heading"
     >
       <div className="container-main">
+        {/* Anchor targets for the menu links (all land on this section) */}
+        <span id="plants-home" aria-hidden="true" />
+        <span id="plants-outdoor" aria-hidden="true" />
+        <span id="plants-work" aria-hidden="true" />
         
         {/* Section Header */}
         <div className="max-w-2xl text-right mb-8 sm:mb-10">

@@ -98,6 +98,8 @@ p, li, .prose-ar {
 
 html {
   scroll-behavior: smooth;
+  /* Fixed header is ~64-72px tall; keep anchored headings visible below it */
+  scroll-padding-top: 5.5rem;
 }
 
 ::selection {
