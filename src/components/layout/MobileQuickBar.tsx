@@ -9,7 +9,7 @@ export function MobileQuickBar() {
 
   return (
     <div 
-      className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#071d12]/95 backdrop-blur-xl border-t border-emerald-500/30 px-3 py-2.5 shadow-2xl safe-area-bottom"
+      className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#102117]/95 backdrop-blur-xl border-t border-[#2f5d43]/50 px-3 py-2 shadow-2xl safe-area-bottom"
       role="navigation"
       aria-label="شريط الوصول السريع للجوال"
     >
@@ -18,14 +18,14 @@ export function MobileQuickBar() {
         {/* WhatsApp Fast Consultation */}
         <a
           href={`https://wa.me/966563340109?text=${encodeURIComponent(
-            "مرحباً بصمة ايما الزراعية، أتصفح الموقع عبر الجوال وأود استشارة سريعة بخصوص النباتات وتنسيق الحدائق."
+            "مرحباً بصمة ايما الزراعية، أتصفح الموقع عبر الجوال وأود استشارة بخصوص النباتات وتنسيق الحدائق."
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-gradient-to-t from-emerald-600 to-emerald-500 text-white font-bold shadow-md shadow-emerald-950 active:scale-95 transition-transform"
+          className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold shadow-sm active:scale-95 transition-transform"
           aria-label="محادثة واتساب سريعة"
         >
-          <MessageCircle className="w-4 h-4 text-white animate-pulse" />
+          <MessageCircle className="w-4 h-4 text-white" />
           <span className="text-[11px] leading-none font-bold">واتساب</span>
         </a>
 

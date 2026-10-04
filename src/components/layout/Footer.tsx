@@ -12,47 +12,46 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#05160d] text-white pt-16 pb-10 border-t border-emerald-900/50" role="contentinfo">
+    <footer className="bg-[#0c1811] text-[#faf8f5] pt-14 pb-8 border-t border-[#2f5d43]/40" role="contentinfo">
       <div className="container-main">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 mb-14">
-          
+        <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
+
           {/* Brand Info */}
           <div className="lg:col-span-5 text-right">
             <a
               href="#home"
-              className="inline-flex items-center gap-3 font-black text-xl text-white mb-5 group"
+              className="inline-flex items-center gap-2.5 font-bold text-lg text-white mb-4 group"
             >
-              <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white p-0.5 shadow-lg shadow-emerald-950 shrink-0 border border-emerald-400/40 group-hover:scale-105 transition-transform">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt={business.name}
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain"
+                  alt="شعار بصمة ايما الزراعية"
+                  fill
+                  className="object-contain"
                 />
               </div>
-              <span className="font-black text-xl tracking-wide font-heading">{business.name}</span>
+              <span className="font-black text-lg tracking-wide font-heading">{business.name}</span>
             </a>
-            
-            <p className="text-sm text-emerald-200/70 prose-ar leading-relaxed max-w-md mb-6">
+
+            <p className="text-xs sm:text-sm text-[#d6c7b5]/90 leading-relaxed max-w-md mb-5">
               {footer.description}
             </p>
 
-            <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-3">
               <a
                 href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-800/60 hover:bg-emerald-700 text-emerald-200 hover:text-white text-xs font-bold border border-emerald-600/30 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white text-xs font-bold transition-colors shadow-sm"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-3.5 h-3.5" />
                 <span>واتساب مباشر</span>
               </a>
               <a
                 href={`tel:${business.phone}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-200 hover:text-white text-xs font-bold border border-white/10 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#d6c7b5] hover:text-white text-xs font-bold border border-[#2f5d43] transition-colors"
               >
-                <Phone className="w-4 h-4" />
+                <Phone className="w-3.5 h-3.5" />
                 <span>{business.phoneDisplay}</span>
               </a>
             </div>
@@ -60,15 +59,15 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 text-right">
-            <h4 className="font-bold text-white text-sm mb-4 border-b border-emerald-900/80 pb-2 font-heading">
-              روابط سريعة
+            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
+              اكتشف خضرتك
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               {footer.quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-emerald-200/70 hover:text-emerald-300 transition-colors block py-0.5"
+                    className="text-[#d6c7b5]/80 hover:text-white transition-colors block py-0.5 leading-relaxed"
                   >
                     {link.label}
                   </a>
@@ -79,12 +78,12 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="lg:col-span-2 text-right">
-            <h4 className="font-bold text-white text-sm mb-4 border-b border-emerald-900/80 pb-2 font-heading">
-              خدماتنا الرئيسية
+            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
+              خدماتنا الميدانية
             </h4>
-            <ul className="space-y-2.5 text-xs text-emerald-200/70">
+            <ul className="space-y-2 text-xs text-[#d6c7b5]/80">
               {footer.servicesLinks.map((s) => (
-                <li key={s} className="py-0.5 hover:text-emerald-300 transition-colors">
+                <li key={s} className="py-0.5 leading-relaxed">
                   {s}
                 </li>
               ))}
@@ -93,34 +92,34 @@ export function Footer() {
 
           {/* Location & Hours */}
           <div className="lg:col-span-3 text-right">
-            <h4 className="font-bold text-white text-sm mb-4 border-b border-emerald-900/80 pb-2 font-heading">
+            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
               المقر وأوقات العمل
             </h4>
-            <ul className="space-y-3 text-xs text-emerald-200/80">
+            <ul className="space-y-3 text-xs text-[#d6c7b5]/90">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" aria-hidden />
+                <MapPin className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" aria-hidden />
                 <div>
-                  <span className="font-bold block text-white">{business.address}</span>
+                  <span className="block font-bold text-white mb-0.5">{business.address}</span>
                   <a
                     href={business.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[11px] text-emerald-400 hover:text-emerald-300 underline mt-1"
+                    className="text-[#b8603d] hover:text-[#d6c7b5] underline underline-offset-2 inline-flex items-center gap-1 text-[11px]"
                   >
-                    <Navigation className="w-3 h-3" />
                     <span>عرض الموقع على Google Maps</span>
+                    <Navigation className="w-3 h-3" />
                   </a>
                 </div>
               </li>
-              <li className="flex items-start gap-2.5 pt-2 border-t border-emerald-900/50">
-                <Clock className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" aria-hidden />
-                <div className="space-y-1">
-                  <div className="text-[11px] text-emerald-100 font-medium">
-                    <span className="text-amber-300 font-bold">السبت – الخميس:</span> 8:00 ص – 12:30 ص
-                  </div>
-                  <div className="text-[11px] text-emerald-100 font-medium">
-                    <span className="text-amber-300 font-bold">الجمعة:</span> 12:30 م – 12:30 ص
-                  </div>
+              <li className="flex items-start gap-2.5 pt-1 border-t border-[#2f5d43]/40">
+                <Clock className="w-3.5 h-3.5 text-[#b8603d] mt-0.5 shrink-0" aria-hidden />
+                <div>
+                  <p className="text-[11px] leading-relaxed">
+                    <strong className="text-white">السبت إلى الخميس:</strong> 8:00 ص – 12:30 ص
+                  </p>
+                  <p className="text-[11px] leading-relaxed">
+                    <strong className="text-white">يوم الجمعة:</strong> 12:30 م – 12:30 ص
+                  </p>
                 </div>
               </li>
             </ul>
@@ -128,20 +127,20 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-emerald-900/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-200/60">
+        {/* Bottom Bar */}
+        <div className="border-t border-[#2f5d43]/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#d6c7b5]/70">
           <p className="flex items-center gap-1.5 flex-wrap" dir="rtl">
             <span>جميع الحقوق محفوظة</span>
             <span>&copy;</span>
             <span dir="ltr">2026</span>
-            <span>{business.name}.</span>
+            <span>{business.name} | Emma Smile.</span>
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <a
               href="/site-content.md"
               download="emma-smile-site-content.md"
-              className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-white transition-colors py-1 px-2 rounded-lg hover:bg-emerald-900/40"
+              className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-white transition-colors"
               title="تحميل النص الكامل للموقع بصيغة Markdown"
             >
               <FileDown className="w-3.5 h-3.5" />
@@ -150,13 +149,14 @@ export function Footer() {
 
             <button
               onClick={scrollToTop}
-              className="flex items-center gap-2 hover:text-emerald-300 transition-colors"
+              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
             >
               <span>العودة للأعلى</span>
-              <ArrowUp className="w-4 h-4" />
+              <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
+
       </div>
     </footer>
   );

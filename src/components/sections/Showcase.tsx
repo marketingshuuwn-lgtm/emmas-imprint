@@ -52,7 +52,7 @@ export function Showcase() {
   return (
     <section className="section-padding bg-gradient-to-b from-[#f4f8f4] to-white relative overflow-hidden" id="showcase">
       <div className="container-main">
-        
+
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3 border border-emerald-200">
@@ -73,11 +73,10 @@ export function Showcase() {
             <button
               key={proj.id}
               onClick={() => setActiveTab(idx)}
-              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
-                activeTab === idx
+              className={`px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 ${activeTab === idx
                   ? "bg-emerald-900 text-white shadow-xl shadow-emerald-900/25 scale-105"
                   : "bg-white text-emerald-900 border border-emerald-200 hover:bg-emerald-50"
-              }`}
+                }`}
             >
               <span>{proj.title}</span>
               <span className="text-[11px] opacity-75">({proj.location.split("—")[0]})</span>
@@ -87,7 +86,7 @@ export function Showcase() {
 
         {/* Featured Showcase Card */}
         <div className="bg-white rounded-3xl overflow-hidden border border-emerald-200/80 shadow-2xl grid lg:grid-cols-12 items-stretch">
-          
+
           {/* Visual Main Picture */}
           <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[500px] w-full overflow-hidden group">
             <Image
@@ -137,7 +136,7 @@ export function Showcase() {
 
             <div className="pt-4 border-t border-emerald-100">
               <a
-                href={`https://wa.me/966563340109?text=${encodeURIComponent(
+                href={`https://wa.me/966578326985?text=${encodeURIComponent(
                   `مرحباً بصمة ايما، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
                 )}`}
                 target="_blank"

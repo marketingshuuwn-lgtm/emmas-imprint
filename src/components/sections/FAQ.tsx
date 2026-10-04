@@ -15,11 +15,13 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-16 sm:py-24 bg-[#faf8f5] text-[#1c1f1d] border-b border-[#e8dfd3]"
+      className="py-12 sm:py-16 lg:py-20 bg-[#faf8f5] text-[#1c1f1d] border-b border-[#e8dfd3]"
       aria-labelledby="faq-heading"
     >
       <div className="container-main">
-        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        
+        {/* Header */}
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-xs font-bold mb-3">
             <HelpCircle className="w-3.5 h-3.5 text-[#b8603d]" />
             <span>{faq.title}</span>
@@ -27,15 +29,16 @@ export function FAQ() {
 
           <h2
             id="faq-heading"
-            className="text-2xl sm:text-3xl md:text-4xl font-black text-[#102117] leading-tight mb-3 font-heading"
+            className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#102117] leading-snug mb-3 font-heading"
           >
             {faq.subtitle}
           </h2>
-          <p className="text-xs sm:text-sm text-[#6f7872]">
-            تجارب وحلول عملية من واقع خدمة عملاء مشتلنا اليومية بالرياض
+          <p className="text-xs sm:text-sm text-[#6f7872] leading-relaxed">
+            إجابات واضحة تساعدك على اتخاذ قرارك قبل أن تبدأ
           </p>
         </div>
 
+        {/* FAQ Accordion Items */}
         <div className="max-w-3xl mx-auto space-y-3">
           {faq.items.map((item, index) => {
             const isOpen = openIndex === index;
@@ -48,12 +51,12 @@ export function FAQ() {
                   <button
                     type="button"
                     onClick={() => toggle(index)}
-                    className="w-full flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 text-right text-sm sm:text-base font-bold text-[#102117] hover:bg-[#faf8f5] transition-colors"
+                    className="w-full flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-4.5 text-right text-sm sm:text-base font-bold text-[#102117] hover:bg-[#faf8f5] transition-colors cursor-pointer"
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                     id={`faq-question-${index}`}
                   >
-                    <span className="flex-1 font-heading">{item.question}</span>
+                    <span className="flex-1 font-heading leading-snug">{item.question}</span>
                     <ChevronDown
                       className={`w-4 h-4 shrink-0 text-[#b8603d] transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
@@ -71,7 +74,7 @@ export function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 sm:px-6 sm:pb-6 text-[#424944] prose-ar text-xs sm:text-sm leading-relaxed border-t border-[#f4efea] pt-3">
+                    <p className="px-5 pb-5 sm:px-6 sm:pb-5 text-[#424944] prose-ar text-xs sm:text-sm leading-relaxed border-t border-[#f4efea] pt-3">
                       {item.answer}
                     </p>
                   </div>
@@ -81,18 +84,19 @@ export function FAQ() {
           })}
         </div>
 
-        {/* Quiet Help Note */}
-        <div className="mt-10 text-center text-xs text-[#6f7872]">
-          <span>عندك سؤال مختلف؟ </span>
+        {/* Direct WhatsApp Prompt */}
+        <div className="mt-8 text-center text-xs text-[#6f7872]">
+          <span>لديك سؤال يخص مكانك؟ </span>
           <a
             href="https://wa.me/966563340109"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#b8603d] font-bold underline hover:text-[#183324] mr-1"
           >
-            تحدث مباشرة مع مهندسنا الزراعي على واتساب
+            تحدث مباشرة مع مهندسنا الزراعي عبر الواتساب
           </a>
         </div>
+
       </div>
     </section>
   );

@@ -2,7 +2,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { QuickIntentNavigator } from "@/components/sections/QuickIntentNavigator";
-import { WhyWeSurvive } from "@/components/sections/WhyWeSurvive";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { Plants } from "@/components/sections/Plants";
@@ -16,12 +15,12 @@ export default function HomePage() {
   const schemaGraph = {
     "@context": "https://schema.org",
     "@graph": [
-      // 1. Primary GardenStore & LocalBusiness Entity
+      // 1. GardenStore & LocalBusiness Entity
       {
         "@type": ["GardenStore", "LocalBusiness", "HomeAndConstructionBusiness"],
         "@id": "https://emma-nursery.sa/#business",
         name: business.name,
-        alternateName: [business.nameShort, "Emma Smile Nursery", "مشتل بصمة ايما"],
+        alternateName: [business.nameShort, "Emma Smile Agricultural Nursery", "مشتل بصمة ايما"],
         url: "https://emma-nursery.sa",
         logo: "https://emma-nursery.sa/images/logo.png",
         image: "https://emma-nursery.sa/images/nursery-greenhouse.jpg",
@@ -89,7 +88,7 @@ export default function HomePage() {
         },
       },
 
-      // 2. FAQ Rich Snippet Schema (Google SERP Accordion)
+      // 2. FAQ Rich Snippet Schema (Google Search Accordion)
       {
         "@type": "FAQPage",
         "@id": "https://emma-nursery.sa/#faq",
@@ -135,7 +134,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <QuickIntentNavigator />
-        <WhyWeSurvive />
         <About />
         <Services />
         <Plants />

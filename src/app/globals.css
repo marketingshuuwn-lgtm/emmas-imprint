@@ -78,15 +78,22 @@ body {
   font-family: var(--font-readex);
   background-color: var(--background);
   color: var(--foreground);
-  line-height: 1.75;
+  line-height: 1.85;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
+/* Balanced, Human Heading Typography & Reading Rhythm */
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-lemonada);
+  line-height: 1.35;
   letter-spacing: -0.015em;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+p, li, .prose-ar {
+  line-height: 1.85;
+  letter-spacing: 0.005em;
 }
 
 html {
@@ -111,11 +118,7 @@ html {
   }
 }
 
-.prose-ar {
-  line-height: 1.9;
-}
-
-/* Authentic Tactile Cards (No fake neon, no excessive glow) */
+/* Subtle Authentic Tactile Editorial Cards */
 .editorial-card {
   background: #ffffff;
   border: 1px solid var(--sand-200);
@@ -137,11 +140,6 @@ html {
   background: var(--foliage-950);
   color: #faf8f5;
   border: 1px solid rgba(232, 223, 211, 0.12);
-}
-
-/* Subtle editorial quote border */
-.editorial-border-r {
-  border-right: 3px solid var(--clay-500);
 }
 
 /* Scrollbar - Clean & Organic */
