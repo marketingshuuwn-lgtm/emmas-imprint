@@ -41,6 +41,11 @@ export interface SiteContent {
     phoneDisplay: string;
     whatsapp: string;
     address: string;
+    logo: string;
+    googleMapsUrl: string;
+    googleMapsEmbed: string;
+    workingHoursWeekdays: string;
+    workingHoursFriday: string;
   };
   nav: NavItem[];
   hero: {

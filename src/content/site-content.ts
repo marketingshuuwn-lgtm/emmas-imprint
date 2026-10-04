@@ -9,7 +9,12 @@ export const siteContent: SiteContent = {
     phone: "+966563340109",
     phoneDisplay: "0563340109",
     whatsapp: "https://wa.me/966563340109",
-    address: "الرياض — الدائري الغربي — مخرج 29",
+    address: "الرياض — طريق أبو بكر الصديق",
+    logo: "/images/logo.png",
+    googleMapsUrl: "https://www.google.com/maps?q=24.8984706,46.6249185&z=17&hl=ar",
+    googleMapsEmbed: "https://maps.google.com/maps?q=24.8984706,46.6249185&z=17&output=embed&hl=ar",
+    workingHoursWeekdays: "8:00 ص – 12:30 ص (السبت إلى الخميس)",
+    workingHoursFriday: "12:30 م – 12:30 ص (يوم الجمعة)",
   },
   nav: [
     { label: "الرئيسية", href: "/#home" },

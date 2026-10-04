@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, MessageCircle, Sprout } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Header() {
@@ -28,8 +29,8 @@ export function Header() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#071d12]/90 backdrop-blur-xl shadow-xl border-b border-emerald-500/20 py-1"
-          : "bg-gradient-to-b from-[#071d12]/90 via-[#071d12]/50 to-transparent py-2.5"
+          ? "bg-[#071d12]/92 backdrop-blur-xl shadow-xl border-b border-emerald-500/20 py-1"
+          : "bg-gradient-to-b from-[#071d12]/95 via-[#071d12]/60 to-transparent py-2.5"
       }`}
     >
       <div className="container-main">
@@ -41,11 +42,18 @@ export function Header() {
             className="flex items-center gap-3 font-black text-lg md:text-xl text-white shrink-0 group"
             onClick={close}
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-600 to-green-400 text-white flex items-center justify-center shadow-lg shadow-emerald-900/40 group-hover:scale-105 transition-transform">
-              <Sprout className="w-5 h-5 text-white" />
+            <div className="relative w-11 h-11 rounded-full overflow-hidden bg-white p-0.5 shadow-md shadow-emerald-950/40 group-hover:scale-105 transition-transform shrink-0 border border-emerald-400/40">
+              <Image
+                src="/images/logo.png"
+                alt={siteContent.business.name}
+                width={44}
+                height={44}
+                className="w-full h-full object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col text-right">
-              <span className="font-black text-white text-base md:text-lg leading-tight tracking-wide">
+              <span className="font-black text-white text-base md:text-lg leading-tight tracking-wide font-heading">
                 {siteContent.business.nameShort}
               </span>
               <span className="text-[11px] text-emerald-300 font-medium tracking-normal">

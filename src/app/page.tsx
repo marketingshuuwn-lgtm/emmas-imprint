@@ -14,6 +14,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: siteContent.business.name,
+    image: "/images/logo.png",
     description: siteContent.seo.description,
     telephone: siteContent.business.phone,
     address: {
@@ -22,6 +23,33 @@ export default function HomePage() {
       addressCountry: "SA",
       streetAddress: siteContent.business.address,
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 24.8984706,
+      longitude: 46.6249185,
+    },
+    hasMap: siteContent.business.googleMapsUrl,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Saturday",
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+        ],
+        opens: "08:00",
+        closes: "00:30",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday"],
+        opens: "12:30",
+        closes: "00:30",
+      },
+    ],
     url: "/",
     areaServed: {
       "@type": "City",

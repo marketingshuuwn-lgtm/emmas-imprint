@@ -1,25 +1,31 @@
 import type { Metadata } from "next";
-import { Cairo } from "next/font/google";
 import "./globals.css";
 import { siteContent } from "@/content/site-content";
 
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["arabic", "latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://emma-nursery.sa"),
   title: siteContent.seo.title,
   description: siteContent.seo.description,
   keywords: siteContent.seo.keywords,
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   openGraph: {
     title: siteContent.seo.title,
     description: siteContent.seo.description,
     locale: "ar_SA",
     type: "website",
     siteName: siteContent.business.name,
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 600,
+        height: 600,
+        alt: siteContent.business.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -38,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${cairo.variable} h-full antialiased`}>
+    <html lang="ar" dir="rtl" className="h-full antialiased">
       <body className="min-h-full flex flex-col font-sans bg-background text-foreground">
         {children}
       </body>

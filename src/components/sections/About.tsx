@@ -36,7 +36,7 @@ export function About() {
                     <span>مشتلنا الميداني بالرياض</span>
                   </div>
                   <h4 className="text-lg font-bold">بيئة استنبات زراعي خاضعة لأعلى المعايير</h4>
-                  <p className="text-xs text-emerald-200">الدائري الغربي — مخرج 29، الرياض</p>
+                  <p className="text-xs text-emerald-200">طريق أبو بكر الصديق، الرياض</p>
                 </div>
               </div>
             </div>
