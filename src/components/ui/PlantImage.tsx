@@ -11,6 +11,6 @@ function PlantPhoto({src,name,sizes,compact}:Props) {
     <Sprout size={compact?24:36} aria-hidden />
     {!compact&&<span className="text-sm">صورة الصنف غير متاحة</span>}
   </div>;
-  return <Image src={src} alt={`صورة توضيحية لـ${name}`} fill sizes={sizes} className="object-cover" onError={()=>setFailed(true)} />;
+  return <Image src={src} alt={`صورة توضيحية لـ${name}`} fill quality={60} sizes={sizes} className="object-cover" onError={()=>setFailed(true)} />;
 }
 export function PlantImage(props:Props) {return <PlantPhoto key={props.src??"missing"} {...props} />;}

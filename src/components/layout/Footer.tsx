@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation } from "lucide-react";
@@ -9,11 +7,7 @@ import { siteContent } from "@/content/site-content";
 export function Footer() {
   const { footer, business } = siteContent;
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  return (
+return (
     <footer className="bg-[#0c1811] text-[#faf8f5] pt-14 pb-8 border-t border-[#2f5d43]/40" role="contentinfo">
       <div className="container-main">
         <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
@@ -29,6 +23,7 @@ export function Footer() {
                   src="/images/logo.png"
                   alt="شعار بصمة ايما الزراعية"
                   fill
+                  sizes="32px"
                   className="object-contain"
                 />
               </div>
@@ -135,13 +130,13 @@ export function Footer() {
 
           <div className="flex items-center gap-5">
 
-            <button
-              onClick={scrollToTop}
+            <a
+              href="#main-content"
               className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
             >
               <span>العودة للأعلى</span>
               <ArrowUp className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
         </div>
 

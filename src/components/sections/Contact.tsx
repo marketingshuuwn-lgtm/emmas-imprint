@@ -1,5 +1,4 @@
-"use client";
-
+import { MapPreview } from "@/components/ui/MapPreview";
 import { businessHours, readableHours } from "@/content/business-hours";
 
 
@@ -126,17 +125,7 @@ export function Contact() {
 
           {/* Interactive Google Maps Embed (6 cols) */}
           <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-[#2f5d43] bg-[#183324] flex flex-col min-h-[340px]">
-            <iframe
-              src={business.googleMapsEmbed}
-              width="100%"
-              height="100%"
-              style={{ border: 0, minHeight: "340px", flex: 1 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="موقع بصمة ايما الزراعية على طريق أبو بكر الصديق بالرياض"
-              className="w-full h-full grayscale-[20%] contrast-105"
-            />
+            {business.googleMapsEmbed && <MapPreview src={business.googleMapsEmbed} address={business.address} />}
           </div>
 
         </div>

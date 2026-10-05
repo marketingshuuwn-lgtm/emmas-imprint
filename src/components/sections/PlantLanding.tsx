@@ -26,7 +26,7 @@ export function PlantLanding({ page }: { page: PlantPageContent }) {
         {page.plants.map(item => {
           const plant = allPlantsCatalog.find(entry => entry.name === item.name);
           return <li key={item.name} className="editorial-card rounded-2xl overflow-hidden flex flex-col">
-            <div className="relative h-52 bg-[#e9f2ec]"><PlantImage src={plant?.image} name={item.name} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" /></div>
+            <div className="relative h-52 bg-[#e9f2ec]"><PlantImage src={plant?.image} name={item.name} sizes="(min-width: 1216px) 273px, (min-width: 1024px) calc(25vw - 32px), (min-width: 768px) calc(50vw - 42px), (min-width: 640px) calc(50vw - 30px), calc(100vw - 40px)" /></div>
             <div className="p-5 flex flex-col flex-1"><h3 className="text-lg font-bold text-[#102117] mb-2">{item.name}</h3>
               <ImageCreditCaption credit={plant?.imageCredit} /><p className="text-[#424944] mb-5">{item.description}</p>
               <a href={`${siteContent.business.whatsapp}?text=${encodeURIComponent(`مرحبًا بصمة ايما، أود معرفة سعر وتوفر وأحجام ${item.name}. الكمية المطلوبة: `)}`} target="_blank" rel="noopener noreferrer" aria-label={`السعر والتوفر: ${item.name}`} className="mt-auto bg-[#e9f2ec] text-[#183324] text-center font-bold rounded-xl px-3 py-3">السعر والتوفر</a>

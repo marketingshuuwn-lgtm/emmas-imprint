@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Sprout, MapPin, Check, ArrowLeft, Calendar } from "lucide-react";
@@ -120,7 +118,8 @@ export function Hero() {
                   src="/images/nursery-greenhouse.jpg"
                   alt="صورة توضيحية لبيت محمي ونباتات"
                   fill
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  quality={60}
+                  sizes="(min-width: 1216px) 400px, (min-width: 1024px) calc(42vw - 106px), (min-width: 768px) calc(100vw - 120px), (min-width: 640px) calc(100vw - 96px), calc(100vw - 88px)"
                   className="object-cover"
                 />
                 <div className="absolute bottom-0 inset-x-0 bg-black/85 p-3 text-white text-right">

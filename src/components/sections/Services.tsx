@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Trees, Droplets, Sprout, Check, ArrowLeft, ShieldCheck, Wrench } from "lucide-react";
 import { siteContent } from "@/content/site-content";
@@ -71,7 +69,8 @@ export function Services() {
                       alt={`صورة توضيحية لخدمة ${srv.title}`}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 500px"
+                      quality={60}
+                  sizes="(min-width: 1216px) 504px, (min-width: 768px) calc(50vw - 80px), calc(100vw - 80px)"
                     />
                   </div>
 

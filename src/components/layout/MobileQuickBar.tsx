@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { MessageCircle, Phone, BookOpen, MapPin } from "lucide-react";
 import { siteContent } from "@/content/site-content";

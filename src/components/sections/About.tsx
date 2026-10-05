@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Check, MapPin, Camera, Sparkles } from "lucide-react";
 import { siteContent } from "@/content/site-content";
@@ -26,8 +24,8 @@ export function About() {
                   alt="صورة توضيحية لبيت محمي ونباتات"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
+                  quality={60}
+                  sizes="(min-width: 1216px) 548px, (min-width: 1024px) calc(50vw - 60px), (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)"
                 />
               </div>
 

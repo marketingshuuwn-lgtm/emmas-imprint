@@ -7,8 +7,8 @@ import { catalogSchema } from "@/lib/structured-data";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, MessageCircle, LayoutGrid, List, ArrowRight } from "lucide-react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+
+
 import { ImageCreditCaption } from "@/components/ui/ImageCreditCaption";
 import { PlantImage } from "@/components/ui/PlantImage";
 import { allPlantsCatalog } from "@/content/plants-catalog-data";
@@ -34,7 +34,7 @@ export function PlantCatalog({ initialCategory = "all", origin }: { initialCateg
   return (
     <>
       <JsonLd data={catalogSchema(filtered.slice(0, limit), origin)} />
-      <Header />
+
       <main tabIndex={-1} id="main-content" className="bg-[#faf8f5] min-h-screen">
         <section className="bg-[#102117] text-white pt-32 pb-10" aria-labelledby="catalog-heading">
           <div className="container-main">
@@ -77,7 +77,7 @@ export function PlantCatalog({ initialCategory = "all", origin }: { initialCateg
           </div> : <ul className={view==="grid"?"grid sm:grid-cols-2 lg:grid-cols-4 gap-5":"flex flex-col gap-3"}>
             {filtered.slice(0,limit).map(plant=><li key={`${plant.type}-${plant.id}`} className={`bg-white rounded-2xl border border-[#e8dfd3] overflow-hidden ${view==="list"?"flex items-center gap-4 p-4":"flex flex-col"}`}>
               <div className={view==="grid"?"relative h-52 bg-[#e9f2ec]":"relative w-20 h-20 shrink-0 rounded-xl overflow-hidden bg-[#e9f2ec]"}>
-                <PlantImage src={plant.image} name={plant.name} compact={view==="list"} sizes={view==="list"?"80px":"(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"} />
+                <PlantImage src={plant.image} name={plant.name} compact={view==="list"} sizes={view==="list"?"80px":"(min-width: 1216px) 273px, (min-width: 1024px) calc(25vw - 32px), (min-width: 768px) calc(50vw - 42px), (min-width: 640px) calc(50vw - 30px), calc(100vw - 40px)"} />
               </div>
               <div className={view==="grid"?"p-5 flex flex-col flex-1":"flex-1 min-w-0"}>
                 <h2 className="font-bold text-base text-[#102117] mb-2">{plant.name}</h2>
@@ -96,7 +96,7 @@ export function PlantCatalog({ initialCategory = "all", origin }: { initialCateg
           </section>
         </section>
       </main>
-      <Footer />
+
     </>
   );
 }
