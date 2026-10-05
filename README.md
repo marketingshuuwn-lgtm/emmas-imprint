@@ -40,7 +40,7 @@ npm run dev
 
 العناوين والأوصاف تخص كل صفحة، والسيكما تصف النشاط والخدمات والقوائم الظاهرة ومسار التصفح والأسئلة. لا تختلق أسعارًا أو مخزونًا أو ضمانات أو طرق دفع.
 
-النطاق الرسمي غير مؤكد. الوضع الافتراضي غير مفهرس؛ اضبط SITE_URL إلى النطاق المؤكد وSITE_INDEXABLE=true في بيئة النشر، ثم أعد البناء. راجع [دليل الإعداد](docs/seo-configuration.md). لا تقارن درجة البحث في المعاينة بدرجة موقع مفهرس؛ noindex مقصود هنا.
+عنوان الإنتاج الحالي المسجل في GitHub هو https://emmas-imprint.vercel.app. يستخدم التطبيق عنوان إنتاج المشروع الثابت من Vercel، ويفتح الفهرسة في بيئة Production فقط عند عدم وجود تعطيل صريح. التطوير وPreview غير مفهرسين. عند اعتماد نطاق مخصص يتقدم SITE_URL على عنوان المنصة؛ SITE_INDEXABLE=false يبقى محترمًا. راجع [دليل الإعداد والفحص](docs/seo-configuration.md). لا تقارن درجة البحث في المعاينة بدرجة موقع مفهرس؛ noindex مقصود هنا.
 
 ## التحقق والقياسات
 
@@ -51,7 +51,13 @@ npx tsc --noEmit
 npm run build
 ```
 
-الاختبارات تشمل البحث وتهيئة البحث والسيكما. التفاصيل والقيود في [المرحلة الثانية](docs/phase-two-results.md) و[الثالثة](docs/phase-three-results.md) و[الأخيرة](docs/phase-four-results.md). تحديث السرعة الأحدث في [استكمال سرعة الجوال](docs/mobile-performance-follow-up.md)، وقياساته في docs/mobile-performance-follow-up.json. قياسات الجولة السابقة محفوظة في docs/performance-measurements.json. درجات Lighthouse المحلية لا تثبت اعتماد وصول شاملًا أو أداء المستخدمين بعد النشر.
+الاختبارات تشمل البحث وتهيئة البحث والسيكما، وإعدادات إنتاج Vercel والمعاينة، واكتشاف أخطاء الروابط والحظر في فاحص النشر. لفحص الموقع المنشور:
+
+```bash
+node scripts/seo-check.mjs --base https://emmas-imprint.vercel.app --origin https://emmas-imprint.vercel.app --mode public
+```
+
+التفاصيل والقيود في [المرحلة الثانية](docs/phase-two-results.md) و[الثالثة](docs/phase-three-results.md) و[الرابعة](docs/phase-four-results.md). تحديث السرعة الأحدث في [استكمال سرعة الجوال](docs/mobile-performance-follow-up.md)، وقياساته في docs/mobile-performance-follow-up.json. قياسات الجولة السابقة محفوظة في docs/performance-measurements.json. درجات Lighthouse المحلية لا تثبت اعتماد وصول شاملًا أو أداء المستخدمين بعد النشر. نتيجة فحص ملفات الفهرسة لا تثبت إدراج الصفحات في Google.
 
 ## التواصل
 

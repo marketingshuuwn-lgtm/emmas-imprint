@@ -1,2 +1,5 @@
 import { siteSitemap } from "@/lib/seo";
-export default siteSitemap;
+
+export default function sitemap() {
+  return siteSitemap();
+}

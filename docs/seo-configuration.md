@@ -1,55 +1,65 @@
-# إعداد النطاق والفهرسة
+# إعداد النطاق والفهرسة وفحص النشر
 
-لا يُعتمد النطاق الموجود في المرجع التحريري وحده لإثبات النطاق الرسمي. لا يحتوي التنفيذ على نطاق نشاط ثابت مفترض.
+عنوان الإنتاج الحالي في صفحة مستودع GitHub هو **https://emmas-imprint.vercel.app**. جرى التحقق في 5 أكتوبر 2026 من ارتباطه بنشر Production ناجح للنسخة a6e221b، ومن استجابة الصفحات الست بمحتوى المشروع. العنوان المكتوب سابقًا vecrel.app كان أوليًا؛ العنوان دون الشرطة emmasimprint.vercel.app أعاد DEPLOYMENT_NOT_FOUND. لا يعتمد التطبيق أيًا منهما.
 
-## المعاينة الحالية
+## سلوك البيئات
 
-- `SITE_URL` غير محدد: لا رابط canonical إلى نطاق عام مفترض؛ روابط السيكما نسبية.
-- جميع الصفحات تحمل `noindex, follow`، وrobots.txt يمنع الزحف، وsitemap.xml لا يدرج روابط عامة.
-- عناوين الصفحات والأوصاف وصورة المشاركة تعمل في المعاينة. عنوان صورة المشاركة محلي حاليًا، ولا يصلح للمشاركة خارج الجهاز قبل النشر.
+| البيئة | الأصل المستخدم | الفهرسة |
+| --- | --- | --- |
+| محلي دون متغيرات | روابط السيكما نسبية، دون canonical عام | noindex وrobots يمنع الزحف وخريطة فارغة |
+| Vercel Production | SITE_URL إن ضبط، وإلا VERCEL_PROJECT_PRODUCTION_URL | تعمل افتراضيًا عند توفر نطاق المنصة الثابت، إلا مع تعطيل صريح |
+| Vercel Preview أو Development | أصل الإنتاج الثابت إن توفر | ممنوعة حتى مع SITE_INDEXABLE=true |
+| استضافة أخرى | SITE_URL المؤكد | تتطلب SITE_INDEXABLE=true صراحة |
 
-## بعد تأكيد النطاق الرسمي
+لا يستخدم التطبيق VERCEL_URL؛ فهو عنوان نشر مؤقت. متغير VERCEL_PROJECT_PRODUCTION_URL يتوفر في البناء والتشغيل، وقد يتوفر أيضًا في Preview؛ لذلك لا يُعتبر وجوده وحده إذنًا للفهرسة. يختار Vercel نطاق إنتاج المشروع، وقد يتغير عند إضافة نطاق مخصص. راجع [وثائق المتغيرات النظامية في Vercel](https://vercel.com/docs/environment-variables/system-environment-variables).
 
-اضبط متغيري البيئة في بيئة الاستضافة، ثم أعد البناء والنشر:
+للنطاق المخصص أو الاستضافة الأخرى:
 
 ```dotenv
 SITE_URL=https://your-confirmed-domain.example
 SITE_INDEXABLE=true
 ```
 
-العنوان أعلاه مثال توضيحي، وليس نطاق النشاط. يقبل SITE_URL أصل HTTPS فقط، دون مسار أو معاملات أو بيانات دخول. يحتفظ `.env.example` بالقيم الفارغة والآمنة للمعاينة، ولا يحتوي أسرارًا.
+هذا مثال محجوز، وليس نطاق النشاط. يقبل SITE_URL أصل HTTPS فقط دون مسارات أو معاملات أو بيانات دخول. SITE_INDEXABLE=false أو قيمة غير معروفة يمنعان الفهرسة حتى في الإنتاج. إذا نُسخت قيمة false من .env.example إلى إعداد إنتاج Vercel، احذف المتغير من إعداد الإنتاج للسلوك التلقائي، أو اضبطه true صراحة. ملف المثال آمن للمحلي ولا يغير إعداد الاستضافة.
 
-لنسخ المعاينة، أبقِ SITE_INDEXABLE=false. لا يفهرس التطبيق تشغيل التطوير أو بيئة Vercel preview حتى إذا بقي العلم مفعّلًا. الإعدادات المستخدمة في الصفحات الثابتة وملفات الفهرسة تُقرأ أثناء البناء؛ تغيير المتغير دون إعادة البناء لا يكفي.
+**أعد البناء والنشر بعد تعديل المتغيرات**؛ الصفحات وملفات الفهرسة تتضمن قيمًا تحسب أثناء البناء. إذا لم يتوفر متغير نطاق الإنتاج النظامي، اضبط SITE_URL وSITE_INDEXABLE يدويًا؛ لا يُخمن التطبيق اسم المشروع.
 
-## الروابط العامة المعدة
+## فحص مخرجات النشر
 
-- `/`
-- `/plants`
-- `/plants/indoor`
-- `/plants/outdoor`
-- `/plants/offices`
-- `/services`
+```bash
+node scripts/seo-check.mjs --base https://emmas-imprint.vercel.app --origin https://emmas-imprint.vercel.app --mode public
+```
 
-يتحول `/projects` دائمًا إلى `/plants` عبر HTTP 308، مع بقاء معاملات الفئة. لا يدخل المسار القديم أو معاملات البحث أو أقسام الصفحة في sitemap. لم يوضع تاريخ تعديل آلي جديد في كل طلب؛ لا توجد تواريخ محتوى موثقة تبرر ذلك.
+يمكن حفظ تقرير JSON بإضافة --output report.json. يفشل الفحص إذا كان النشر يحظر الفهرسة أو كانت الروابط من نطاق خاطئ أو كانت الخريطة ناقصة. يتحقق من:
 
-## البيانات المنظمة
+- استجابة الصفحات الست، عنوان ووصف مختلفين لكل صفحة، وعنوان رئيسي واحد واتجاه عربي.
+- robots في HTML ورأس X-Robots-Tag ووسم googlebot، وcanonical وعنوان المشاركة وصورتها العامة.
+- JSON-LD صالح، أصل موحد ومعرفات غير مكررة للنشاط والصفحات والخدمات ومسار التصفح.
+- robots.txt وخريطة تضم الصفحات الست فقط، وصورة PNG بأبعاد 1200×630.
+- تحويل /projects إلى /plants مع بقاء معاملات الرابط، وصفحة مجهولة وملف التحرير غير متاحين عبر HTTP 404.
 
-- GardenStore للنشاط، وWebSite وWebPage للصفحات، وCollectionPage وItemList للنباتات الظاهرة.
-- BreadcrumbList يطابق مسار التصفح في الصفحات الفرعية. لا تنسب الرئيسية لنفسها مسار دليل النباتات.
-- Service للخدمات الأربع، وخدمة تنسيق المكاتب. لا أسعار أو عروض شراء أو حالة مخزون أو تقييمات مفترضة.
-- FAQPage يطابق الأسئلة الموجودة في الرئيسية؛ لا يَعِد بنتيجة بحث موسعة.
-- لا تُنسب صورة البيت المحمي العامة للنشاط في السيكما، ولا تُدرج طرق دفع أو مدى أسعار دون توثيق.
-- أوقات العمل لها مصدر واحد للعرض والسيكما. إغلاق 00:30 يمثل نهاية الدوام بعد منتصف الليل من يوم الفتح، وليس فتحًا طوال اليوم.
-- يُهرب الحرف `<` في JSON-LD حتى لا يستطيع نص تحريري إغلاق عنصر script.
+لفحص المعاينة المحلية المعتادة:
 
-## الاختبارات وحدودها
+```bash
+node scripts/seo-check.mjs --base http://127.0.0.1:3000 --mode preview
+```
 
-`npm test` يفحص البحث، وإعداد النطاق والفهرسة، ومسارات السيكما ومطابقتها للمحتوى، والدوام والتهريب. فحص JSON ومطابقة النصوص محليًا لا يساوي اعتمادًا من Google أو إثبات فهرسة.
+إذا تضمنت المعاينة canonical إلى أصل الإنتاج، أضف --origin مع ذلك الأصل. أصل الفحص يختلف عن عنوان الاتصال؛ يمكن الاتصال ببناء محلي دون طلب النطاق العام. مثال اختبار الإنتاج المعزول:
 
-بعد النشر على النطاق المؤكد: راجع canonical وrobots وsitemap وعناوين المشاركة فعليًا، ثم افحص البيانات بأدوات Schema.org وGoogle المناسبة، وأرسل sitemap في Search Console إن كان الحساب متاحًا. لم تُرسل بيانات النشاط إلى أدوات تحقق خارجية في هذه المرحلة.
+```bash
+node scripts/seo-check.mjs --base http://127.0.0.1:3002 --origin https://example.com --mode public
+```
 
-المراجع: [ملفات Sitemap في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap)، [robots.txt في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)، [JSON-LD في Next.js](https://nextjs.org/docs/app/guides/json-ld)، [دوام النشاط المحلي الممتد ليلًا](https://developers.google.com/search/docs/appearance/structured-data/local-business#business-hours)، [GardenStore](https://schema.org/GardenStore)، [Service](https://schema.org/Service)، [CollectionPage](https://schema.org/CollectionPage).
+## خريطة الموقع والبيانات المنظمة
 
-## العنوان المقترح — 5 أكتوبر 2026
+الخريطة تدرج / و/plants و/plants/indoor و/plants/outdoor و/plants/offices و/services. لا يدخل /projects أو معاملات البحث أو أقسام الصفحة فيها، ولا تُختلق تواريخ تعديل. دالتا sitemap وrobots في ملفات المسارات تستدعيان مساعدي الإعداد دون تمرير وسيط Next.js؛ تصدير مساعد sitemap مباشرة كان يجعل وسيط المسار يُفسر كإعدادات ويُنتج خريطة فارغة في بناء الإنتاج.
 
-ذكر المستخدم أن العنوان «على الأغلب» سيكون http://emmasimprint.vecrel.app/. الصيغة التي يُرجح أنه يقصدها هي https://emmasimprint.vercel.app/؛ هذا تصحيح مقترح للكتابة، وليس إثباتًا لملكية العنوان أو توفر نشر عليه. تستخدم Vercel اللاحقة vercel.app بحسب [وثائق عناوين النشر](https://vercel.com/docs/deployments/generated-urls). لم نضبط SITE_URL أو نفعّل الفهرسة بناءً على عنوان مبدئي. بعد النشر يُؤخذ عنوان Production الفعلي من إعدادات المشروع، ثم تُراجع ملفات الفهرسة والروابط العامة قبل اعتمادها.
+السيكما تصف GardenStore وWebSite وWebPage وCollectionPage وItemList وBreadcrumbList، والخدمات الأربع وخدمة المكاتب والأسئلة الظاهرة. لا تختلق أسعارًا أو مخزونًا أو تقييمات أو ضمانات أو طرق دفع. ساعات العمل لها مصدر مشترك للعرض والسيكما؛ 00:30 يمثل نهاية الدوام بعد منتصف الليل. نص JSON-LD يهرب الحرف <. الصورة العامة للبيت المحمي لا تُنسب للمشتل في السيكما.
+
+## حدود التحقق
+
+npm test يفحص البحث والسيكما وإعدادات البيئات وحالات فشل أداة النشر. أداة HTTP تفحص المخرجات الفعلية، وقد كشفت خلل خريطة الموقع الذي لم تكشفه اختبارات المساعد وحده. لا تدعي الأداة اعتماد Google أو اكتمال الفهرسة أو نتائج بحث موسعة.
+
+إرسال الخريطة والتحقق من تغطية الفهرسة يحتاج حساب Search Console مخولًا؛ لم يُرسل طلب عبره. لا توفر هذه الفحوص قياسات أداء مستخدمين أو اعتماد وصول شاملًا.
+
+المراجع: [Sitemap في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap)، [robots.txt في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)، [JSON-LD](https://nextjs.org/docs/app/guides/json-ld)، [دوام النشاط الممتد ليلًا](https://developers.google.com/search/docs/appearance/structured-data/local-business#business-hours)، [GardenStore](https://schema.org/GardenStore).

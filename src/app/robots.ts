@@ -1,2 +1,5 @@
 import { siteRobots } from "@/lib/seo";
-export default siteRobots;
+
+export default function robots() {
+  return siteRobots();
+}
