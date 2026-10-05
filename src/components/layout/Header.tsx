@@ -17,8 +17,45 @@ export function Header() {
   }, []);
 
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const bar = document.querySelector<HTMLElement>('[data-mobile-quickbar]');
+    const header = headerRef.current;
+    const previousHeader = root.style.getPropertyValue('--site-header-height');
+    const previousBar = root.style.getPropertyValue('--mobile-quickbar-height');
+    const previousFlowHeader = root.hasAttribute('data-flow-header');
+    const previousFlowBar = root.hasAttribute('data-flow-quickbar');
+    const measure = () => {
+      const headerHeight = header?.getBoundingClientRect().height ?? 0;
+      const barHeight = bar?.getBoundingClientRect().height ?? 0;
+      // Large text or a short viewport must leave room for the page itself.
+      const flowHeader = headerHeight > window.innerHeight / 4;
+      const flowBar = barHeight > window.innerHeight / 4;
+      root.toggleAttribute('data-flow-header', flowHeader);
+      root.toggleAttribute('data-flow-quickbar', flowBar);
+      root.style.setProperty('--site-header-height', `${flowHeader ? 0 : headerHeight}px`);
+      root.style.setProperty('--mobile-quickbar-height', `${flowBar ? 0 : barHeight}px`);
+    };
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? undefined : new ResizeObserver(measure);
+    if (header) observer?.observe(header);
+    if (bar) observer?.observe(bar);
+    window.addEventListener('resize', measure);
+    return () => {
+      observer?.disconnect();
+      window.removeEventListener('resize', measure);
+      if (previousHeader) root.style.setProperty('--site-header-height', previousHeader);
+      else root.style.removeProperty('--site-header-height');
+      if (previousBar) root.style.setProperty('--mobile-quickbar-height', previousBar);
+      else root.style.removeProperty('--mobile-quickbar-height');
+      root.toggleAttribute('data-flow-header', previousFlowHeader);
+      root.toggleAttribute('data-flow-quickbar', previousFlowBar);
+    };
+  }, []);
 
   useEffect(() => {
     const desktop = window.matchMedia('(min-width: 1536px)');
@@ -30,6 +67,7 @@ export function Header() {
   useEffect(() => {
     if (!open) return;
     const toggleButton = toggleRef.current;
+    const header = headerRef.current;
     const previousOverflow = document.body.style.overflow;
     const background = Array.from(document.querySelectorAll<HTMLElement>('main, footer, [data-mobile-quickbar], #skip-link'));
     const previousInert = background.map(element => element.inert);
@@ -39,7 +77,8 @@ export function Header() {
     return () => {
       document.body.style.overflow = previousOverflow;
       background.forEach((element, index) => { element.inert = previousInert[index]; });
-      toggleButton?.focus({ preventScroll: true });
+      const returnTarget = toggleButton?.getClientRects().length ? toggleButton : header?.querySelector<HTMLAnchorElement>('a');
+      returnTarget?.focus({ preventScroll: true });
     };
   }, [open]);
 
@@ -54,7 +93,9 @@ export function Header() {
   };
 
   return (
+    <>
     <header
+      ref={headerRef}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#102117]/95 backdrop-blur-md shadow-md border-b border-[#2f5d43]/40 py-1"
@@ -62,15 +103,15 @@ export function Header() {
       }`}
     >
       <div className="container-main max-w-none" inert={open}>
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between gap-3 min-h-[64px] md:min-h-[72px]">
 
           {/* Official Brand Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-bold text-white shrink-0 group"
+            className="flex items-center gap-2.5 font-bold text-white min-w-0 group"
             onClick={close}
           >
-            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
+            <div className="relative w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
               <Image
                 src="/images/logo.png"
                 alt="شعار بصمة ايما الزراعية"
@@ -80,7 +121,7 @@ export function Header() {
                 priority
               />
             </div>
-            <div className="flex flex-col text-right">
+            <div className="flex flex-col text-right min-w-0">
               <span className="font-black text-white text-sm sm:text-base leading-tight font-heading">
                 {siteContent.business.nameShort}
               </span>
@@ -92,7 +133,7 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav
-            className="hidden 2xl:flex items-center gap-1 bg-[#183324]/80 px-3 py-1.5 rounded-xl border border-[#2f5d43]/50"
+            className="hidden 2xl:flex flex-wrap items-center gap-1 bg-[#183324]/80 px-3 py-1.5 rounded-xl border border-[#2f5d43]/50"
             aria-label="القائمة الرئيسية"
           >
             {siteContent.nav.map((item) => (
@@ -134,16 +175,18 @@ export function Header() {
           <button
             type="button"
             ref={toggleRef}
-            className="2xl:hidden p-2 rounded-xl bg-white/10 text-white hover:text-emerald-300 transition-colors cursor-pointer"
+            className="2xl:hidden shrink-0 p-[10px] rounded-xl bg-white/10 text-white hover:text-emerald-300 transition-colors cursor-pointer"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
           >
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X className="w-[24px] h-[24px]" /> : <Menu className="w-[24px] h-[24px]" />}
           </button>
         </div>
       </div>
+
+    </header>
 
       {/* Mobile Drawer */}
       <div
@@ -155,7 +198,7 @@ export function Header() {
         aria-modal="true"
         aria-labelledby="mobile-menu-title"
         onKeyDown={handleDialogKeys}
-        className="fixed inset-0 bg-[#102117] z-60 overflow-y-auto"
+        className="fixed inset-0 bg-[#102117] z-60 overflow-y-auto overscroll-contain safe-area-bottom"
       >
         <div className="container-main pt-4 flex items-center justify-between text-white">
           <h2 id="mobile-menu-title" className="text-lg font-bold">قائمة الموقع</h2>
@@ -181,7 +224,7 @@ export function Header() {
               href={siteContent.business.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#9c4c2d] text-white font-bold text-sm whitespace-nowrap shadow-md"
+              className="inline-flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#9c4c2d] text-white font-bold text-sm shadow-md"
               onClick={close}
             >
               <MessageCircle className="w-4 h-4" />
@@ -199,6 +242,6 @@ export function Header() {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

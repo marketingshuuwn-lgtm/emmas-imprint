@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 :root {
+  --site-header-height: 6rem;
+  --mobile-quickbar-height: 6rem;
   /* Najd Earth & Riyadh Flora Palette - Human & Grounded */
   --sand-50: #faf8f5;
   --sand-100: #f4efea;
@@ -80,6 +82,7 @@ body {
   line-height: 1.85;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(var(--mobile-quickbar-height) + 1rem);
 }
 
 /* Balanced, Human Heading Typography & Reading Rhythm */
@@ -98,7 +101,20 @@ p, li, .prose-ar {
 html {
   scroll-behavior: smooth;
   /* Fixed header is ~64-72px tall; keep anchored headings visible below it */
-  scroll-padding-top: 6.5rem;
+  scroll-padding-top: calc(var(--site-header-height) + 1rem);
+  scroll-padding-bottom: calc(var(--mobile-quickbar-height) + 1rem);
+}
+
+html:focus-within { scroll-behavior: auto; }
+
+/* Let enlarged text reflow inside grid and flex cards rather than widen them. */
+.grid > *, main .flex > *, footer .flex > * { min-width: 0; }
+main, footer, header, [role="dialog"] { overflow-wrap: anywhere; }
+.quickbar-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 3.5em), 1fr)); }
+html[data-flow-header] header, html[data-flow-quickbar] [data-mobile-quickbar] { position: static; }
+html[data-flow-header] main > section:first-of-type { padding-top: 2rem; }
+@media (min-width: 1024px) {
+  :root { --mobile-quickbar-height: 0px; }
 }
 
 ::selection {
@@ -162,7 +178,7 @@ html {
 }
 
 /* Keyboard navigation and motion preferences. */
-:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0 0 0 6px #234733; }
+:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: inset 0 0 0 3px #234733, 0 0 0 6px #234733; }
 .skip-link { position: fixed; top: 0.75rem; right: 1rem; z-index: 100; padding: 0.75rem 1rem; border-radius: 0.5rem; background: white; color: #102117; transform: translateY(-200%); }
 .skip-link:focus { transform: translateY(0); }
 header a, header button, [data-mobile-quickbar] a { min-height: 44px; }

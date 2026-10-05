@@ -59,6 +59,8 @@ node scripts/seo-check.mjs --base https://emmas-imprint.vercel.app --origin http
 
 التفاصيل والقيود في [المرحلة الثانية](docs/phase-two-results.md) و[الثالثة](docs/phase-three-results.md) و[الرابعة](docs/phase-four-results.md). تحديث السرعة الأحدث في [استكمال سرعة الجوال](docs/mobile-performance-follow-up.md)، وقياساته في docs/mobile-performance-follow-up.json. قياسات الجولة السابقة محفوظة في docs/performance-measurements.json. درجات Lighthouse المحلية لا تثبت اعتماد وصول شاملًا أو أداء المستخدمين بعد النشر. نتيجة فحص ملفات الفهرسة لا تثبت إدراج الصفحات في Google.
 
+تفاصيل إصلاح القائمة والتركيز وإعادة تدفق النص، وقائمة إعادة الفحص، في [مراجعة الوصول والجوال](docs/accessibility-and-mobile-review.md).
+
 ## التواصل
 
 واتساب وهاتف: 0563340109 (+966563340109). الرياض — طريق أبو بكر الصديق.

@@ -6,12 +6,13 @@ export function MobileQuickBar() {
   const { business } = siteContent;
 
   return (
-    <div 
+    <div
+      data-mobile-quickbar
       className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-[#102117]/95 backdrop-blur-xl border-t border-[#2f5d43]/50 px-3 py-2 shadow-2xl safe-area-bottom"
       role="navigation"
       aria-label="شريط الوصول السريع للجوال"
     >
-      <div className="grid grid-cols-4 gap-2 max-w-md mx-auto items-center text-center">
+      <div className="grid quickbar-grid gap-2 max-w-md mx-auto items-center text-center">
         
         {/* WhatsApp Fast Consultation */}
         <a
