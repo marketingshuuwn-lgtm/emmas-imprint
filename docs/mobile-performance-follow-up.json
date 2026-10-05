@@ -1,0 +1,3340 @@
+{
+  "date": "2026-10-05",
+  "baselineCommit": "59b4bf12637b715eb6d05943756d1602ec7b038b",
+  "historicalBaselineCommit": "7ae9df6fc7522041c3acd410d3260db7f7873676",
+  "adoptedStage": "patched-after",
+  "method": "Lighthouse CLI 13.5.0; Chrome 154; production Next.js 15.3.8 for adopted comparison; baseline built separately from origin/main 59b4bf1 on port 3001 with same installed dependencies; after on port 3000; earlier experiments use 15.3.3; cleared browser profiles; serial runs; same default simulated mobile/desktop settings. Median of three runs per primary mobile route. Intermediate experiments retained. Single secondary runs are diagnostic.",
+  "settingsProfiles": [
+    {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "desktop",
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "cli",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices",
+        "seo"
+      ],
+      "skipAudits": null
+    },
+    {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "cli",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices",
+        "seo"
+      ],
+      "skipAudits": null
+    }
+  ],
+  "groups": {
+    "after-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 745.22315,
+      "cls": 0,
+      "tbt": 0
+    },
+    "after-home-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 2986.2666,
+      "cls": 0,
+      "tbt": 30.5
+    },
+    "after-indoor-mobile": {
+      "runs": 1,
+      "performance": 90,
+      "lcp": 3641.709475,
+      "cls": 0,
+      "tbt": 13.5
+    },
+    "after-plants-mobile": {
+      "runs": 3,
+      "performance": 90,
+      "lcp": 3628.4219999999996,
+      "cls": 0,
+      "tbt": 28
+    },
+    "after-services-mobile": {
+      "runs": 1,
+      "performance": 90,
+      "lcp": 3544.579750000001,
+      "cls": 0,
+      "tbt": 21.000000000000227
+    },
+    "before-home-mobile": {
+      "runs": 3,
+      "performance": 94,
+      "lcp": 2959.4651999999996,
+      "cls": 0.0002325733448833652,
+      "tbt": 50
+    },
+    "before-plants-mobile": {
+      "runs": 3,
+      "performance": 89,
+      "lcp": 3698.5689999999995,
+      "cls": 0.00002034735969686298,
+      "tbt": 31.5
+    },
+    "combined-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 683.40575,
+      "cls": 0,
+      "tbt": 0
+    },
+    "combined-home-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 2930.9706000000006,
+      "cls": 0,
+      "tbt": 25.5
+    },
+    "combined-indoor-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3009.1713,
+      "cls": 0,
+      "tbt": 21.5
+    },
+    "combined-plants-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 3009.924,
+      "cls": 0,
+      "tbt": 25
+    },
+    "combined-services-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3007.0954,
+      "cls": 0,
+      "tbt": 30.5
+    },
+    "common-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 801.338725,
+      "cls": 0,
+      "tbt": 0
+    },
+    "common-home-mobile": {
+      "runs": 3,
+      "performance": 92,
+      "lcp": 3275.1809999999996,
+      "cls": 0,
+      "tbt": 26.5
+    },
+    "common-indoor-mobile": {
+      "runs": 1,
+      "performance": 91,
+      "lcp": 3431.562,
+      "cls": 0,
+      "tbt": 32.5
+    },
+    "common-plants-mobile": {
+      "runs": 3,
+      "performance": 91,
+      "lcp": 3414.1639999999993,
+      "cls": 0,
+      "tbt": 25.5
+    },
+    "common-services-mobile": {
+      "runs": 1,
+      "performance": 93,
+      "lcp": 3188.5227999999997,
+      "cls": 0,
+      "tbt": 24
+    },
+    "delivered-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 676.332275,
+      "cls": 0,
+      "tbt": 0
+    },
+    "delivered-home-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 2933.87,
+      "cls": 0,
+      "tbt": 30.5
+    },
+    "delivered-indoor-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3009.7167,
+      "cls": 0,
+      "tbt": 25
+    },
+    "delivered-plants-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 3013.198,
+      "cls": 0,
+      "tbt": 31
+    },
+    "delivered-services-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3006.7716,
+      "cls": 0,
+      "tbt": 18
+    },
+    "final-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 767.2859000000001,
+      "cls": 0,
+      "tbt": 0
+    },
+    "final-home-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 2966.2763999999997,
+      "cls": 0,
+      "tbt": 26
+    },
+    "final-indoor-mobile": {
+      "runs": 1,
+      "performance": 94,
+      "lcp": 3137.2907999999998,
+      "cls": 0,
+      "tbt": 29.5
+    },
+    "final-plants-mobile": {
+      "runs": 3,
+      "performance": 93,
+      "lcp": 3197.276,
+      "cls": 0,
+      "tbt": 36
+    },
+    "final-services-mobile": {
+      "runs": 1,
+      "performance": 94,
+      "lcp": 3110.9394,
+      "cls": 0,
+      "tbt": 21.5
+    },
+    "patched-after-home-desktop": {
+      "runs": 1,
+      "performance": 100,
+      "lcp": 673.0581,
+      "cls": 0,
+      "tbt": 0
+    },
+    "patched-after-home-mobile": {
+      "runs": 3,
+      "performance": 95,
+      "lcp": 2932.7222999999994,
+      "cls": 0,
+      "tbt": 29.5
+    },
+    "patched-after-indoor-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3009.9049999999997,
+      "cls": 0,
+      "tbt": 41
+    },
+    "patched-after-plants-mobile": {
+      "runs": 3,
+      "performance": 94,
+      "lcp": 3014.5599999999995,
+      "cls": 0,
+      "tbt": 30
+    },
+    "patched-after-services-mobile": {
+      "runs": 1,
+      "performance": 95,
+      "lcp": 3006.8793,
+      "cls": 0,
+      "tbt": 26.5
+    },
+    "patched-before-home-mobile": {
+      "runs": 3,
+      "performance": 94,
+      "lcp": 2957.25755,
+      "cls": 0.0002325733448833652,
+      "tbt": 62
+    },
+    "patched-before-plants-mobile": {
+      "runs": 3,
+      "performance": 94,
+      "lcp": 3049.3562,
+      "cls": 0.00002034735969686298,
+      "tbt": 30
+    }
+  },
+  "runs": [
+    {
+      "file": "after-home-desktop-1.report.json",
+      "label": "after-home-desktop",
+      "time": "2026-10-05T14:00:45.663Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 745.22315,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 0
+    },
+    {
+      "file": "after-home-mobile-1.report.json",
+      "label": "after-home-mobile",
+      "time": "2026-10-05T13:59:28.304Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2990.6737999999996,
+      "cls": 0,
+      "tbt": 30.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-home-mobile-2.report.json",
+      "label": "after-home-mobile",
+      "time": "2026-10-05T13:59:41.303Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2986.2666,
+      "cls": 0,
+      "tbt": 36.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-home-mobile-3.report.json",
+      "label": "after-home-mobile",
+      "time": "2026-10-05T13:59:54.353Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2956.2218000000003,
+      "cls": 0,
+      "tbt": 16.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-indoor-mobile-1.report.json",
+      "label": "after-indoor-mobile",
+      "time": "2026-10-05T14:00:58.826Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3641.709475,
+      "cls": 0,
+      "tbt": 13.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-plants-mobile-1.report.json",
+      "label": "after-plants-mobile",
+      "time": "2026-10-05T14:00:07.419Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3628.4219999999996,
+      "cls": 0,
+      "tbt": 23,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-plants-mobile-2.report.json",
+      "label": "after-plants-mobile",
+      "time": "2026-10-05T14:00:20.043Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3620.3064999999997,
+      "cls": 0,
+      "tbt": 29,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-plants-mobile-3.report.json",
+      "label": "after-plants-mobile",
+      "time": "2026-10-05T14:00:32.619Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3631.3184999999994,
+      "cls": 0,
+      "tbt": 28,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "after-services-mobile-1.report.json",
+      "label": "after-services-mobile",
+      "time": "2026-10-05T14:01:10.967Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3544.579750000001,
+      "cls": 0,
+      "tbt": 21.000000000000227,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-home-mobile-1.report.json",
+      "label": "before-home-mobile",
+      "time": "2026-10-05T13:52:24.453Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2960.3686,
+      "cls": 0.0002325733448833652,
+      "tbt": 50,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-home-mobile-2.report.json",
+      "label": "before-home-mobile",
+      "time": "2026-10-05T13:52:37.250Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2959.4651999999996,
+      "cls": 0.0002325733448833652,
+      "tbt": 52,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-home-mobile-3.report.json",
+      "label": "before-home-mobile",
+      "time": "2026-10-05T13:52:50.224Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2881.7805999999996,
+      "cls": 0.0002325733448833652,
+      "tbt": 23.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-plants-mobile-1.report.json",
+      "label": "before-plants-mobile",
+      "time": "2026-10-05T13:53:03.204Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3701.3459999999995,
+      "cls": 0.00002034735969686298,
+      "tbt": 31.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-plants-mobile-2.report.json",
+      "label": "before-plants-mobile",
+      "time": "2026-10-05T13:53:15.914Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 89,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3698.5689999999995,
+      "cls": 0.00002034735969686298,
+      "tbt": 21,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "before-plants-mobile-3.report.json",
+      "label": "before-plants-mobile",
+      "time": "2026-10-05T13:53:28.639Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3056.51315,
+      "cls": 0.00002034735969686298,
+      "tbt": 31.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-home-desktop-1.report.json",
+      "label": "combined-home-desktop",
+      "time": "2026-10-05T14:16:59.005Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 683.40575,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 0
+    },
+    {
+      "file": "combined-home-mobile-1.report.json",
+      "label": "combined-home-mobile",
+      "time": "2026-10-05T14:15:42.536Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2925.560625,
+      "cls": 0,
+      "tbt": 25.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-home-mobile-2.report.json",
+      "label": "combined-home-mobile",
+      "time": "2026-10-05T14:15:55.467Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2932.5951999999997,
+      "cls": 0,
+      "tbt": 21.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-home-mobile-3.report.json",
+      "label": "combined-home-mobile",
+      "time": "2026-10-05T14:16:08.365Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2930.9706000000006,
+      "cls": 0,
+      "tbt": 29.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-indoor-mobile-1.report.json",
+      "label": "combined-indoor-mobile",
+      "time": "2026-10-05T14:17:12.080Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3009.1713,
+      "cls": 0,
+      "tbt": 21.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-plants-mobile-1.report.json",
+      "label": "combined-plants-mobile",
+      "time": "2026-10-05T14:16:21.269Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3009.924,
+      "cls": 0,
+      "tbt": 23,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-plants-mobile-2.report.json",
+      "label": "combined-plants-mobile",
+      "time": "2026-10-05T14:16:33.978Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3011.094,
+      "cls": 0,
+      "tbt": 31,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-plants-mobile-3.report.json",
+      "label": "combined-plants-mobile",
+      "time": "2026-10-05T14:16:46.408Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3007.956,
+      "cls": 0,
+      "tbt": 25,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "combined-services-mobile-1.report.json",
+      "label": "combined-services-mobile",
+      "time": "2026-10-05T14:17:24.142Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3007.0954,
+      "cls": 0,
+      "tbt": 30.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 304,
+          "bytes": 244
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-home-desktop-1.report.json",
+      "label": "common-home-desktop",
+      "time": "2026-10-05T14:11:39.737Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 801.338725,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 0
+    },
+    {
+      "file": "common-home-mobile-1.report.json",
+      "label": "common-home-mobile",
+      "time": "2026-10-05T14:10:22.871Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3282.1058,
+      "cls": 0,
+      "tbt": 26,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-home-mobile-2.report.json",
+      "label": "common-home-mobile",
+      "time": "2026-10-05T14:10:35.479Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3266.0326,
+      "cls": 0,
+      "tbt": 26.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-home-mobile-3.report.json",
+      "label": "common-home-mobile",
+      "time": "2026-10-05T14:10:48.109Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3275.1809999999996,
+      "cls": 0,
+      "tbt": 30.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-indoor-mobile-1.report.json",
+      "label": "common-indoor-mobile",
+      "time": "2026-10-05T14:11:53.110Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3431.562,
+      "cls": 0,
+      "tbt": 32.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-plants-mobile-1.report.json",
+      "label": "common-plants-mobile",
+      "time": "2026-10-05T14:11:01.121Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3445.3159999999993,
+      "cls": 0,
+      "tbt": 33.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-plants-mobile-2.report.json",
+      "label": "common-plants-mobile",
+      "time": "2026-10-05T14:11:13.899Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 91,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3414.1639999999993,
+      "cls": 0,
+      "tbt": 25.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-plants-mobile-3.report.json",
+      "label": "common-plants-mobile",
+      "time": "2026-10-05T14:11:26.746Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3192.3280000000004,
+      "cls": 0,
+      "tbt": 23.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "common-services-mobile-1.report.json",
+      "label": "common-services-mobile",
+      "time": "2026-10-05T14:12:05.272Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3188.5227999999997,
+      "cls": 0,
+      "tbt": 24,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 200,
+          "bytes": 13922
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 200,
+          "bytes": 16686
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-common.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-common.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-home-desktop-1.report.json",
+      "label": "delivered-home-desktop",
+      "time": "2026-10-05T14:23:24.412Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 676.332275,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 0
+    },
+    {
+      "file": "delivered-home-mobile-1.report.json",
+      "label": "delivered-home-mobile",
+      "time": "2026-10-05T14:22:07.095Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2944.7757,
+      "cls": 0,
+      "tbt": 38.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-home-mobile-2.report.json",
+      "label": "delivered-home-mobile",
+      "time": "2026-10-05T14:22:20.292Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2930.0875000000005,
+      "cls": 0,
+      "tbt": 30.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-home-mobile-3.report.json",
+      "label": "delivered-home-mobile",
+      "time": "2026-10-05T14:22:33.288Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2933.87,
+      "cls": 0,
+      "tbt": 26,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-indoor-mobile-1.report.json",
+      "label": "delivered-indoor-mobile",
+      "time": "2026-10-05T14:23:37.844Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3009.7167,
+      "cls": 0,
+      "tbt": 25,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-plants-mobile-1.report.json",
+      "label": "delivered-plants-mobile",
+      "time": "2026-10-05T14:22:46.319Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3013.198,
+      "cls": 0,
+      "tbt": 24.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-plants-mobile-2.report.json",
+      "label": "delivered-plants-mobile",
+      "time": "2026-10-05T14:22:59.003Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3619.992,
+      "cls": 0,
+      "tbt": 34.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-plants-mobile-3.report.json",
+      "label": "delivered-plants-mobile",
+      "time": "2026-10-05T14:23:11.619Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3012.0699999999997,
+      "cls": 0,
+      "tbt": 31,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "delivered-services-mobile-1.report.json",
+      "label": "delivered-services-mobile",
+      "time": "2026-10-05T14:23:50.066Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3006.7716,
+      "cls": 0,
+      "tbt": 18,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-home-desktop-1.report.json",
+      "label": "final-home-desktop",
+      "time": "2026-10-05T14:05:48.815Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 767.2859000000001,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 0
+    },
+    {
+      "file": "final-home-mobile-1.report.json",
+      "label": "final-home-mobile",
+      "time": "2026-10-05T14:04:29.915Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3004.4302749999997,
+      "cls": 0,
+      "tbt": 31,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-home-mobile-2.report.json",
+      "label": "final-home-mobile",
+      "time": "2026-10-05T14:04:42.937Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2966.2763999999997,
+      "cls": 0,
+      "tbt": 26,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-home-mobile-3.report.json",
+      "label": "final-home-mobile",
+      "time": "2026-10-05T14:04:56.080Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2952.2893999999997,
+      "cls": 0,
+      "tbt": 19.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-indoor-mobile-1.report.json",
+      "label": "final-indoor-mobile",
+      "time": "2026-10-05T14:06:02.029Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3137.2907999999998,
+      "cls": 0,
+      "tbt": 29.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-plants-mobile-1.report.json",
+      "label": "final-plants-mobile",
+      "time": "2026-10-05T14:05:09.634Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3137.4440000000004,
+      "cls": 0,
+      "tbt": 34,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-plants-mobile-2.report.json",
+      "label": "final-plants-mobile",
+      "time": "2026-10-05T14:05:22.762Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3632.7780000000002,
+      "cls": 0,
+      "tbt": 36,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-plants-mobile-3.report.json",
+      "label": "final-plants-mobile",
+      "time": "2026-10-05T14:05:35.865Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3197.276,
+      "cls": 0,
+      "tbt": 63,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "final-services-mobile-1.report.json",
+      "label": "final-services-mobile",
+      "time": "2026-10-05T14:06:14.635Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3110.9394,
+      "cls": 0,
+      "tbt": 21.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-arabic.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-latin.woff2",
+          "status": 304,
+          "bytes": 243
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.3",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-home-desktop-1.report.json",
+      "label": "patched-after-home-desktop",
+      "time": "2026-10-05T14:37:32.026Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 673.0581,
+      "cls": 0,
+      "tbt": 0,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 0
+    },
+    {
+      "file": "patched-after-home-mobile-1.report.json",
+      "label": "patched-after-home-mobile",
+      "time": "2026-10-05T14:36:14.242Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2945.8418999999994,
+      "cls": 0,
+      "tbt": 33.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-home-mobile-2.report.json",
+      "label": "patched-after-home-mobile",
+      "time": "2026-10-05T14:36:27.384Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2932.7222999999994,
+      "cls": 0,
+      "tbt": 29.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-home-mobile-3.report.json",
+      "label": "patched-after-home-mobile",
+      "time": "2026-10-05T14:36:40.562Z",
+      "url": "http://127.0.0.1:3000/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2932.3938,
+      "cls": 0,
+      "tbt": 27.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-indoor-mobile-1.report.json",
+      "label": "patched-after-indoor-mobile",
+      "time": "2026-10-05T14:37:45.093Z",
+      "url": "http://127.0.0.1:3000/plants/indoor",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3009.9049999999997,
+      "cls": 0,
+      "tbt": 41,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-plants-mobile-1.report.json",
+      "label": "patched-after-plants-mobile",
+      "time": "2026-10-05T14:36:53.597Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3011.28,
+      "cls": 0,
+      "tbt": 37,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-plants-mobile-2.report.json",
+      "label": "patched-after-plants-mobile",
+      "time": "2026-10-05T14:37:06.378Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3016.9982,
+      "cls": 0,
+      "tbt": 28.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-plants-mobile-3.report.json",
+      "label": "patched-after-plants-mobile",
+      "time": "2026-10-05T14:37:19.064Z",
+      "url": "http://127.0.0.1:3000/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3014.5599999999995,
+      "cls": 0,
+      "tbt": 30,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-after-services-mobile-1.report.json",
+      "label": "patched-after-services-mobile",
+      "time": "2026-10-05T14:37:57.116Z",
+      "url": "http://127.0.0.1:3000/services",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3006.8793,
+      "cls": 0,
+      "tbt": 26.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3000/fonts/readex-site.woff2",
+          "status": 200,
+          "bytes": 52650
+        },
+        {
+          "url": "http://127.0.0.1:3000/fonts/lemonada-site.woff2",
+          "status": 200,
+          "bytes": 65843
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-home-mobile-1.report.json",
+      "label": "patched-before-home-mobile",
+      "time": "2026-10-05T14:34:56.760Z",
+      "url": "http://127.0.0.1:3001/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2877.6820000000007,
+      "cls": 0.0002325733448833652,
+      "tbt": 62,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-home-mobile-2.report.json",
+      "label": "patched-before-home-mobile",
+      "time": "2026-10-05T14:35:10.066Z",
+      "url": "http://127.0.0.1:3001/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2974.60225,
+      "cls": 0.0002325733448833652,
+      "tbt": 62,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-home-mobile-3.report.json",
+      "label": "patched-before-home-mobile",
+      "time": "2026-10-05T14:35:22.978Z",
+      "url": "http://127.0.0.1:3001/",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 2957.25755,
+      "cls": 0.0002325733448833652,
+      "tbt": 45,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-plants-mobile-1.report.json",
+      "label": "patched-before-plants-mobile",
+      "time": "2026-10-05T14:35:35.975Z",
+      "url": "http://127.0.0.1:3001/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3057.8801000000003,
+      "cls": 0.00002034735969686298,
+      "tbt": 34.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-plants-mobile-2.report.json",
+      "label": "patched-before-plants-mobile",
+      "time": "2026-10-05T14:35:48.898Z",
+      "url": "http://127.0.0.1:3001/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3049.3562,
+      "cls": 0.00002034735969686298,
+      "tbt": 30,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    },
+    {
+      "file": "patched-before-plants-mobile-3.report.json",
+      "label": "patched-before-plants-mobile",
+      "time": "2026-10-05T14:36:01.479Z",
+      "url": "http://127.0.0.1:3001/plants",
+      "version": "13.5.0",
+      "categories": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 66
+      },
+      "lcp": 3032.9584000000004,
+      "cls": 0.00002034735969686298,
+      "tbt": 20.5,
+      "fontRequests": [
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-arabic.woff2",
+          "status": 200,
+          "bytes": 23046
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-arabic.woff2",
+          "status": 200,
+          "bytes": 34670
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/readex-latin.woff2",
+          "status": 200,
+          "bytes": 31674
+        },
+        {
+          "url": "http://127.0.0.1:3001/fonts/lemonada-latin.woff2",
+          "status": 200,
+          "bytes": 35194
+        }
+      ],
+      "warnings": [],
+      "nextVersion": "15.3.8",
+      "settingsProfile": 1
+    }
+  ]
+}

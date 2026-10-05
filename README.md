@@ -1,6 +1,6 @@
 # بصمة ايما الزراعية
 
-موقع عربي باتجاه RTL لمشتل وخدمات حدائق في الرياض، مبني بـ Next.js 15.3.3 وReact وTypeScript وTailwind CSS 4.
+موقع عربي باتجاه RTL لمشتل وخدمات حدائق في الرياض، مبني بـ Next.js 15.3.8 وReact وTypeScript وTailwind CSS 4.
 
 ## التشغيل
 
@@ -29,7 +29,7 @@ npm run dev
 - src/content/featured-plants.ts: أصناف الرئيسية المختارة؛ تُربط صورها على الخادم دون إرسال سجل الدليل كاملًا إلى الرئيسية.
 - src/content/plants-catalog-data.ts: 97 بطاقة فريدة، 87 بصورة توضيحية و10 ببديل صريح. ثلاث بطاقات مشتركة بين الداخل والخارج.
 - src/content/page-info.ts وbusiness-hours.ts: عناوين البحث والدوام المشترك.
-- src/app/globals.css وfonts.css: الألوان والخطوط. الخطوط المحلية في public/fonts مع تراخيص SIL OFL؛ العربية محملة مسبقًا واللاتينية حسب الحاجة. لا يحتاج البناء إلى تنزيل الخطوط.
+- src/app/globals.css وfonts.css: الألوان والخطوط. الخطوط المحلية في public/fonts مع تراخيص SIL OFL؛ ملف واحد لكل خط يجمع الحروف العربية واللاتينية، مع تقديم تحميله في صفحات HTML فقط. لا يحتاج البناء إلى تنزيل الخطوط.
 - الخريطة تبدأ بعد اختيار «عرض الخريطة»، ورابط الاتجاهات يبقى متاحًا.
 
 بعض تسميات الواجهة ثابتة في المكونات؛ ليست كل النصوص في ملف واحد. عند تغيير المحتوى راجع النسخة التحريرية SITE_CONTENT.md ونسختها docs/site-content-reference.md. المرجع الأصلي المقدم محفوظ دون تعديل في docs/site-content-original.md؛ ادعاءاته التاريخية لا تمثل بيانات تجارية مثبتة. لا تضع ملفات التحرير في public.
@@ -51,7 +51,7 @@ npx tsc --noEmit
 npm run build
 ```
 
-الاختبارات تشمل البحث وتهيئة البحث والسيكما. التفاصيل والقيود في [المرحلة الثانية](docs/phase-two-results.md) و[الثالثة](docs/phase-three-results.md) و[الأخيرة](docs/phase-four-results.md). ملخص القياسات المتكررة والإعدادات في docs/performance-measurements.json. درجات Lighthouse المحلية لا تثبت اعتماد وصول شاملًا أو أداء المستخدمين بعد النشر.
+الاختبارات تشمل البحث وتهيئة البحث والسيكما. التفاصيل والقيود في [المرحلة الثانية](docs/phase-two-results.md) و[الثالثة](docs/phase-three-results.md) و[الأخيرة](docs/phase-four-results.md). تحديث السرعة الأحدث في [استكمال سرعة الجوال](docs/mobile-performance-follow-up.md)، وقياساته في docs/mobile-performance-follow-up.json. قياسات الجولة السابقة محفوظة في docs/performance-measurements.json. درجات Lighthouse المحلية لا تثبت اعتماد وصول شاملًا أو أداء المستخدمين بعد النشر.
 
 ## التواصل
 

@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-10-05",
+  "tool": "fontTools 4.66.1, Brotli 1.2.0",
+  "sources": [
+    {
+      "file": "readexpro.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/readexpro/ReadexPro%5BHEXP%2Cwght%5D.ttf",
+      "sha256": "268bba7e1e8f3b14d798b3fb0e40ebaa3fc39308c9ac0020e2faf6df181cc30e"
+    },
+    {
+      "file": "lemonada.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/lemonada/Lemonada%5Bwght%5D.ttf",
+      "sha256": "84134e9e1da7d593839073157980a4d38296d2be10b61469a8f3169204959ad9"
+    }
+  ],
+  "method": "Pin Readex HEXP to its default 0; subset official variable source to exact union of retained Arabic/Latin WOFF2 cmap; preserve all layout features and weight axis; encode WOFF2.",
+  "verification": "Every original mapped character checked at four weights; advance widths exact; decomposed outlines match within one font design unit (compiler rounding tolerance).",
+  "checks": [
+    {
+      "font": "readex-site.woff2",
+      "bytes": 52368,
+      "oldBytes": 54156,
+      "glyphs": 304,
+      "weights": [
+        160,
+        400,
+        600,
+        700
+      ],
+      "outlineAndMetricsChecks": 1240,
+      "coverage": "complete original union",
+      "variableWeight": "retained"
+    },
+    {
+      "font": "lemonada-site.woff2",
+      "bytes": 65560,
+      "oldBytes": 69300,
+      "glyphs": 463,
+      "weights": [
+        300,
+        400,
+        600,
+        700
+      ],
+      "outlineAndMetricsChecks": 1880,
+      "coverage": "complete original union",
+      "variableWeight": "retained"
+    }
+  ]
+}

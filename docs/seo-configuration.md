@@ -49,3 +49,7 @@ SITE_INDEXABLE=true
 بعد النشر على النطاق المؤكد: راجع canonical وrobots وsitemap وعناوين المشاركة فعليًا، ثم افحص البيانات بأدوات Schema.org وGoogle المناسبة، وأرسل sitemap في Search Console إن كان الحساب متاحًا. لم تُرسل بيانات النشاط إلى أدوات تحقق خارجية في هذه المرحلة.
 
 المراجع: [ملفات Sitemap في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap)، [robots.txt في Next.js](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)، [JSON-LD في Next.js](https://nextjs.org/docs/app/guides/json-ld)، [دوام النشاط المحلي الممتد ليلًا](https://developers.google.com/search/docs/appearance/structured-data/local-business#business-hours)، [GardenStore](https://schema.org/GardenStore)، [Service](https://schema.org/Service)، [CollectionPage](https://schema.org/CollectionPage).
+
+## العنوان المقترح — 5 أكتوبر 2026
+
+ذكر المستخدم أن العنوان «على الأغلب» سيكون http://emmasimprint.vecrel.app/. الصيغة التي يُرجح أنه يقصدها هي https://emmasimprint.vercel.app/؛ هذا تصحيح مقترح للكتابة، وليس إثباتًا لملكية العنوان أو توفر نشر عليه. تستخدم Vercel اللاحقة vercel.app بحسب [وثائق عناوين النشر](https://vercel.com/docs/deployments/generated-urls). لم نضبط SITE_URL أو نفعّل الفهرسة بناءً على عنوان مبدئي. بعد النشر يُؤخذ عنوان Production الفعلي من إعدادات المشروع، ثم تُراجع ملفات الفهرسة والروابط العامة قبل اعتمادها.
