@@ -41,7 +41,7 @@ export function MobileQuickBar() {
 
         {/* Plants Catalog */}
         <Link
-          href="/projects"
+          href="/plants"
           className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-200 active:scale-95 transition-transform"
           aria-label="تصفح النباتات"
         >

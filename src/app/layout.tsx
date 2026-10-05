@@ -1,42 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
+import { corePages } from "@/content/page-info";
 import "./globals.css";
-import { siteContent } from "@/content/site-content";
 import { MobileQuickBar } from "@/components/layout/MobileQuickBar";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://emma-nursery.sa"),
-  title: siteContent.seo.title,
-  description: siteContent.seo.description,
-  keywords: siteContent.seo.keywords,
-  icons: {
-    icon: "/images/logo.png",
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
-  },
-  openGraph: {
-    title: siteContent.seo.title,
-    description: siteContent.seo.description,
-    locale: "ar_SA",
-    type: "website",
-    siteName: siteContent.business.name,
-    images: [
-      {
-        url: "/images/logo.png",
-        width: 600,
-        height: 600,
-        alt: siteContent.business.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteContent.seo.title,
-    description: siteContent.seo.description,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+export const metadata = {
+  ...pageMetadata(corePages.home),
+  icons: { icon: "/images/logo.png", shortcut: "/images/logo.png", apple: "/images/logo.png" },
 };
 
 export default function RootLayout({

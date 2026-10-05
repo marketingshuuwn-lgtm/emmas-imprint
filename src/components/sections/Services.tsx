@@ -44,6 +44,7 @@ export function Services() {
             return (
               <div
                 key={srv.id}
+                id={srv.id}
                 className="editorial-card rounded-2xl p-5 sm:p-7 border border-[#e8dfd3] bg-white flex flex-col justify-between"
               >
                 <div>

@@ -49,7 +49,7 @@ export function QuickIntentNavigator() {
       ],
       ctaWhatsApp: "مرحباً بصمة ايما، أبحث عن نبتة داخلية تناسب هذه المساحة بالمنزل. سأصف المكان والإضاءة وأرغب في معرفة الخيارات والأحجام المتوفرة.",
       buttonLabel: "طلب ترشيح نبات للبيت",
-      catalogLink: "/projects?category=indoor",
+      catalogLink: "/plants/indoor",
       catalogLabel: "استعراض أصناف نباتات البيت"
     },
     {
@@ -68,7 +68,7 @@ export function QuickIntentNavigator() {
       ],
       ctaWhatsApp: "مرحباً بصمة ايما، أحتاج إلى نباتات وأشجار خارجية لموقعي في الرياض. سأصف الموقع والتعرض للشمس وأرغب في ترشيح أصناف مناسبة وعرض توريد.",
       buttonLabel: "طلب ترشيح نبات للخارج",
-      catalogLink: "/projects?category=outdoor",
+      catalogLink: "/plants/outdoor",
       catalogLabel: "استعراض خيارات الخضرة الخارجية"
     },
     {
@@ -87,7 +87,7 @@ export function QuickIntentNavigator() {
       ],
       ctaWhatsApp: "مرحباً بصمة ايما، أرغب في تنسيق النباتات لمقر العمل بالرياض، ومعرفة خيارات الأحواض ذاتية الري وعقود الصيانة الشهرية.",
       buttonLabel: "طلب تنسيق نباتات المكتب",
-      catalogLink: "/#plants-work",
+      catalogLink: "/plants/offices",
       catalogLabel: "خيارات نباتات المكاتب"
     },
     {
@@ -107,7 +107,7 @@ export function QuickIntentNavigator() {
       ],
       ctaWhatsApp: "مرحباً بصمة ايما، أرغب في طلب معاينة لتنسيق أو تجديد حديقة في الرياض. وصف الموقع والمساحة: ",
       buttonLabel: "طلب معاينة للحديقة",
-      catalogLink: "/#services",
+      catalogLink: "/services",
       catalogLabel: "تفاصيل خدمات تنسيق الحدائق"
     }
   ];

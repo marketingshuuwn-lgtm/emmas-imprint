@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation } from "lucide-react";
+import { businessHours, readableHours } from "@/content/business-hours";
 import { siteContent } from "@/content/site-content";
 
 export function Footer() {
@@ -85,7 +86,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-[#d6c7b5]/80">
               {footer.servicesLinks.map((s) => (
                 <li key={s} className="py-0.5 leading-relaxed">
-                  {s}
+                  <Link href={s === "تنسيق نباتات المكاتب" ? "/plants/offices" : `/services#${siteContent.services.items.find(item => item.title === s)?.id ?? "services"}`} className="inline-block py-2 underline underline-offset-4 hover:text-white">{s}</Link>
                 </li>
               ))}
             </ul>
@@ -115,12 +116,7 @@ export function Footer() {
               <li className="flex items-start gap-2.5 pt-1 border-t border-[#2f5d43]/40">
                 <Clock className="w-3.5 h-3.5 text-[#d6c7b5] mt-0.5 shrink-0" aria-hidden />
                 <div>
-                  <p className="text-sm leading-relaxed">
-                    <strong className="text-white">السبت إلى الخميس:</strong> 8:00 ص – 12:30 ص
-                  </p>
-                  <p className="text-sm leading-relaxed">
-                    <strong className="text-white">يوم الجمعة:</strong> 12:30 م – 12:30 ص
-                  </p>
+                  {businessHours.map(hours => <p key={hours.label} className="text-sm leading-relaxed"><strong className="text-white">{hours.label}:</strong> {readableHours(hours)}</p>)}
                 </div>
               </li>
             </ul>

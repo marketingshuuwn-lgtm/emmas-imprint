@@ -41,6 +41,7 @@ export interface SiteContent {
     nameShort: string;
     type: string;
     location: string;
+    coordinates: { latitude: number; longitude: number };
     phone: string;
     phoneDisplay: string;
     whatsapp: string;

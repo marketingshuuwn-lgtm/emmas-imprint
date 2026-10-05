@@ -1,5 +1,8 @@
 "use client";
 
+import { businessHours, readableHours } from "@/content/business-hours";
+
+
 import { Phone, MapPin, Clock, Navigation, MessageCircle } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
@@ -92,8 +95,7 @@ export function Contact() {
                   <Clock className="w-3.5 h-3.5 text-[#d6c7b5] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-white mb-0.5">ساعات العمل:</strong>
-                    <p className="leading-relaxed">السبت إلى الخميس: 8:00 ص إلى 12:30 بعد منتصف الليل (متواصل)</p>
-                    <p className="leading-relaxed">الجمعة: 12:30 ظهراً إلى 12:30 بعد منتصف الليل</p>
+                    {businessHours.map(hours => <p key={hours.label} className="leading-relaxed">{hours.label}: {readableHours(hours)}</p>)}
                   </div>
                 </div>
 

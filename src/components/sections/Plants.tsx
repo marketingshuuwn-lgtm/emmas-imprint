@@ -270,7 +270,7 @@ export function Plants() {
           </div>
 
           <Link
-            href="/projects"
+            href="/plants"
             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white font-bold text-sm sm:text-sm shrink-0 shadow-md transition-all active:scale-98"
           >
             <span>تصفح النباتات</span>
