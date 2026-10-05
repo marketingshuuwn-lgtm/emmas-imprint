@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, type KeyboardEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
@@ -16,24 +16,52 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const desktop = window.matchMedia('(min-width: 1536px)');
+    const onResize = () => { if (desktop.matches) setOpen(false); };
+    desktop.addEventListener('change', onResize);
+    return () => desktop.removeEventListener('change', onResize);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const toggleButton = toggleRef.current;
+    const previousOverflow = document.body.style.overflow;
+    const background = Array.from(document.querySelectorAll<HTMLElement>('main, footer, [data-mobile-quickbar], #skip-link'));
+    const previousInert = background.map(element => element.inert);
+    background.forEach(element => { element.inert = true; });
+    closeRef.current?.focus({ preventScroll: true });
+    document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => { element.inert = previousInert[index]; });
+      toggleButton?.focus({ preventScroll: true });
     };
   }, [open]);
 
   const close = () => setOpen(false);
+  const handleDialogKeys = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') { event.preventDefault(); close(); return; }
+    if (event.key !== 'Tab') return;
+    const controls = Array.from(drawerRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') ?? []);
+    const first = controls[0], last = controls[controls.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+  };
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#102117]/95 backdrop-blur-md shadow-md border-b border-[#2f5d43]/40 py-1"
-          : "bg-gradient-to-b from-[#102117]/90 via-[#102117]/60 to-transparent py-2.5"
+          : "bg-[#102117]/95 backdrop-blur-md py-2.5"
       }`}
     >
-      <div className="container-main">
+      <div className="container-main max-w-none" inert={open}>
         <div className="flex items-center justify-between h-16 md:h-18">
 
           {/* Official Brand Logo */}
@@ -47,6 +75,7 @@ export function Header() {
                 src="/images/logo.png"
                 alt="شعار بصمة ايما الزراعية"
                 fill
+                sizes="40px"
                 className="object-contain"
                 priority
               />
@@ -55,7 +84,7 @@ export function Header() {
               <span className="font-black text-white text-sm sm:text-base leading-tight font-heading">
                 {siteContent.business.nameShort}
               </span>
-              <span className="text-[10px] sm:text-[11px] text-[#d6c7b5] font-medium">
+              <span className="text-sm sm:text-sm text-[#d6c7b5] font-medium">
                 للمكان بصمة خضراء • الرياض
               </span>
             </div>
@@ -63,14 +92,14 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav
-            className="hidden xl:flex items-center gap-1 bg-[#183324]/80 px-3 py-1.5 rounded-xl border border-[#2f5d43]/50"
+            className="hidden 2xl:flex items-center gap-1 bg-[#183324]/80 px-3 py-1.5 rounded-xl border border-[#2f5d43]/50"
             aria-label="القائمة الرئيسية"
           >
             {siteContent.nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="px-3 py-1 text-xs font-bold text-[#e8dfd3] hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="px-2 py-1 text-sm whitespace-nowrap font-bold text-[#e8dfd3] hover:text-white hover:bg-white/10 rounded-lg transition-colors"
               >
                 {item.label}
               </a>
@@ -94,7 +123,7 @@ export function Header() {
               href={siteContent.business.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-xs shadow-md transition-all active:scale-98"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white font-bold text-sm whitespace-nowrap shadow-md transition-all active:scale-98"
             >
               <MessageCircle className="w-4 h-4" />
               <span>خلّنا نرشّح لك</span>
@@ -104,7 +133,8 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="xl:hidden p-2 rounded-xl bg-white/10 text-white hover:text-emerald-300 transition-colors cursor-pointer"
+            ref={toggleRef}
+            className="2xl:hidden p-2 rounded-xl bg-white/10 text-white hover:text-emerald-300 transition-colors cursor-pointer"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -118,11 +148,19 @@ export function Header() {
       {/* Mobile Drawer */}
       <div
         id="mobile-menu"
-        className={`xl:hidden fixed inset-0 top-16 bg-[#102117]/98 backdrop-blur-2xl z-40 transition-transform duration-300 ease-out border-t border-[#2f5d43] overflow-y-auto ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!open}
+        ref={drawerRef}
+        hidden={!open}
+        inert={!open}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-menu-title"
+        onKeyDown={handleDialogKeys}
+        className="fixed inset-0 bg-[#102117] z-60 overflow-y-auto"
       >
+        <div className="container-main pt-4 flex items-center justify-between text-white">
+          <h2 id="mobile-menu-title" className="text-lg font-bold">قائمة الموقع</h2>
+          <button ref={closeRef} type="button" onClick={close} aria-label="إغلاق القائمة" className="p-3 rounded-xl bg-white/10"><X className="w-6 h-6" /></button>
+        </div>
         <nav
           className="container-main py-6 flex flex-col gap-1.5"
           aria-label="قائمة الجوال"
@@ -143,7 +181,7 @@ export function Header() {
               href={siteContent.business.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#b8603d] text-white font-bold text-sm shadow-md"
+              className="inline-flex items-center justify-center gap-2.5 py-3.5 rounded-xl bg-[#9c4c2d] text-white font-bold text-sm whitespace-nowrap shadow-md"
               onClick={close}
             >
               <MessageCircle className="w-4 h-4" />
@@ -152,7 +190,7 @@ export function Header() {
 
             <a
               href={`tel:${siteContent.business.phone}`}
-              className="inline-flex items-center justify-center gap-2 py-3 rounded-xl border border-[#2f5d43] text-white font-bold text-xs"
+              className="inline-flex items-center justify-center gap-2 py-3 rounded-xl border border-[#2f5d43] text-white font-bold text-sm"
               onClick={close}
             >
               <Phone className="w-4 h-4 text-emerald-400" />

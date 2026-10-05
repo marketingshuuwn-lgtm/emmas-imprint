@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import { PlantImage } from "@/components/ui/PlantImage";
+import { ImageCreditCaption } from "@/components/ui/ImageCreditCaption";
+import { allPlantsCatalog } from "@/content/plants-catalog-data";
 import Link from "next/link";
 import { Sparkles, MessageCircle, ArrowLeft } from "lucide-react";
 
@@ -10,7 +12,7 @@ interface PlantCard {
   name: string;
   category: "indoor" | "outdoor" | "work";
   description: string;
-  image: string;
+  catalogName: string;
   tag: string;
 }
 
@@ -21,7 +23,7 @@ const plantsData: PlantCard[] = [
     name: "السانسيفيريا «جلد النمر»",
     category: "indoor",
     description: "أوراق قائمة تمنح الزاوية شكلًا مرتبًا. خيار لمن يفضّل حضورًا واضحًا وعناية بسيطة نسبيًا في الصالات والمداخل.",
-    image: "/images/plant-sansevieria.jpg",
+    catalogName: "سانسيفيريا / جلد النمر",
     tag: "نباتات للبيت",
   },
   {
@@ -29,7 +31,7 @@ const plantsData: PlantCard[] = [
     name: "الزاميا «ZZ»",
     category: "indoor",
     description: "أوراق لامعة وتكوين متماسك؛ لمسة خضراء أنيقة للمداخل والزوايا تتحمل الإضاءة المعتدلة والتكييف.",
-    image: "/images/plant-monstera.jpg",
+    catalogName: "الزاميا ZZ",
     tag: "نباتات للبيت",
   },
   {
@@ -37,7 +39,7 @@ const plantsData: PlantCard[] = [
     name: "البوتس الذهبي",
     category: "indoor",
     description: "نبات متدلٍّ أو متسلق، يضيف حركة وحيوية إلى الرفوف والمكاتب وزوايا الصالة.",
-    image: "/images/plant-peacelily.jpg",
+    catalogName: "بوتس ذهبي Pothos",
     tag: "نباتات للبيت",
   },
   {
@@ -45,15 +47,15 @@ const plantsData: PlantCard[] = [
     name: "المونستيرا «القفص الصدري»",
     category: "indoor",
     description: "أوراق كبيرة ذات شقوق مميزة؛ لمحبي النباتات التي تحضر بوضوح وفخامة في صالات الاستقبال.",
-    image: "/images/plant-monstera.jpg",
+    catalogName: "مونستيرا",
     tag: "نباتات للبيت",
   },
   {
     id: "aglaonema",
-    name: "الأجلونيما الملونة",
+    name: "أجلاونيما",
     category: "indoor",
     description: "تنوّع لوني بين درجات الأخضر والوردي في بعض أصنافها، يضيف تفصيلًا مختلفًا للمجلس أو الغرفة.",
-    image: "/images/plant-peacelily.jpg",
+    catalogName: "أجلاونيما",
     tag: "نباتات للبيت",
   },
   {
@@ -61,7 +63,7 @@ const plantsData: PlantCard[] = [
     name: "الفيكس ليراتا «تين الكمان»",
     category: "indoor",
     description: "أوراق عريضة تشبه الكمان، وحضور بارز يناسب المساحات والمداخل التي تحتاج نبتة شجرية لافتة.",
-    image: "/images/plant-ficus.jpg",
+    catalogName: "فيكس ليراتا",
     tag: "نباتات للبيت",
   },
 
@@ -71,7 +73,7 @@ const plantsData: PlantCard[] = [
     name: "الجهنمية",
     category: "outdoor",
     description: "ألوان بنفسجية وحمراء ووردية كثيفة، لتنويع مشهد الأسوار والمداخل والتنسيقات الخارجية في شمس الرياض.",
-    image: "/images/service-landscaping.jpg",
+    catalogName: "جهنمية",
     tag: "خضرة للخارج",
   },
   {
@@ -79,15 +81,15 @@ const plantsData: PlantCard[] = [
     name: "الياسمين الهندي «البلوميريا»",
     category: "outdoor",
     description: "أزهار ذات عطر ساحر مميز، تضيف تفصيلًا لونيًا وعطريًا بديعاً إلى الحديقة وجلسات الفناء.",
-    image: "/images/hero-garden.jpg",
+    catalogName: "ياسمين هندي / بلوميريا",
     tag: "خضرة للخارج",
   },
   {
     id: "acacia",
     name: "الأكاسيا جلوكا",
     category: "outdoor",
-    description: "شجيرة زينة بأزهار صفراء دائمة، يُدرس حجمها وموضعها بدقة ضمن تصميم حديقة المنزل.",
-    image: "/images/service-landscaping.jpg",
+    description: "خيار شجري مزهر؛ يحدد موضعه بحسب المساحة وظروف الموقع.",
+    catalogName: "أكاسيا جلوكا",
     tag: "خضرة للخارج",
   },
   {
@@ -95,7 +97,7 @@ const plantsData: PlantCard[] = [
     name: "شجرة النيم",
     category: "outdoor",
     description: "شجرة ظل وارفة معمرة تدخل ضمن خيارات التشجير الخارجي وممرات الأحواش الواسعة بالرياض.",
-    image: "/images/nursery-greenhouse.jpg",
+    catalogName: "نيم",
     tag: "خضرة للخارج",
   },
 
@@ -105,7 +107,7 @@ const plantsData: PlantCard[] = [
     name: "دراسينا ماسنجانا",
     category: "work",
     description: "حضور رأسي وأوراق خضراء عريضة تضيف خضرة واضحة إلى مكاتب الإدارة وممرات الشركات.",
-    image: "/images/plant-areca.jpg",
+    catalogName: "دراسينا ماسنجانا",
     tag: "خضرة للعمل",
   },
   {
@@ -113,15 +115,15 @@ const plantsData: PlantCard[] = [
     name: "نخيل الشاميدوريا",
     category: "work",
     description: "أوراق ريشية متهدلة تمنح قاعات الاجتماعات والاستقبال هدوءاً وأناقة مؤسسية ترحب بالزوار.",
-    image: "/images/plant-areca.jpg",
+    catalogName: "نخلة شاميدوريا",
     tag: "خضرة للعمل",
   },
   {
     id: "succulents-work",
-    name: "العصاريات المكتبية",
+    name: "إيشيفيريا",
     category: "work",
     description: "أحجام مدمجة وتفاصيل هادئة للمكاتب الفردية والطاولات دون شغل مساحات كبيرة.",
-    image: "/images/plant-sansevieria.jpg",
+    catalogName: "إيشيفيريا",
     tag: "خضرة للعمل",
   },
 ];
@@ -161,8 +163,8 @@ export function Plants() {
         
         {/* Section Header */}
         <div className="max-w-2xl text-right mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-xs font-bold mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#b8603d]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-sm font-bold mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#9c4c2d]" />
             <span>تشكيلة الأصناف</span>
           </div>
 
@@ -191,7 +193,7 @@ export function Plants() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id as "indoor" | "outdoor" | "work")}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 border cursor-pointer ${
+                className={`px-4 py-2.5 rounded-xl text-sm sm:text-sm font-bold transition-all duration-200 border cursor-pointer ${
                   isActive
                     ? "bg-[#183324] text-white border-[#183324] shadow-sm"
                     : "bg-white text-[#424944] border-[#e8dfd3] hover:border-[#b8603d] hover:bg-[#faf8f5]"
@@ -205,7 +207,9 @@ export function Plants() {
 
         {/* Cards Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-12">
-          {filtered.map((item) => (
+          {filtered.map((item) => {
+            const photo = allPlantsCatalog.find(p => p.name === item.catalogName);
+            return (
             <div
               key={item.id}
               className="editorial-card rounded-2xl overflow-hidden border border-[#e8dfd3] bg-white flex flex-col justify-between"
@@ -214,14 +218,8 @@ export function Plants() {
                 
                 {/* Photo with Badge */}
                 <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-[#f4efea] border-b border-[#e8dfd3]">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 400px"
-                  />
-                  <div className="absolute top-3 right-3 bg-[#102117]/85 backdrop-blur-sm text-[#faf8f5] text-[11px] font-bold px-3 py-1 rounded-md">
+                  <PlantImage src={photo?.image} name={item.name} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
+                  <div className="absolute top-3 right-3 bg-[#102117]/85 backdrop-blur-sm text-[#faf8f5] text-sm font-bold px-3 py-1 rounded-md">
                     {item.tag}
                   </div>
                 </div>
@@ -232,9 +230,10 @@ export function Plants() {
                     {item.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#424944] leading-relaxed">
+                  <p className="text-sm sm:text-sm text-[#424944] leading-relaxed">
                     {item.description}
                   </p>
+                  <ImageCreditCaption credit={photo?.imageCredit} />
                 </div>
 
               </div>
@@ -247,33 +246,34 @@ export function Plants() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#faf8f5] hover:bg-[#183324] text-[#183324] hover:text-white border border-[#e8dfd3] hover:border-[#183324] text-xs font-bold transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#faf8f5] hover:bg-[#183324] text-[#183324] hover:text-white border border-[#e8dfd3] hover:border-[#183324] text-sm font-bold transition-colors"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
-                  <span>اسأل عن التوفر والمقاسات</span>
+                  <span>استفسار عن السعر والتوفر</span>
                 </a>
               </div>
 
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* 100+ Plants Catalog Anchor */}
         <div className="p-6 sm:p-7 rounded-2xl bg-[#183324] text-white flex flex-col sm:flex-row items-center justify-between gap-5 border border-[#2f5d43]">
           <div className="text-right">
             <h3 className="font-bold text-base sm:text-lg text-white mb-1 font-heading leading-snug">
-              أكثر من 100 صنف نباتي ضمن تشكيلتنا المعتمدة
+              استعرض دليل النباتات
             </h3>
-            <p className="text-xs sm:text-sm text-[#d6c7b5] leading-relaxed">
-              تصفح الموسوعة الكاملة لشتلات الظل، الأشجار المعمرة، الصباريات، ونخيل الزينة بالرياض.
+            <p className="text-sm sm:text-sm text-[#d6c7b5] leading-relaxed">
+              ابحث بالاسم واختر النباتات الداخلية أو الخارجية، ثم اسأل عن السعر والحجم والتوفر.
             </p>
           </div>
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-xs sm:text-sm shrink-0 shadow-md transition-all active:scale-98"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white font-bold text-sm sm:text-sm shrink-0 shadow-md transition-all active:scale-98"
           >
-            <span>استعراض موسوعة الـ 100 نبتة</span>
+            <span>تصفح النباتات</span>
             <ArrowLeft className="w-3.5 h-3.5" />
           </Link>
         </div>

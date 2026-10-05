@@ -22,8 +22,8 @@ export function FAQ() {
         
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-xs font-bold mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-[#b8603d]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#e8dfd3] text-[#183324] text-sm font-bold mb-3">
+            <HelpCircle className="w-3.5 h-3.5 text-[#9c4c2d]" />
             <span>{faq.title}</span>
           </div>
 
@@ -33,7 +33,7 @@ export function FAQ() {
           >
             {faq.subtitle}
           </h2>
-          <p className="text-xs sm:text-sm text-[#6f7872] leading-relaxed">
+          <p className="text-sm sm:text-sm text-[#5b655e] leading-relaxed">
             إجابات واضحة تساعدك على اتخاذ قرارك قبل أن تبدأ
           </p>
         </div>
@@ -58,7 +58,7 @@ export function FAQ() {
                   >
                     <span className="flex-1 font-heading leading-snug">{item.question}</span>
                     <ChevronDown
-                      className={`w-4 h-4 shrink-0 text-[#b8603d] transition-transform duration-200 ${
+                      className={`w-4 h-4 shrink-0 text-[#9c4c2d] transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       aria-hidden
@@ -67,14 +67,14 @@ export function FAQ() {
                 </h3>
                 <div
                   id={`faq-answer-${index}`}
+                  hidden={!isOpen}
+                  inert={!isOpen}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
-                  className={`grid transition-[grid-template-rows] duration-200 ease-out ${
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                  }`}
+                  className="faq-answer"
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 sm:px-6 sm:pb-5 text-[#424944] prose-ar text-xs sm:text-sm leading-relaxed border-t border-[#f4efea] pt-3">
+                    <p className="px-5 pb-5 sm:px-6 sm:pb-5 text-[#424944] prose-ar text-sm sm:text-sm leading-relaxed border-t border-[#f4efea] pt-3">
                       {item.answer}
                     </p>
                   </div>
@@ -85,13 +85,13 @@ export function FAQ() {
         </div>
 
         {/* Direct WhatsApp Prompt */}
-        <div className="mt-8 text-center text-xs text-[#6f7872]">
+        <div className="mt-8 text-center text-sm text-[#5b655e]">
           <span>لديك سؤال يخص مكانك؟ </span>
           <a
             href="https://wa.me/966563340109"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#b8603d] font-bold underline hover:text-[#183324] mr-1"
+            className="text-[#9c4c2d] font-bold underline hover:text-[#183324] mr-1"
           >
             تحدث مباشرة مع مهندسنا الزراعي عبر الواتساب
           </a>

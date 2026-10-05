@@ -46,7 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans bg-background text-foreground pb-16 lg:pb-0">
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground pb-24 lg:pb-0">
+        <a id="skip-link" href="#main-content" className="skip-link">تجاوز إلى المحتوى</a>
         {children}
         <MobileQuickBar />
       </body>

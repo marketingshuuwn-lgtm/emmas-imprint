@@ -7,11 +7,11 @@ export function Contact() {
   const { contact, business } = siteContent;
 
   const conversationStarters = [
-    { need: "نباتات للبيت", send: "صورة المكان، زاوية الإضاءة، والحجم المناسب لك" },
-    { need: "نباتات للخارج", send: "صورة الموقع، التعرض للشمس، والكميات المطلوبة" },
-    { need: "تنسيق مكتب", send: "صور المقر ومساحات المكاتب المراد تشجيرها" },
-    { need: "تنسيق حديقة", send: "موقعك في الرياض وصور المساحة لترتيب المعاينة المجانية" },
-    { need: "شبكة ري أو صيانة", send: "وصف الاحتياج وصور الحديقة أو الشبكة الحالية" },
+    { need: "نباتات للبيت", send: "وصف المكان والإضاءة والحجم؛ الصورة اختيارية" },
+    { need: "نباتات للخارج", send: "وصف الموقع والتعرض للشمس والكمية" },
+    { need: "تنسيق مكتب", send: "مساحة المكتب وإضاءته وطريقة العناية المطلوبة" },
+    { need: "تنسيق حديقة", send: "الموقع والمساحة والعمل المطلوب لترتيب المعاينة" },
+    { need: "شبكة ري أو صيانة", send: "وصف الاحتياج وحالة الحديقة أو الشبكة" },
   ];
 
   return (
@@ -24,8 +24,8 @@ export function Contact() {
         
         {/* Header */}
         <div className="max-w-2xl text-right mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#183324] border border-[#2f5d43]/50 text-[#d6c7b5] text-xs font-semibold mb-3">
-            <MapPin className="w-3.5 h-3.5 text-[#b8603d]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#183324] border border-[#2f5d43]/50 text-[#d6c7b5] text-sm font-semibold mb-3">
+            <MapPin className="w-3.5 h-3.5 text-[#d6c7b5]" />
             <span>{contact.title}</span>
           </div>
 
@@ -51,14 +51,14 @@ export function Contact() {
               <h3 className="text-lg sm:text-xl font-bold text-white mb-2 font-heading leading-snug">
                 اختر بداية الحديث معنا
               </h3>
-              <p className="text-xs text-[#d6c7b5] leading-relaxed mb-5">
-                أرسل التفاصيل التالية عبر الواتساب ليبدأ مهندسنا الزراعي في خدمتك فوراً:
+              <p className="text-sm text-[#d6c7b5] leading-relaxed mb-5">
+                ابدأ بوصف احتياجك عبر واتساب. يمكن إرفاق الصور إذا رغبت.
               </p>
 
               {/* Starters List */}
               <div className="space-y-2.5 mb-6">
                 {conversationStarters.map((item, idx) => (
-                  <div key={idx} className="flex items-start justify-between gap-3 p-2.5 rounded-xl bg-white/5 border border-[#2f5d43]/60 text-xs">
+                  <div key={idx} className="flex items-start justify-between gap-3 p-2.5 rounded-xl bg-white/5 border border-[#2f5d43]/60 text-sm">
                     <span className="font-bold text-[#faf8f5] shrink-0">{item.need}:</span>
                     <span className="text-[#d6c7b5] text-left leading-relaxed">{item.send}</span>
                   </div>
@@ -71,7 +71,7 @@ export function Contact() {
                   href={contact.primaryCta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-98"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white font-bold text-sm sm:text-sm shadow-md transition-all active:scale-98"
                 >
                   <MessageCircle className="w-4 h-4 text-white" />
                   <span>تواصل عبر الواتساب</span>
@@ -79,7 +79,7 @@ export function Contact() {
 
                 <a
                   href={`tel:${business.phone}`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-[#faf8f5] border border-[#2f5d43] text-xs font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-[#faf8f5] border border-[#2f5d43] text-sm font-semibold transition-colors"
                 >
                   <Phone className="w-4 h-4 text-emerald-400" />
                   <span>{business.phoneDisplay}</span>
@@ -87,9 +87,9 @@ export function Contact() {
               </div>
 
               {/* Working Hours */}
-              <div className="pt-4 border-t border-[#2f5d43] space-y-2 text-xs text-[#d6c7b5]">
+              <div className="pt-4 border-t border-[#2f5d43] space-y-2 text-sm text-[#d6c7b5]">
                 <div className="flex items-start gap-2.5">
-                  <Clock className="w-3.5 h-3.5 text-[#b8603d] shrink-0 mt-0.5" />
+                  <Clock className="w-3.5 h-3.5 text-[#d6c7b5] shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-white mb-0.5">ساعات العمل:</strong>
                     <p className="leading-relaxed">السبت إلى الخميس: 8:00 ص إلى 12:30 بعد منتصف الليل (متواصل)</p>
@@ -108,13 +108,13 @@ export function Contact() {
 
             </div>
 
-            <div className="mt-5 pt-3.5 border-t border-[#2f5d43] flex items-center justify-between text-xs text-[#d6c7b5]">
+            <div className="mt-5 pt-3.5 border-t border-[#2f5d43] flex items-center justify-between text-sm text-[#d6c7b5]">
               <span>مرحب بكم دائماً في المشتل</span>
               <a
                 href={business.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#b8603d] hover:text-[#d6c7b5] font-bold underline underline-offset-4 inline-flex items-center gap-1"
+                className="text-[#d6c7b5] hover:text-[#d6c7b5] font-bold underline underline-offset-4 inline-flex items-center gap-1"
               >
                 <span>فتح بالخرائط</span>
                 <Navigation className="w-3.5 h-3.5" />

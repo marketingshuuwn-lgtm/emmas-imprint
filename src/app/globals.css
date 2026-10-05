@@ -7,21 +7,21 @@
   --sand-100: #f4efea;
   --sand-200: #e8dfd3;
   --sand-300: #d6c7b5;
-  --clay-500: #b8603d;
+  --clay-500: #9c4c2d;
   --clay-600: #9c4c2d;
   --clay-100: #f7ebe5;
-  
+
   --foliage-950: #102117;
   --foliage-900: #183324;
   --foliage-800: #234733;
   --foliage-700: #2f5d43;
   --foliage-600: #3d7857;
   --foliage-100: #e9f2ec;
-  
+
   --ink-900: #1c1f1d;
   --ink-700: #424944;
-  --ink-500: #6f7872;
-  
+  --ink-500: #5b655e;
+
   --background: var(--sand-50);
   --foreground: var(--ink-900);
   --primary: var(--foliage-900);
@@ -34,7 +34,7 @@
   --card-foreground: var(--ink-900);
   --border: var(--sand-200);
   --ring: var(--foliage-800);
-  
+
   --font-readex: 'Readex Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-lemonada: 'Lemonada', cursive, sans-serif;
 }
@@ -56,7 +56,7 @@
   --color-ink-900: var(--ink-900);
   --color-ink-700: var(--ink-700);
   --color-ink-500: var(--ink-500);
-  
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -69,7 +69,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  
+
   --font-sans: var(--font-readex);
   --font-heading: var(--font-lemonada);
 }
@@ -99,7 +99,7 @@ p, li, .prose-ar {
 html {
   scroll-behavior: smooth;
   /* Fixed header is ~64-72px tall; keep anchored headings visible below it */
-  scroll-padding-top: 5.5rem;
+  scroll-padding-top: 6.5rem;
 }
 
 ::selection {
@@ -161,3 +161,16 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--foliage-700);
 }
+
+/* Keyboard navigation and motion preferences. */
+:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; box-shadow: 0 0 0 6px #234733; }
+.skip-link { position: fixed; top: 0.75rem; right: 1rem; z-index: 100; padding: 0.75rem 1rem; border-radius: 0.5rem; background: white; color: #102117; transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+header a, header button, [data-mobile-quickbar] a { min-height: 44px; }
+.safe-area-bottom { padding-bottom: max(0.5rem, env(safe-area-inset-bottom)); }
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+header > .container-main { max-width: none; }

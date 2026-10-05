@@ -22,11 +22,11 @@ export function MobileQuickBar() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white font-bold shadow-sm active:scale-95 transition-transform"
+          className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white font-bold shadow-sm active:scale-95 transition-transform"
           aria-label="محادثة واتساب سريعة"
         >
           <MessageCircle className="w-4 h-4 text-white" />
-          <span className="text-[11px] leading-none font-bold">واتساب</span>
+          <span className="text-sm leading-none font-bold">واتساب</span>
         </a>
 
         {/* Call Now */}
@@ -36,17 +36,17 @@ export function MobileQuickBar() {
           aria-label="اتصال هاتفي مباشر"
         >
           <Phone className="w-4 h-4 text-emerald-400" />
-          <span className="text-[11px] leading-none font-bold">اتصال</span>
+          <span className="text-sm leading-none font-bold">اتصال</span>
         </a>
 
         {/* Plants Catalog */}
         <Link
           href="/projects"
           className="flex flex-col items-center justify-center gap-1 py-1.5 px-1 rounded-xl bg-white/5 hover:bg-white/10 text-emerald-200 active:scale-95 transition-transform"
-          aria-label="موسوعة النباتات والأشجار"
+          aria-label="تصفح النباتات"
         >
           <BookOpen className="w-4 h-4 text-teal-300" />
-          <span className="text-[11px] leading-none font-bold">الموسوعة</span>
+          <span className="text-sm leading-none font-bold">النباتات</span>
         </Link>
 
         {/* Google Maps Location */}
@@ -58,7 +58,7 @@ export function MobileQuickBar() {
           aria-label="موقعنا على طريق أبو بكر الصديق"
         >
           <MapPin className="w-4 h-4 text-amber-300" />
-          <span className="text-[11px] leading-none font-bold">الموقع</span>
+          <span className="text-sm leading-none font-bold">الموقع</span>
         </a>
 
       </div>

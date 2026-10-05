@@ -9,6 +9,10 @@ export interface NavItem {
 }
 
 export interface Service {
+  deliverables: string[];
+  cta: string;
+  whatsappMsg: string;
+  image: string;
   id: string;
   number: string;
   title: string;

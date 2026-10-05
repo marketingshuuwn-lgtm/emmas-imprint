@@ -34,7 +34,7 @@ export function Footer() {
               <span className="font-black text-lg tracking-wide font-heading">{business.name}</span>
             </Link>
 
-            <p className="text-xs sm:text-sm text-[#d6c7b5]/90 leading-relaxed max-w-md mb-5">
+            <p className="text-sm sm:text-sm text-[#d6c7b5]/90 leading-relaxed max-w-md mb-5">
               {footer.description}
             </p>
 
@@ -43,14 +43,14 @@ export function Footer() {
                 href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#b8603d] hover:bg-[#9c4c2d] text-white text-xs font-bold transition-colors shadow-sm"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#9c4c2d] hover:bg-[#7f3d25] text-white text-sm font-bold transition-colors shadow-sm"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
                 <span>واتساب مباشر</span>
               </a>
               <a
                 href={`tel:${business.phone}`}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#d6c7b5] hover:text-white text-xs font-bold border border-[#2f5d43] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#d6c7b5] hover:text-white text-sm font-bold border border-[#2f5d43] transition-colors"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>{business.phoneDisplay}</span>
@@ -60,10 +60,10 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="lg:col-span-2 text-right">
-            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
+            <h2 className="font-bold text-white text-sm sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
               اكتشف خضرتك
-            </h4>
-            <ul className="space-y-2 text-xs">
+            </h2>
+            <ul className="space-y-2 text-sm">
               {footer.quickLinks.map((link) => (
                 <li key={link.href}>
                   <a
@@ -79,10 +79,10 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="lg:col-span-2 text-right">
-            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
+            <h2 className="font-bold text-white text-sm sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
               خدماتنا الميدانية
-            </h4>
-            <ul className="space-y-2 text-xs text-[#d6c7b5]/80">
+            </h2>
+            <ul className="space-y-2 text-sm text-[#d6c7b5]/80">
               {footer.servicesLinks.map((s) => (
                 <li key={s} className="py-0.5 leading-relaxed">
                   {s}
@@ -93,10 +93,10 @@ export function Footer() {
 
           {/* Location & Hours */}
           <div className="lg:col-span-3 text-right">
-            <h4 className="font-bold text-white text-xs sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
+            <h2 className="font-bold text-white text-sm sm:text-sm mb-3.5 border-b border-[#2f5d43]/50 pb-2 font-heading">
               المقر وأوقات العمل
-            </h4>
-            <ul className="space-y-3 text-xs text-[#d6c7b5]/90">
+            </h2>
+            <ul className="space-y-3 text-sm text-[#d6c7b5]/90">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400 mt-0.5 shrink-0" aria-hidden />
                 <div>
@@ -105,7 +105,7 @@ export function Footer() {
                     href={business.googleMapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#b8603d] hover:text-[#d6c7b5] underline underline-offset-2 inline-flex items-center gap-1 text-[11px]"
+                    className="text-[#d6c7b5] hover:text-[#d6c7b5] underline underline-offset-2 inline-flex items-center gap-1 text-sm"
                   >
                     <span>عرض الموقع على Google Maps</span>
                     <Navigation className="w-3 h-3" />
@@ -113,12 +113,12 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2.5 pt-1 border-t border-[#2f5d43]/40">
-                <Clock className="w-3.5 h-3.5 text-[#b8603d] mt-0.5 shrink-0" aria-hidden />
+                <Clock className="w-3.5 h-3.5 text-[#d6c7b5] mt-0.5 shrink-0" aria-hidden />
                 <div>
-                  <p className="text-[11px] leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     <strong className="text-white">السبت إلى الخميس:</strong> 8:00 ص – 12:30 ص
                   </p>
-                  <p className="text-[11px] leading-relaxed">
+                  <p className="text-sm leading-relaxed">
                     <strong className="text-white">يوم الجمعة:</strong> 12:30 م – 12:30 ص
                   </p>
                 </div>
@@ -129,7 +129,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#2f5d43]/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#d6c7b5]/70">
+        <div className="border-t border-[#2f5d43]/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[#d6c7b5]/70">
           <p className="flex items-center gap-1.5 flex-wrap" dir="rtl">
             <span>جميع الحقوق محفوظة</span>
             <span>&copy;</span>

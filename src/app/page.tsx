@@ -131,7 +131,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
       />
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <QuickIntentNavigator />
         <About />
