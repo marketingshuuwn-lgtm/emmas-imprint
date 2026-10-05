@@ -123,4 +123,3 @@ src/app/globals.css
 المحتوى الجديد في src/content/plant-pages.ts، وعناوين الصفحات في src/content/page-info.ts، والدوام المشترك في src/content/business-hours.ts. إعداد النطاق والفهرسة موضح في [دليل الإعداد](docs/seo-configuration.md). الوضع الافتراضي معاينة غير مفهرسة؛ يلزم تأكيد النطاق وضبط SITE_URL وSITE_INDEXABLE وإعادة البناء قبل النشر العام.
 
 تشغيل اختبارات البحث وSEO والسيكما: npm test.
-
