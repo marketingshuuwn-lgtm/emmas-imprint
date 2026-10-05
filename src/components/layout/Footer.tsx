@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation, FileDown } from "lucide-react";
+import Link from "next/link";
+import { Phone, MapPin, Clock, MessageCircle, ArrowUp, Navigation } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Footer() {
@@ -18,8 +19,8 @@ export function Footer() {
 
           {/* Brand Info */}
           <div className="lg:col-span-5 text-right">
-            <a
-              href="#home"
+            <Link
+              href="/#home"
               className="inline-flex items-center gap-2.5 font-bold text-lg text-white mb-4 group"
             >
               <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
@@ -31,7 +32,7 @@ export function Footer() {
                 />
               </div>
               <span className="font-black text-lg tracking-wide font-heading">{business.name}</span>
-            </a>
+            </Link>
 
             <p className="text-xs sm:text-sm text-[#d6c7b5]/90 leading-relaxed max-w-md mb-5">
               {footer.description}
@@ -137,15 +138,6 @@ export function Footer() {
           </p>
 
           <div className="flex items-center gap-5">
-            <a
-              href="/site-content.md"
-              download="emma-smile-site-content.md"
-              className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-white transition-colors"
-              title="تحميل النص الكامل للموقع بصيغة Markdown"
-            >
-              <FileDown className="w-3.5 h-3.5" />
-              <span>تحميل محتوى الموقع (.md)</span>
-            </a>
 
             <button
               onClick={scrollToTop}

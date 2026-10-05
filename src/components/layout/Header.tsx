@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, MessageCircle, FileDown } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { siteContent } from "@/content/site-content";
 
 export function Header() {
@@ -79,15 +79,6 @@ export function Header() {
 
           {/* Action Buttons */}
           <div className="hidden md:flex items-center gap-2.5">
-            <a
-              href="/site-content.md"
-              download="emma-smile-site-content.md"
-              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-[#d6c7b5] hover:text-white border border-[#2f5d43]/50 text-xs font-semibold transition-colors"
-              title="تحميل النص الكامل للموقع بصيغة Markdown"
-            >
-              <FileDown className="w-3.5 h-3.5 text-[#b8603d]" />
-              <span>ملف المحتوى (.md)</span>
-            </a>
 
             <a
               href={`tel:${siteContent.business.phone}`}
@@ -166,16 +157,6 @@ export function Header() {
             >
               <Phone className="w-4 h-4 text-emerald-400" />
               <span>اتصل بنا هاتفياً</span>
-            </a>
-
-            <a
-              href="/site-content.md"
-              download="emma-smile-site-content.md"
-              className="inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/5 border border-[#2f5d43] text-[#d6c7b5] font-semibold text-xs"
-              onClick={close}
-            >
-              <FileDown className="w-3.5 h-3.5 text-[#b8603d]" />
-              <span>تحميل محتوى الموقع (.md)</span>
             </a>
           </div>
         </nav>
