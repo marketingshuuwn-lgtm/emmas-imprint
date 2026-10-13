@@ -11,8 +11,8 @@ export const siteContent: SiteContent = {
     "whatsapp": "https://wa.me/966563340109",
     "address": "الرياض — طريق أبو بكر الصديق",
     "logo": "/images/logo.png",
-    "googleMapsUrl": "https://www.google.com/maps?q=24.8984706,46.6249185&z=17&hl=ar",
-    "googleMapsEmbed": "https://maps.google.com/maps?q=24.8984706,46.6249185&z=17&output=embed&hl=ar",
+    "googleMapsUrl": "https://maps.google.com/?cid=7537505156491439845",
+    "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.9864358511254!2d46.6249324!3d24.898444299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2eef07db17bf25%3A0x689a99012158eee5!2z2YXYtNiq2YQg2KjYtdmF2Kkg2KfZitmF2Kcg2KfZhNiy2LHYp9i52YrYqQ!5e0!3m2!1sar!2ssa!4v1791909847229!5m2!1sar!2ssa",
     "workingHoursWeekdays": "من 8:00 ص إلى 12:30 بعد منتصف الليل (السبت إلى الخميس، متواصل)",
     "workingHoursFriday": "من 12:30 ظهراً إلى 12:30 بعد منتصف الليل (يوم الجمعة)",
     "coordinates": {
