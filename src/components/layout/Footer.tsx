@@ -120,19 +120,38 @@ return (
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[#2f5d43]/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-[#d6c7b5]/70">
-          <p className="flex items-center gap-1.5 flex-wrap" dir="rtl">
-            <span>جميع الحقوق محفوظة</span>
-            <span>&copy;</span>
-            <span dir="ltr">2026</span>
-            <span>{business.name} | Emma Smile.</span>
-          </p>
+        <div className="border-t border-[#2f5d43]/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#d6c7b5]/75">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2 text-center md:text-right" dir="rtl">
+            <p className="flex items-center gap-1.5 flex-wrap">
+              <span>جميع الحقوق محفوظة</span>
+              <span>&copy;</span>
+              <span dir="ltr">2026</span>
+              <span className="text-[#faf8f5] font-medium">{business.name} | Emma Smile.</span>
+            </p>
+
+            {footer.agencyCredit && (
+              <>
+                <span className="hidden sm:inline text-[#2f5d43]" aria-hidden="true">•</span>
+                <a
+                  href={footer.agencyCredit.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${footer.agencyCredit.text} ${footer.agencyCredit.agency} - تواصل عبر واتساب لطلب تصميم موقع`}
+                  title="تواصل مع وكالة نقرة لتصميم وتطوير موقعك الإلكتروني عبر واتساب"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#162e21]/90 hover:bg-[#1f4230] border border-[#2f5d43]/70 hover:border-emerald-500/50 text-[#d6c7b5] hover:text-white transition-all duration-200 group shadow-sm text-xs"
+                >
+                  <span className="text-[#a8bba2] group-hover:text-[#d6c7b5] transition-colors">{footer.agencyCredit.text}</span>
+                  <span className="font-semibold text-emerald-400 group-hover:text-emerald-300 transition-colors">{footer.agencyCredit.agency}</span>
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-400 group-hover:text-emerald-300 transition-transform group-hover:scale-110" aria-hidden="true" />
+                </a>
+              </>
+            )}
+          </div>
 
           <div className="flex items-center gap-5">
-
             <a
               href="#main-content"
-              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer text-xs sm:text-sm"
             >
               <span>العودة للأعلى</span>
               <ArrowUp className="w-3.5 h-3.5" />

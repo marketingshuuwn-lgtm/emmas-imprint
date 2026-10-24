@@ -102,6 +102,11 @@ export interface SiteContent {
     quickLinks: NavItem[];
     servicesLinks: string[];
     copyright: string;
+    agencyCredit?: {
+      text: string;
+      agency: string;
+      whatsapp: string;
+    };
   };
   seo: {
     title: string;
