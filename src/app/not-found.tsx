@@ -1,4 +1,4 @@
-export const metadata = { title: "الصفحة غير موجودة | بصمة ايما الزراعية", robots: { index: false, follow: true } };
+export const metadata = { title: "الصفحة غير موجودة | مشاتل مؤسسة نوف الرويلي", robots: { index: false, follow: true } };
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

@@ -114,7 +114,7 @@ export function Header() {
             <div className="relative w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
               <Image
                 src="/images/logo.png"
-                alt="شعار بصمة ايما الزراعية"
+                alt="شعار مشاتل مؤسسة نوف الرويلي"
                 fill
                 sizes="40px"
                 className="object-contain"

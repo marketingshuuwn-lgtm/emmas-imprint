@@ -6,8 +6,8 @@ export function MapPreview({ src, address }: { src: string; address?: string }) 
       <iframe
         id="nursery-map"
         src={src}
-        title="موقع مشتل بصمة إيما الزراعية على طريق أبو بكر الصديق بالرياض"
-        aria-label={address ? `خريطة موقع مشتل بصمة إيما الزراعية: ${address}` : "خريطة موقع مشتل بصمة إيما الزراعية"}
+        title="موقع مشاتل مؤسسة نوف الرويلي على طريق أبو بكر الصديق بالرياض"
+        aria-label={address ? `خريطة موقع مشاتل مؤسسة نوف الرويلي: ${address}` : "خريطة موقع مشاتل مؤسسة نوف الرويلي"}
         className="w-full h-full flex-1 border-0 rounded-2xl"
         style={{ border: 0 }}
         allowFullScreen

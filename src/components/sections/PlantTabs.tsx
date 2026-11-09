@@ -126,7 +126,7 @@ export function PlantTabs({ plants }: { plants: FeaturedPlant[] }) {
               <div className="p-4 pt-0">
                 <a
                   href={`https://wa.me/966563340109?text=${encodeURIComponent(
-                    `مرحباً بصمة ايما، أود الاستفسار عن توفر وأحجام (${item.name}).`
+                    `مرحباً مشاتل مؤسسة نوف الرويلي، أود الاستفسار عن توفر وأحجام (${item.name}).`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"

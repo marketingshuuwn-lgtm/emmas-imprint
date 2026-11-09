@@ -17,7 +17,7 @@ export function MobileQuickBar() {
         {/* WhatsApp Fast Consultation */}
         <a
           href={`https://wa.me/966563340109?text=${encodeURIComponent(
-            "مرحباً بصمة ايما الزراعية، أتصفح الموقع عبر الجوال وأود استشارة بخصوص النباتات وتنسيق الحدائق."
+            "مرحباً مشاتل مؤسسة نوف الرويلي، أتصفح الموقع عبر الجوال وأود استشارة بخصوص النباتات وتنسيق الحدائق."
           )}`}
           target="_blank"
           rel="noopener noreferrer"

@@ -21,7 +21,7 @@ return (
               <div className="relative w-8 h-8 rounded-lg overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="شعار بصمة ايما الزراعية"
+                  alt="شعار مشاتل مؤسسة نوف الرويلي"
                   fill
                   sizes="32px"
                   className="object-contain"
@@ -126,7 +126,7 @@ return (
               <span>جميع الحقوق محفوظة</span>
               <span>&copy;</span>
               <span dir="ltr">2026</span>
-              <span className="text-[#faf8f5] font-medium">{business.name} | Emma Smile.</span>
+              <span className="text-[#faf8f5] font-medium">{business.name}.</span>
             </p>
 
             {footer.agencyCredit && (

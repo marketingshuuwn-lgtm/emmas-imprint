@@ -63,7 +63,7 @@ export function Showcase() {
             شاهد كيف نحول المساحات إلى <span className="text-emerald-700">تحف طبيعية</span>
           </h2>
           <p className="text-base md:text-lg text-emerald-900/80 prose-ar max-w-2xl mx-auto">
-            نماذج واقعية من مشاريع نفذها فريق بصمة ايما الزراعية لعملائنا في مختلف أحياء الرياض.
+            نماذج واقعية من مشاريع نفذها فريق مشاتل مؤسسة نوف الرويلي لعملائنا في مختلف أحياء الرياض.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export function Showcase() {
             <div className="pt-4 border-t border-emerald-100">
               <a
                 href={`https://wa.me/966563340109?text=${encodeURIComponent(
-                  `مرحباً بصمة ايما، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
+                  `مرحباً مشاتل مؤسسة نوف الرويلي، شاهدت مشروع (${currentProject.title} - ${currentProject.location}) وأود تصميم حديقة مشابهة لمنزلي.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"

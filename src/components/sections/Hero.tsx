@@ -45,7 +45,7 @@ export function Hero() {
 
             {/* Scope Summary */}
             <p className="text-sm sm:text-sm text-[#d6c7b5]/80 leading-relaxed mb-8 max-w-xl">
-              <strong>بصمة ايما الزراعية في الرياض:</strong> نباتات داخلية وخارجية، وتنسيق حدائق منزلية وتجارية، وشبكات ري ذكية وصيانة دورية.
+              <strong>مشاتل مؤسسة نوف الرويلي في الرياض:</strong> نباتات داخلية وخارجية، وتنسيق حدائق منزلية وتجارية، وشبكات ري ذكية وصيانة دورية.
             </p>
 
             {/* Primary Action Card */}

@@ -95,7 +95,7 @@ export function PlantCatalog({ initialCategory = "all", origin }: { initialCateg
                 <h2 className="font-bold text-base text-[#102117] mb-2">{plant.name}</h2>
                 <ImageCreditCaption credit={plant.imageCredit} />
                 <p className="text-sm text-[#424944] mb-4">{plant.alsoOutdoor?"اختيار للمواقع الداخلية أو الخارجية المناسبة":plant.type==="indoor"?"نبات داخلي — راجع احتياجه للإضاءة والري":"نبات خارجي — راجع ظروف الشمس ومساحة النمو"}</p>
-                <a id={`plant-request-${plant.type}-${plant.id}`} href={`${siteContent.business.whatsapp}?text=${encodeURIComponent(`مرحبًا بصمة ايما، أود معرفة سعر وتوفر وأحجام ${plant.name}. الكمية المطلوبة: `)}`} target="_blank" rel="noopener noreferrer"
+                <a id={`plant-request-${plant.type}-${plant.id}`} href={`${siteContent.business.whatsapp}?text=${encodeURIComponent(`مرحبًا مشاتل مؤسسة نوف الرويلي، أود معرفة سعر وتوفر وأحجام ${plant.name}. الكمية المطلوبة: `)}`} target="_blank" rel="noopener noreferrer"
                   aria-label={`استفسار عن السعر والتوفر: ${plant.name}`} className="inline-flex gap-2 items-center justify-center bg-[#e9f2ec] text-[#183324] rounded-xl px-3 py-3 text-sm font-bold mt-auto"><MessageCircle size={16} aria-hidden />السعر والتوفر</a>
               </div>
             </li>)}
@@ -104,7 +104,7 @@ export function PlantCatalog({ initialCategory = "all", origin }: { initialCateg
           <section className="bg-[#183324] text-white rounded-2xl p-6 sm:p-8 my-10" aria-labelledby="bulk-heading">
             <h2 id="bulk-heading" className="text-xl sm:text-2xl font-bold mb-3">تحتاج كميات لمشروع؟</h2>
             <p className="text-[#e8dfd3] mb-5">أرسل أسماء النباتات والأحجام والكميات وموقع التوريد في الرياض لطلب عرض سعر يناسب المشروع.</p>
-            <a href={`${siteContent.business.whatsapp}?text=${encodeURIComponent("مرحبًا بصمة ايما، أود طلب عرض سعر لكميات نباتات لمشروع في الرياض. قائمة الأصناف والأحجام والكميات والموقع: ")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#183324] font-bold rounded-xl px-5 py-3"><MessageCircle size={18} aria-hidden />طلب عرض سعر للكميات</a>
+            <a href={`${siteContent.business.whatsapp}?text=${encodeURIComponent("مرحبًا مشاتل مؤسسة نوف الرويلي، أود طلب عرض سعر لكميات نباتات لمشروع في الرياض. قائمة الأصناف والأحجام والكميات والموقع: ")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#183324] font-bold rounded-xl px-5 py-3"><MessageCircle size={18} aria-hidden />طلب عرض سعر للكميات</a>
           </section>
         </section>
       </main>
